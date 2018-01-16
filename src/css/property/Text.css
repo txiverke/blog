@@ -1,0 +1,10 @@
+p,
+.normalTxt {
+  font-size: var(--textSize);
+  font-family: Lighter;
+  color: var(--textColor);
+}
+
+::selection {
+  background: var(--selectColor) /* WebKit/Blink Browsers */
+}

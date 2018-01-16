@@ -1,0 +1,105 @@
+.app-content {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+}
+
+.app-content-landing h2{
+  margin: 2rem 0;
+}
+
+.app-content-landing h2 > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  color: var(--textColor);
+}
+
+.app-content-landing h2 span {
+  font-size: var(--hugeSize);
+  font-family: Number;
+}
+
+.app-content-landing h2 span.bold {
+  transform: scale(1);
+  font-family: Bold;
+  font-size: 2.5rem;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  line-height: 1;
+}
+
+@media only screen 
+  and (min-width: 1200px) {
+    .app-content {
+      flex-direction: row;
+    }
+    .app-content-landing h2{
+      margin: 0 3.5rem;
+    }
+    .app-content-landing h2 span {
+      transform: scale(1.1);
+      line-height: 6.7rem;
+    }
+    .app-content-landing h2 span.bold {
+      transform: scale(.9);
+    }
+  }
+
+@media only screen 
+  and (max-width: 1199px) 
+  and (min-width: 850px) {
+    .app-content {
+      flex-direction: row;
+    }
+    .app-content-landing h2{
+      margin: 0 3rem;
+    }
+    .app-content-landing h2 span {
+      transform: scale(1);
+      line-height: 5.7rem;
+    }
+    .app-content-landing h2 span.bold {
+      transform: scale(.85);
+    }
+  }
+
+  @media only screen 
+  and (max-width: 849px) 
+  and (min-width: 650px) {
+    .app-content {
+      flex-direction: row;
+    }
+    .app-content-landing h2{
+      margin: 0 3rem;
+    }
+    .app-content-landing h2 span {
+      transform: scale(.9);
+      line-height: 5.4rem;
+    }
+    .app-content-landing h2 span.bold {
+      transform: scale(.75);
+      
+    }
+  }
+
+@media only screen 
+  and (max-width: 649px) {
+    .app-content {
+      flex-direction: column;
+    }
+    .app-content-landing h2{
+      margin: 1rem 0;
+    }
+    .app-content-landing h2 span {
+      transform: scale(.9);
+      line-height: 5.2rem;
+    }
+    
+    .app-content-landing h2 span.bold {
+      transform: scale(.7);
+      
+    }
+}

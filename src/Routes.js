@@ -27,6 +27,11 @@ const Routes = () => (
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/Projects')} />
       )} />
+    <Route 
+      path="/admin"
+      component={props => (
+        <RoutesAsync props={props} loadingPromise={import('./views/Admin')} />
+      )} />
     <Route
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/NotFound')} />

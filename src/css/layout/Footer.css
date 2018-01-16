@@ -1,0 +1,32 @@
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+
+}
+
+.app-footer-list{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-footer-item {
+  margin: 1rem;
+}
+
+.app-footer-item a{
+  font-size: var(--textSize);
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+.app-footer span {
+  display: none;
+}

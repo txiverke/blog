@@ -1,0 +1,10 @@
+.roundedImg {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  display: block;
+  border: 1px solid var(--textColor);
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+}

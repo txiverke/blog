@@ -22,10 +22,10 @@ class RoutesAsync extends React.Component {
 
   render() {
     if (this.state.loaded) {
-      return <this.component {...this.props.props} />;
+      return <this.component {...this.props.props} />
     }
 
-    return <Loading />;
+    return <Loading />
   }
 }
 
