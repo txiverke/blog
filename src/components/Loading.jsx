@@ -2,9 +2,16 @@
 
 import React from 'react'
 
-const Loading = () => 
-  <div className="app-view"> 
-    <span className="app-loader icon-spinner3"></span>
+import loader from '../assets/imgs/loader.png'
+
+type Props = {
+  msg: string
+}
+
+const Loading = (props: Props) => 
+  <div className="app-view app-loader"> 
+    <img src={loader} className="app-loader-icon icon-spinner3" />
+    <h3 className="app-loader-msg">{props.msg}</h3>
   </div>
 
 export default Loading

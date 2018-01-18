@@ -1,10 +1,19 @@
 .app-loader {
+  display: flex;
+  flex-direction: column;
+}
+.app-loader-icon {
   font-size: var(--maxSize);
   color: var(--textColor);
-  -webkit-animation: app-loader-rotation 1s infinite ease-in-out; /* Safari 4+ */
-  -moz-animation:    app-loader-rotation 1s infinite ease-in-out; /* Fx 5+ */
-  -o-animation:      app-loader-rotation 1s infinite ease-in-out; /* Opera 12+ */
-  animation:         app-loader-rotation 1s infinite ease-in-out;
+  -webkit-animation: app-loader-rotation .5s infinite linear; /* Safari 4+ */
+  -moz-animation:    app-loader-rotation .5s infinite linear; /* Fx 5+ */
+  -o-animation:      app-loader-rotation .5s infinite linear; /* Opera 12+ */
+  animation:         app-loader-rotation .5s infinite linear;
+}
+
+.app-loader-msg {
+  font-family: Lighter;
+  font-size: var(--minSize);
 }
 
 @-webkit-keyframes app-loader-rotation {

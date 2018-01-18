@@ -10,6 +10,35 @@ const headers = new Headers({
   'access_token': JSON.parse(token) || '',
 })
 
+/** LOAD APP STATISTICS */
+export const loadStatsRequest = () => ({ type: ACTION.LOAD_STATS_REQUEST })
+
+export const loadStatsSuccess = (payload: Object) => ({
+  type: ACTION.LOAD_STATS_SUCCESS, payload
+})
+
+export const loadStatsFailure = () => ({ type: ACTION.LOAD_STATS_FAILURE })
+
+export const loadStats = () => 
+  async (dispatch: Function) => {
+    const options = { 
+      method: 'GET',
+      headers,
+      mode: 'cors',
+      cache: 'default',
+    }
+
+    dispatch(loadStatsRequest())
+
+    try {
+      const promise = await fetch(`${config.api.url}/statistic`, options)
+      const data = await promise.json()
+      return dispatch(loadStatsSuccess(data))
+    } catch (err) {
+      dispatch(loadStatsFailure())
+    }
+  } 
+
 /** LOAD USER DATA **/
 export const loadUserDataRequest = () => ({ type: ACTION.LOAD_USER_DATA_REQUEST })
 
