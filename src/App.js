@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 import './css/App.css'
 
-const App = () =>
+const App = () => (
   <main className="app-root">
     <Helmet titleTemplate={`%s | Xavier Vilà - frontend developer`} defaultTitle="Xavi Vilà - frontend developer" >
       <link rel="canonical" href="http://xaviervila.tech" />
@@ -19,5 +19,7 @@ const App = () =>
     <Routes />
     <Footer />
   </main>
+)
+
 
 export default App

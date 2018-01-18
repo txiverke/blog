@@ -3,7 +3,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Background from '../components/Background'
 import avatar from '../assets/imgs/about.jpg'
 
 type Props = {
@@ -25,10 +24,10 @@ const About = (props: Props) =>
       <h2>Xavier Vilà</h2>
       <h3>frondend developer</h3>
       <p>Versatile Front-end Developer with lots of experience in HTML
-and CSS implementation, Cross-browser and Responsive design.
-Wide range of professional experience in j avascript using several
-frameworks, libraries and vanilla js. Experience in agile working
-environments and Scrum methodology.</p>
+        and CSS implementation, Cross-browser and Responsive design.
+        Wide range of professional experience in j avascript using several
+        frameworks, libraries and vanilla js. Experience in agile working
+        environments and Scrum methodology.</p>
     </article>
   </section>
 
