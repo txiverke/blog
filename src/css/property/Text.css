@@ -1,8 +1,31 @@
 p,
-.normalTxt {
+.txt {
   font-size: var(--textSize);
   font-family: Lighter;
   color: var(--textColor);
+}
+
+.txt-huge {
+  font-size: var(--hugeSize);
+  font-family: Number;
+  color: var(--textColor)
+}
+
+.txt-link {
+  color: var(--selectColor);
+  text-decoration: underline;
+}
+
+.txt-link:hover {
+  text-decoration: none;
+}
+
+.txt-bold {
+  font-family: Bold
+}
+
+.txt-highlight {
+  color: var(--secondColor);
 }
 
 ::selection {

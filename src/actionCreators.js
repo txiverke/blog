@@ -4,10 +4,10 @@ import 'isomorphic-fetch'
 import * as ACTION from './actions'
 import config from './config'
 
-const token = localStorage.getItem('token')
+const token: string = JSON.parse(localStorage.getItem('token')) || ''
 const headers = new Headers({
   'Content-Type': 'application/json',
-  'access_token': JSON.parse(token) || '',
+  'access_token': token || ''
 })
 
 /** LOAD APP STATISTICS */

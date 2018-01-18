@@ -25,7 +25,7 @@ class RoutesAsync extends React.Component {
       return <this.component {...this.props.props} />
     }
 
-    return <Loading />
+    return <Loading msg='Loading...'/>
   }
 }
 

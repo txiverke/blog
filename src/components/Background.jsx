@@ -13,10 +13,7 @@ class Background extends React.Component {
   props: {
     name: string,
     title: string,
-    match: Object,
     location: Object,
-    history: Object,
-    staticContext: any
   }
   componentDidMount() {
     setTimeout(() => { 

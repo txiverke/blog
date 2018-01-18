@@ -18,13 +18,11 @@ const sections = [
 
 class Landing extends React.Component {
   props: {
-    match: Object,
     location: Object,
-    history: Object,
-    staticContext: any,
     dispatch: Function,
-    statistic: Object,
+    statistic: Statistic,
   }
+
   componentDidMount() {
     const { dispatch, statistic } = this.props
 
@@ -36,11 +34,12 @@ class Landing extends React.Component {
   render() {
     const completed = this.props.statistic.completed
     const getValue = (section) => {
-      const { users, posts } = this.props.statistic.data
+      const { users, posts, projects } = this.props.statistic.data
 
       switch (section) {
         case 'about-me': return normalizeVal(users)
         case 'posts': return normalizeVal(posts)
+        case 'projects': return normalizeVal(projects)
         default: return '00'
       }
     }
@@ -48,8 +47,14 @@ class Landing extends React.Component {
     if (completed) {
       return (
         <section className="app-view">
-          <Helmet title="Welcome!" />
-          <Background title="Just a tes of bg" name="bg_1.png" {...this.props} />
+          <Helmet 
+            title="Welcome!" 
+            meta={[
+              { name:"description", content: "Welcome to xaviervila.tech" },
+              { property: "og:title", content: "Landing page of xaviervila.tech" }
+            ]}
+          />
+          <Background title="Just a tes of bg" name="bg_1.png" location={this.props.location} />
           <div className="app-content">
           {sections.map(item => {
             const name = getSlug(item.name)

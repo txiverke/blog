@@ -33,6 +33,11 @@ const Routes = () => (
         <RoutesAsync props={props} loadingPromise={import('./views/Admin')} />
       )} />
     <Route
+      path="/sign-in"
+      component={props => (
+        <RoutesAsync props={props} loadingPromise={import('./views/SignIn')} />
+      )} />
+    <Route
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/NotFound')} />
       )} />

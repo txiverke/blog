@@ -12,77 +12,49 @@ const newState = (state, ...args) =>
   })
 
 const statistic = (
-  state = {
+  state: Statistic = {
     completed: false,
     data: {},
     message: ''
-  }, action
+  }, action: Action
 ) => {
   switch (action.type) {
-    case ACTION.LOAD_STATS_REQUEST: return newState(state, false, state.data, 'Loading statistics.')
+    case ACTION.LOAD_STATS_REQUEST: return newState(state, false, {}, 'Loading statistics.')
     case ACTION.LOAD_STATS_SUCCESS: return newState(state, true, action.payload, 'Statistics loaded.')
-    case ACTION.LOAD_STATS_FAILURE: return newState(state, true, state.data, 'Statistics failed.')
+    case ACTION.LOAD_STATS_FAILURE: return newState(state, true, {}, 'Statistics failed.')
     default: return state
   }
 }
 
 const user = (
-  state = {
+  state: Data = {
     completed: false,
     data: [],
     message: ''
   }, 
-  action
+  action: Action
 ) => {
   switch(action.type) {
-    case ACTION.LOAD_USER_DATA_REQUEST:
-      return Object.assign({}, state, { 
-        completed: false, 
-        message: 'Loading User Data.' 
-      })
-    case ACTION.LOAD_USER_DATA_SUCCESS:
-      return Object.assign({}, state, { 
-        completed: true, 
-        data: action.payload, 
-        message: 'User data loaded.'
-      })
-    case ACTION.LOAD_USER_DATA_FAILURE:
-      return Object.assign({}, state, { 
-        completed: true, 
-        message: 'Something went wrong.' 
-      })
-    default:
-      return state
+    case ACTION.LOAD_USER_DATA_REQUEST: return newState(state, false, [], 'Loading User Data')
+    case ACTION.LOAD_USER_DATA_SUCCESS: return newState(state, true, action.payload, 'User data loaded.')
+    case ACTION.LOAD_USER_DATA_FAILURE: return newState(state, true, [], 'Get users failed.')
+    default: return state
   }
 }
 
 const login = (
-  state = { 
+  state: Login = { 
     completed: false,
-    token: '',
+    data: '',
     message: ''
   },
-  action,
+  action: Action,
 ) => {
   switch(action.type) {
-    case ACTION.LOG_IN_USER_REQUEST:
-      return Object.assign({}, state, { 
-        completed: false, 
-        message: 'User Authenticating.' 
-      })
-    case ACTION.LOG_IN_USER_SUCCESS:
-      return Object.assign({}, state, { 
-        completed: true, 
-        token: action.payload, 
-        message: 'User Authenticated.'
-      })
-    case ACTION.LOG_IN_USER_FAILURE:
-      return Object.assign({}, state, { 
-        completed: true, 
-        message: 'Authentication denied.' 
-      })
-    default:
-      return state
+    case ACTION.LOG_IN_USER_REQUEST: return newState(state, false, '', 'Authenticating user.')
+    case ACTION.LOG_IN_USER_SUCCESS: return newState(state, true, action.payload, 'User Authenticated.')
+    case ACTION.LOG_IN_USER_FAILURE: return newState(state, true, '', 'Authentication denied.')
+    default: return state
   }
 }
 

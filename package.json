@@ -5,6 +5,7 @@
   "dependencies": {
     "deep-equal": "^1.0.1",
     "dotenv": "^4.0.0",
+    "global": "^4.3.2",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -22,5 +23,8 @@
     "eject": "react-scripts eject",
     "flow": "flow"
   },
-  "proxy": "http://localhost:8888"
+  "proxy": "http://localhost:8888",
+  "devDependencies": {
+    "flow-bin": "^0.63.1"
+  }
 }

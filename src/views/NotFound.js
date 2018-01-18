@@ -14,13 +14,17 @@ type Props = {
 const NotFound = (props: Props) => {
   const url = props.location.pathname;
   return (
-    <div className="app-view">
+    <section className="app-view">
       <Helmet title="Page not found" />
-     <h1>
-      {`Ups the url: ${url} does not exit. `}
-      <Link to="/">Back to Landing page</Link>
-    </h1>
-    </div>
+      <h1 className="app-content-column">
+        <span className="txt-huge">404</span><br />
+        <span className="txt">
+          Sorry, but the url: 
+          <span className="txt-highlight">{` xaviervila.tech${url}  `}</span> 
+          does not exist.</span><br />
+        <Link className="txt txt-link" to="/">Back to the landing page</Link>
+      </h1>
+    </section>
   )
 }
 
