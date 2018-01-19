@@ -4,6 +4,10 @@
   display: flex;
   flex-direction: row;
 }
+
+.app-content-section {
+  width: 90%;
+}
 .app-content-column {
   flex-direction: column;
   align-items: center;

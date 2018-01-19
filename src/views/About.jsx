@@ -4,21 +4,22 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
-import Loading from '../components/Loading'
+import Loader from '../components/Loader'
 import { loadUserData } from '../actionCreators'
 import avatar from '../assets/imgs/about.jpg'
+import config from '../config'
 
 class About extends React.Component {
   props: {
-    user: Data,
+    user: User,
     dispatch: Function
   }
 
   componentDidMount() {
     const { dispatch, user } = this.props
     
-    if (user.data.length === 0) {
-      dispatch(loadUserData())
+    if (Object.keys(user.data).length === 0) {
+      dispatch(loadUserData(config.api.profileId))
     }
   }
 
@@ -35,23 +36,19 @@ class About extends React.Component {
               { property: "og:title", content: "About me" }
             ]}
           />
-          {data.map(item =>
-          <article key={item._id}className="app-content">
+          <article className="app-content">
             <figure>
-              <img
-                className="roundedImg"
-                src={avatar} alt="A pic of Xavi Vilà" />
+              <img className="roundedImg" src={avatar} alt="A pic of Xavi Vilà" />
             </figure>
-            <h2>{item.username}</h2>
-            <h3>frondend developer</h3>
-            <p>{item.bio}</p>
+            <h2>{data.firstname} {data.lastname}</h2>
+            <h3>{data.job}</h3>
+            <p>{data.bio}</p>
           </article>
-          )}
         </section>
       )
     }
 
-    return <Loading msg={message} />
+    return <Loader msg={message} />
   }
 }
   

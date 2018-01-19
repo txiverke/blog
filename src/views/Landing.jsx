@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Background from '../components/Background'
-import Loading from '../components/Loading'
+import Loader from '../components/Loader'
 import { getSlug, normalizeVal } from '../utils/helpers'
 import { loadStats } from '../actionCreators'
 
@@ -29,6 +29,7 @@ class Landing extends React.Component {
     if (Object.keys(statistic.data).length === 0) {
       dispatch(loadStats())
     }
+    
   }
 
   render() {
@@ -74,7 +75,7 @@ class Landing extends React.Component {
       )
     }
 
-    return <Loading msg={this.props.statistic.message} />
+    return <Loader msg={this.props.statistic.message} />
   }
 }
 

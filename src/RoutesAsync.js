@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Loading from './components/Loading'
+import Loader from './components/Loader'
 
 class RoutesAsync extends React.Component {
   state = {
@@ -25,7 +25,7 @@ class RoutesAsync extends React.Component {
       return <this.component {...this.props.props} />
     }
 
-    return <Loading msg='Loading...'/>
+    return <Loader msg='Loading...'/>
   }
 }
 

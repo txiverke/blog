@@ -27,9 +27,9 @@ const statistic = (
 }
 
 const user = (
-  state: Data = {
+  state: User = {
     completed: false,
-    data: [],
+    data: {},
     message: ''
   }, 
   action: Action
@@ -43,7 +43,7 @@ const user = (
 }
 
 const login = (
-  state: Login = { 
+  state: Auth = { 
     completed: false,
     data: '',
     message: ''
@@ -51,12 +51,30 @@ const login = (
   action: Action,
 ) => {
   switch(action.type) {
-    case ACTION.LOG_IN_USER_REQUEST: return newState(state, false, '', 'Authenticating user.')
-    case ACTION.LOG_IN_USER_SUCCESS: return newState(state, true, action.payload, 'User Authenticated.')
-    case ACTION.LOG_IN_USER_FAILURE: return newState(state, true, '', 'Authentication denied.')
+    case ACTION.LOG_IN_USER_REQUEST: return newState(state, false, '', 'Login user.')
+    case ACTION.LOG_IN_USER_SUCCESS: return newState(state, true, action.payload, 'User logged.')
+    case ACTION.LOG_IN_USER_FAILURE: return newState(state, true, '', 'Login denied.')
+    default: return state
+  }
+}
+
+const authenticate = (
+  state: Auth = {
+    completed: false,
+    data: '',
+    message: ''
+  },
+  action: Action,
+) => {
+  switch(action.type) {
+    case ACTION.IS_AUTHENTICATED_REQUEST: return newState(state, false, '', 'Authenticating user.')
+    case ACTION.IS_AUTHENTICATED_SUCCESS: return newState(state, true, action.payload, 'User authenticated.')
+    case ACTION.IS_AUTHENTICATED_FAILURE: return newState(state, true, '', 'Authentication denied.')
     default: return state
   }
 }
 
 
-export default combineReducers({ statistic, user, login })
+export default combineReducers({ 
+  statistic, user, login, authenticate 
+})

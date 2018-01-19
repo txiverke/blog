@@ -5,10 +5,10 @@
 .app-loader-icon {
   font-size: var(--maxSize);
   color: var(--textColor);
-  -webkit-animation: app-loader-rotation .5s infinite linear; /* Safari 4+ */
-  -moz-animation:    app-loader-rotation .5s infinite linear; /* Fx 5+ */
-  -o-animation:      app-loader-rotation .5s infinite linear; /* Opera 12+ */
-  animation:         app-loader-rotation .5s infinite linear;
+  -webkit-animation: app-loader-rotation .6s infinite linear; /* Safari 4+ */
+  -moz-animation:    app-loader-rotation .6s infinite linear; /* Fx 5+ */
+  -o-animation:      app-loader-rotation .6s infinite linear; /* Opera 12+ */
+  animation:         app-loader-rotation .6s infinite linear;
 }
 
 .app-loader-msg {

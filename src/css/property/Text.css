@@ -28,6 +28,14 @@ p,
   color: var(--secondColor);
 }
 
+.tit-section {
+  font-size: var(-maxSise);
+  font-family: Lighter;
+  border-bottom: 1px dotted var(--textColor);
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+}
+
 ::selection {
   background: var(--selectColor) /* WebKit/Blink Browsers */
 }

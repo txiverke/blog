@@ -1,9 +1,18 @@
+/** GLOBAL VARIABLES **/
 @import './_variables.css';
+
+/** LAYOUT STYLES **/
 @import './layout/Body.css';
-@import './layout/Header.css';
 @import './layout/Content.css';
 @import './layout/Footer.css';
+@import './layout/Header.css';
+
+/** COMPONENT STYLES **/
 @import './component/Background.css';
+@import './component/Button.css';
+@import './component/Form.css';
 @import './component/Loader.css';
+
+/** PROPERTY STYLES **/
+@import './property/Image.css';
 @import './property/Text.css';
-@import './property/Image.css'

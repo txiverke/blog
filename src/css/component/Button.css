@@ -1,0 +1,29 @@
+.btn {
+  outline: none;
+  display: inline-block;
+  background: transparent;
+  color: var(--selectColor);
+  padding: 0.5rem 1.5rem;
+  font-family: Lighter;
+  font-size: var(--textSize);
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid var(--selectColor);
+  border-radius: 25px;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: var(--selectColor);
+  color: var(--textColor);
+}
