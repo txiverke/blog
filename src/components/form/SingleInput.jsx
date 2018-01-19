@@ -7,7 +7,7 @@ type Props = {
   inputType: mixed,
   title: string,
   controlFunc?: Function,
-  content?: any,
+  content?: string,
   placeholder?: string,
   size?: string,
   required?: boolean,

@@ -38,11 +38,15 @@ const user = (
     case ACTION.LOAD_USER_DATA_REQUEST: return newState(state, false, [], 'Loading User Data')
     case ACTION.LOAD_USER_DATA_SUCCESS: return newState(state, true, action.payload, 'User data loaded.')
     case ACTION.LOAD_USER_DATA_FAILURE: return newState(state, true, [], 'Get users failed.')
+    case ACTION.UPLOAD_USER_DATA_REQUEST: return newState(state, false, [], 'Uploading User Data')
+    case ACTION.UPLOAD_USER_DATA_SUCCESS: return newState(state, true, action.payload, 'User data uploaded.')
+    case ACTION.UPLOAD_USER_DATA_FAILURE: return newState(state, true, [], 'Upload users failed.')
+    
     default: return state
   }
 }
 
-const login = (
+const authenticate = (
   state: Auth = { 
     completed: false,
     data: '',
@@ -54,27 +58,20 @@ const login = (
     case ACTION.LOG_IN_USER_REQUEST: return newState(state, false, '', 'Login user.')
     case ACTION.LOG_IN_USER_SUCCESS: return newState(state, true, action.payload, 'User logged.')
     case ACTION.LOG_IN_USER_FAILURE: return newState(state, true, '', 'Login denied.')
-    default: return state
-  }
-}
-
-const authenticate = (
-  state: Auth = {
-    completed: false,
-    data: '',
-    message: ''
-  },
-  action: Action,
-) => {
-  switch(action.type) {
     case ACTION.IS_AUTHENTICATED_REQUEST: return newState(state, false, '', 'Authenticating user.')
     case ACTION.IS_AUTHENTICATED_SUCCESS: return newState(state, true, action.payload, 'User authenticated.')
     case ACTION.IS_AUTHENTICATED_FAILURE: return newState(state, true, '', 'Authentication denied.')
+    case ACTION.LOG_OUT_USER_REQUEST: return newState(state, false, '', 'Login out user.')
+    case ACTION.LOG_OUT_USER_SUCCESS: return newState(state, true, '', 'User Log out.')
+    case ACTION.LOG_OUT_USER_FAILURE: return newState(state, true, '', 'Log out denied.')
     default: return state
   }
 }
 
 
+
 export default combineReducers({ 
-  statistic, user, login, authenticate 
+  statistic, 
+  user, 
+  authenticate, 
 })

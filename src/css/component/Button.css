@@ -20,10 +20,27 @@
   background-image: none;
   border: 1px solid var(--selectColor);
   border-radius: 25px;
-  transition: background 0.5s;
+  transition-property: color background;
+  transition-duration: 0.5s;
 }
 
 .btn:hover {
   background: var(--selectColor);
   color: var(--textColor);
 }
+
+.btn-close {
+  font-size: var(--maxSize);
+  color: var(--secondColor);
+  border: none;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-close:hover {
+  cursor: pointer;
+  background: transparent;
+  color: var(--textColor);
+  text-decoration: none;
+}
+

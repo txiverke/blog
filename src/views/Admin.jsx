@@ -5,6 +5,9 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom' 
 
+import SignOut from '../containers/SignOut'
+import Stats from '../components/Stats'
+
 const Admin = props => { 
   const { data } = props.authenticate
 
@@ -18,9 +21,8 @@ const Admin = props => {
             { property: "og:title", content: "Admin page" }
           ]}
         />
-        <article className="app-content">
-          Admin
-        </article>
+        <SignOut />
+        <Stats />
       </section>
     )
   }
