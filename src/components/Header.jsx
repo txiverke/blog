@@ -2,27 +2,54 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import Search from './Search'
+import SignOut from '../containers/SignOut'
 
-const Header = () => (
-  <header className="app-header">
-    <div className="app-header-bg"></div>
-    <h1 className="app-header-title">
-      <Link to="/">
-        Xavier Vilà<br />
-        <span>frontend developer</span>
-      </Link>
-    </h1>
+type Props = {
+  authenticate: Auth
+}
+
+const Header = (props: Props) => {
+
+  const { data } = props.authenticate
+  let menu = null
+
+  if (data) {
+    menu = (
     <div className="app-header-nav">
-      <Search />
-      <a 
-        href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
-        className="app-header-nav-item icon-mail4"
-        target="_top">
-        </a>
+      <Link to="/admin" className="app-header-nav-item icon-lock"></Link>
+      <SignOut />
     </div>
-  </header>
-)
+    )
+  } else {
+    menu = (
+      <div className="app-header-nav">
+        <Search />
+        <a 
+          href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
+          className="app-header-nav-item icon-mail-envelope-open"
+          target="_top">
+          </a>
+      </div>
+    )
+  }
 
-export default Header
+  return (
+    <header className="app-header">
+      <div className="app-header-bg"></div>
+      <h1 className="app-header-title">
+        <Link to="/">
+          Xavier Vilà<br />
+          <span>frontend developer</span>
+        </Link>
+      </h1>
+      {menu}
+    </header>
+  )
+}
+
+const mapStateToProps = state => ({ authenticate: state.authenticate })
+
+export default connect(mapStateToProps)(Header)

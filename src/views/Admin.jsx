@@ -21,7 +21,6 @@ const Admin = props => {
             { property: "og:title", content: "Admin page" }
           ]}
         />
-        <SignOut />
         <Stats />
       </section>
     )

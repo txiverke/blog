@@ -3,8 +3,10 @@
   bottom: 0;
   z-index: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-
+  padding-bottom: 1rem;
 }
 
 .app-footer-list{
@@ -18,7 +20,7 @@
 }
 
 .app-footer-item {
-  margin: 1rem;
+  margin: 0.5rem 1rem;
 }
 
 .app-footer-item a{

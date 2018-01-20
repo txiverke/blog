@@ -1,12 +1,15 @@
 // @flow
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const socialMedia = [
   { name: 'Twitter', url: 'https://twitter.com/txiverke' },
   { name: 'Github', url: 'https://github.com/txiverke' },
   { name: 'Instagram', url: 'https://www.instagram.com/txiverke/' },
 ]
+
+const year = new Date()
 
 const Footer = () => (
   <footer className="app-footer">
@@ -19,6 +22,9 @@ const Footer = () => (
       </li>
     )}
     </ul>
+    <Link to="/admin" className="txt-tiny txt-transparent">
+      ©&nbsp; <time dateTime={year}>{year.getFullYear()}</time>&nbsp;xaviervila.tech
+    </Link>
   </footer>
 )
 

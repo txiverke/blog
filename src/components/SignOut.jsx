@@ -11,7 +11,7 @@ type Props = {
 const SignOut = ({ label, handleClick }: Props) => (
   <Link 
     to="/"
-    className="app-content-top-left btn btn-close icon-cancel-circle"
+    className="app-header-nav-item icon-x-circle"
     onClick={handleClick}
   >
     <span className="hidden">{label}</span>

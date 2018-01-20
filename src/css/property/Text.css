@@ -24,6 +24,24 @@ p,
   font-family: Bold
 }
 
+.txt-tiny {
+  font-size: var(--tinySize);
+  font-family: Lighter;
+  color: var(--selectColor);
+  text-align: center;
+  text-decoration: none;
+}
+
+.txt-transparent {
+  transition: opacity;
+  transition-duration: 0.5s;
+  opacity: 0.3;
+}
+
+.txt-transparent:hover {
+  opacity: 1;
+}
+
 .txt-highlight {
   color: var(--secondColor);
 }
