@@ -32,11 +32,11 @@ class About extends React.Component {
           <Helmet 
             title="About me" 
             meta={[
-              { name:"description", content: "Personal information of Xavier Vilà" },
-              { property: "og:title", content: "About me" }
+              { name:"description", content: `${data.bio}` },
+              { property: "og:title", content: `${data.firstname} ${data.lastname} - ${data.job}` }
             ]}
           />
-          <article className="app-content">
+          <article className="app-content-section">
             <figure>
               <img className="roundedImg" src={avatar} alt="A pic of Xavi Vilà" />
             </figure>

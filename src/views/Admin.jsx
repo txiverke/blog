@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom' 
 
-import SignOut from '../containers/SignOut'
 import Stats from '../components/Stats'
 
 const Admin = props => { 

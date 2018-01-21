@@ -3,25 +3,29 @@
 export type Statistic = {
   completed: boolean,
   data: Object,
-  message: string
+  message: string,
+  error: boolean,
 }
 
 export type User = {
   completed: boolean,
   data: Object,
-  message: string
+  message: string,
+  error: boolean
 }
 
 export type Data = {
   completed: boolean,
   data: Array<Object>,
-  message: string
+  message: string,
+  error: boolean
 }
 
 export type Auth = {
   completed: boolean,
   data: string,
-  message: string
+  message: string,
+  error: boolean
 }
 
 declare type ActionType =

@@ -3,49 +3,47 @@
 import React from 'react'
 
 type Props = {
-  name: string,
-  inputType: mixed,
   title: string,
-  controlFunc?: Function,
+  name: string,
+  rows?: Number,
   content?: string,
+  resize?: boolean,
   placeholder?: string,
-  size?: string,
-  required?: boolean,
-  pattern?: string,
+  controlFunc?: Function,
+  required?: boolean 
 }
 
-const SingleInput = (props: Props) => (
+const TextArea = (props: Props) => (
   <div className="app-form-group">
     <label
-      id={props.name + 'Label'}
+      id={props.name + 'Label'} 
       htmlFor={props.name} 
       className="app-form-label"
     >
       {props.title}
     </label>
-    <input
-      id={props.name + 'Input'}
+    <textarea
+      id={props.name + 'Textarea'} 
       className="app-form-input"
+      style={props.resize ? null : { resize: 'none' }}
       name={props.name}
-      type={props.inputType}
-      autoComplete={props.name}
+      rows={props.rows}
       defaultValue={props.content}
       onChange={props.controlFunc}
       placeholder={props.placeholder}
-      pattern={props.pattern}
       required={props.required}
     />
     <p className="app-form-error" id={props.name + 'Error'}></p>
   </div>
-) 
-  
-SingleInput.defaultProps = {
+)
+
+TextArea.defaultProps = {
+  rows: 5,
   content: '',
+  resize: false,
   placeholder: '',
-  size: '',
-  pattern: '',
+  controlFunc: () => {},
   required: true,
-  controlFunc: () => {}
 }
 
-export default SingleInput
+export default TextArea

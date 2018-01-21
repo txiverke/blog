@@ -3,7 +3,7 @@
 }
 
 .app-form-group {
-  height: 6rem;
+  min-height: 5rem;
 }
 
 .app-form-group:last-of-type {
@@ -39,24 +39,11 @@
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
 
-.form-editor-btn {
-  transition: color 0.5s;
-  color: #dddddd;
-  cursor: pointer;
-  border: none;
-  background: none;
+.app-form-btn {
+  display: block;
+  margin-top: 4rem;
 }
 
-.form-editor-btn.active,
-.form-editor-btn:hover {
-  transition: color 0.3s;
-  color: var(--textColor);
-}
-
-.note {
-  color: gray;
-  margin: 8px 0;
-}
 
 textarea:focus, 
 input:focus{
@@ -74,8 +61,8 @@ textarea.active.invalid {
   border: 1px solid var(--secondColor);
 }
 
-.error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 5px;
+.app-form-error {
+  color: var(--secondColor);
+  font-size: var(--tinySize);
+  margin: 2px 0 0 0;
 }

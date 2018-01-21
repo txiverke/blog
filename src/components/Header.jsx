@@ -29,7 +29,7 @@ const Header = (props: Props) => {
         <Search />
         <a 
           href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
-          className="app-header-nav-item icon-mail-envelope-open"
+          className="app-header-nav-item app-header-nav-maito icon-mail-envelope-open"
           target="_top">
           </a>
       </div>

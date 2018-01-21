@@ -1,5 +1,4 @@
-p,
-.txt {
+p, .txt {
   font-size: var(--textSize);
   font-family: Lighter;
   color: var(--textColor);
@@ -30,6 +29,8 @@ p,
   color: var(--selectColor);
   text-align: center;
   text-decoration: none;
+  display: block;
+  z-index: 1;
 }
 
 .txt-transparent {
@@ -44,6 +45,25 @@ p,
 
 .txt-highlight {
   color: var(--secondColor);
+}
+
+.txt-message,
+.txt-message-error {
+  z-index: 100;
+  background: var(--bgColor);
+  font-size: var(--minSize);
+  color: var(--selectColor);
+  display: block;
+  border: 1px solid var(--selectColor);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-align: center;
+  width: auto;
+}
+
+.txt-message-error {
+  color: var(--secondColor);
+  border-color: var(--secondColor);
 }
 
 .tit-section {

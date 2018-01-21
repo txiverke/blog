@@ -2,6 +2,7 @@
 
 import * as ACTION from './actions'
 import config from './config'
+import { handleToken } from './utils/helpers'
 
 /** LOAD APP STATISTICS */
 export const loadStatsRequest = () => ({ type: ACTION.LOAD_STATS_REQUEST })
@@ -44,7 +45,7 @@ export const loadUserDataFailure = () => ({ type: ACTION.LOAD_USER_DATA_FAILURE 
 
 export const loadUserData = (id: string) =>
   async (dispatch: Function) => {
-    const token: ?string = JSON.parse(localStorage.getItem('xavierVilaTechToken'))
+    const token: ?string = handleToken.get()
     const headers = new Headers({
       'Content-Type': 'application/json',
       'access_token': token || ''
@@ -78,8 +79,7 @@ export const uploadUserDataFailure = () => ({ type: ACTION.UPLOAD_USER_DATA_FAIL
 
 export const uploadUserData = (id: string, obj: Object) =>
   async (dispatch: Function) => {
-    console.log(id, obj)
-    const token: ?string = JSON.parse(localStorage.getItem('xavierVilaTechToken'))
+    const token: ?string = handleToken.get()
     const headers = new Headers({
       'Content-Type': 'application/json',
       'access_token': token || ''
@@ -123,7 +123,7 @@ export const loginUser = (obj: Object) =>
         headers 
       })
       const data = await promise.json()
-      localStorage.setItem('xavierVilaTechToken', JSON.stringify(data.token))
+      handleToken.set(JSON.stringify(data.token))
       dispatch(loginUserSuccess(data.token))
       return dispatch(isAuthenticatedSuccess(data.token))
 
@@ -144,8 +144,7 @@ export const isAuthenticatedFailure = () => ({ type: ACTION.IS_AUTHENTICATED_FAI
 
 export const isAuthenticated = () => 
   (dispatch: Function) => {
-    const token: ?string = JSON.parse(localStorage.getItem('xavierVilaTechToken'))
-
+    const token: ?string = handleToken.get()
     dispatch(isAuthenticatedRequest())
 
     if (token) {
@@ -162,11 +161,11 @@ export const logoutUserSuccess = () => ({ type: ACTION.LOG_OUT_USER_SUCCESS })
 export const logoutUserFailure = () => ({ type: ACTION.LOG_OUT_USER_FAILURE })
 
 export const logoutUser = () => (dispatch: Function) => {
-  const token = localStorage.getItem('xavierVilaTechToken')
+  const token = handleToken.get()
   dispatch(logoutUserRequest())
 
   if (token) {
-    localStorage.removeItem('xavierVilaTechToken')
+    handleToken.remove()
     dispatch(logoutUserSuccess())
     return dispatch((isAuthenticated()))
   }

@@ -18,5 +18,9 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 85vh;
+  min-height: 85vh;
+}
+
+.app-view-landing {
+  height: 90vh;
 }

@@ -5,14 +5,23 @@
   flex-direction: row;
 }
 
-.app-content-section {
-  width: 90%;
-}
-
-.app-content-top-left {
+.app-message {
   position: fixed;
   top: 5rem;
-  right: 0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  opacity: 0.9;
+}
+
+.app-content-section {
+  width: 90%;
+  padding-bottom: 5rem;
+}
+
+.app-content-form {
+  width: 350px;
+  padding-bottom: 5rem;
 }
 
 .app-content-column {

@@ -11,7 +11,7 @@ type Props = {
 }
 
 const Landing = ({ location }: Props) => (
-  <section className="app-view">
+  <section className="app-view app-view-landing">
     <Helmet 
       title="Welcome!" 
       meta={[

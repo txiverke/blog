@@ -2,11 +2,13 @@
 
 import { connect } from 'react-redux'
 
+// @flow
+
 import { loginUser } from '../actionCreators'
 import SignInForm from '../components/SignInForm'
 
 const mapStateToProps = (state: Object) => ({
-  message: state.authenticate.message
+  authenticate: state.authenticate
 })
 
 const mapDispatchToProps = (dispatch: Function) => ({
