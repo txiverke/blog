@@ -65,7 +65,8 @@ class ShowMsg extends React.Component {
       return (
         <div className="app-message">
           <p className={`app-message-item txt-message${style} ${classHidden}`}>
-            <span className={`icon-${icon}`}></span>&nbsp;&nbsp; {message}
+            <span className={`icon-${icon}`}></span>
+            <span className="app-message-txt test">{message}</span>
           </p>
         </div>
       )
