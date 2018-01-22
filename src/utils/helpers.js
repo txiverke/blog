@@ -9,7 +9,7 @@ export const getSlug = (text: string) => {
 export const normalizeVal = (val: string) => Number(val) < 10 ? `0${val}` : val
 
 export const handleToken = {
-  TOKEN: config.api.token,
+  TOKEN: config.api.token || '',
   get: function() {
     return JSON.parse(localStorage.getItem(this.TOKEN)) || ''
   },

@@ -19,6 +19,12 @@
   padding-bottom: 5rem;
 }
 
+.app-content-avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .app-content-form {
   width: 350px;
   padding-bottom: 5rem;

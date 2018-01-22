@@ -37,8 +37,12 @@ class About extends React.Component {
             ]}
           />
           <article className="app-content-section">
-            <figure>
-              <img className="roundedImg" src={avatar} alt="A pic of Xavi Vilà" />
+            <figure className="app-content-avatar">
+              <img 
+                className="roundedImg" 
+                src={avatar} 
+                alt={`A pic of: ${data.firstname}`} 
+            />
             </figure>
             <h2>{data.firstname} {data.lastname}</h2>
             <h3>{data.job}</h3>
@@ -54,4 +58,5 @@ class About extends React.Component {
   
 const mapStateToProps = state => ({ user: state.user })
 
+export const Unwrapped = About
 export default connect(mapStateToProps)(About)
