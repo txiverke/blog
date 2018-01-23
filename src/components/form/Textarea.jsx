@@ -3,6 +3,7 @@
 import React from 'react'
 
 type Props = {
+  wrapper: string,
   title: string,
   name: string,
   rows?: Number,
@@ -14,7 +15,7 @@ type Props = {
 }
 
 const TextArea = (props: Props) => (
-  <div className="app-form-group">
+  <div className={props.wrapper}>
     <label
       id={props.name + 'Label'} 
       htmlFor={props.name} 
@@ -38,6 +39,7 @@ const TextArea = (props: Props) => (
 )
 
 TextArea.defaultProps = {
+  wrapper: 'app-form-group',
   rows: 5,
   content: '',
   resize: false,

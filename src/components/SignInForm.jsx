@@ -27,43 +27,47 @@ const SignInForm = ({ authenticate, handleClick }: Props) => {
   const { message, completed } = authenticate
 
   return (
-    <form
-        noValidate
-        className="app-content-form" 
-        onSubmit={
-          (event) => {
-            if (showFormErrors()) {
-              event.preventDefault()
-              handleClick(handleData(event))
-            }
-        }}
-      >
+    <article className="app-form-grid"> 
       <ShowMsg message={message} error={true} next={completed} />
-      <h2 className="tit-section">Sign In</h2>
-      <SingleInput
-        name="username"
-        inputType="text"
-        title="Username"
-        placeholder="Username"
-        pattern=".{6,}"
-        controlFunc={handleChange}
-      />
-      <SingleInput
-        name="password"
-        inputType="password"
-        title="Password"
-        placeholder="Password"
-        pattern=".{6,}"
-        controlFunc={handleChange}
-      />
-      <button 
-        type="submit"
-        className="btn"
-        disabled={!completed}
-      >
-      Sign In
-      </button>
-    </form>
+      <h2 className="app-form-grid-header tit-section">Sign In</h2>
+      <form
+          noValidate
+          className="app-form-grid-body" 
+          onSubmit={
+            (event) => {
+              if (showFormErrors()) {
+                event.preventDefault()
+                handleClick(handleData(event))
+              }
+          }}
+        >
+        <SingleInput
+          wrapper="app-form-grid-item1"
+          name="username"
+          inputType="text"
+          title="Username"
+          placeholder="Username"
+          pattern=".{6,}"
+          controlFunc={handleChange}
+        />
+        <SingleInput
+          wrapper="app-form-grid-item2"        
+          name="password"
+          inputType="password"
+          title="Password"
+          placeholder="Password"
+          pattern=".{6,}"
+          controlFunc={handleChange}
+        />
+        <button 
+          type="submit"
+          className="app-form-btn btn"
+          disabled={!completed}
+        >
+        Sign In
+        </button>
+      </form>
+    </article>
   )
 }
 

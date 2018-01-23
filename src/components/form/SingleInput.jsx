@@ -3,6 +3,7 @@
 import React from 'react'
 
 type Props = {
+  wrapper?: string,
   name: string,
   inputType: mixed,
   title: string,
@@ -15,7 +16,7 @@ type Props = {
 }
 
 const SingleInput = (props: Props) => (
-  <div className="app-form-group">
+  <div className={props.wrapper}>
     <label
       id={props.name + 'Label'}
       htmlFor={props.name} 
@@ -40,6 +41,7 @@ const SingleInput = (props: Props) => (
 ) 
   
 SingleInput.defaultProps = {
+  wrapper: 'app-form-group',
   content: '',
   placeholder: '',
   size: '',

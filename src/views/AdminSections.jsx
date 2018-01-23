@@ -6,17 +6,32 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 import EditUser from '../containers/EditUser'
+import PostList from '../containers/PostList'
 
 type Props = {
-  authenticate: Auth
+  authenticate: Auth,
+  location: Object
 }
 
-const AdminAbout = ({ authenticate }: Props) => {
+const AdminSections = ({ authenticate, location }: Props) => {
   const { data } = authenticate
-  
+  const section = location.pathname.substr(location.pathname.lastIndexOf('/') + 1)
+  let component = null
+  switch(section) {
+    case 'about-me': 
+      component = <EditUser />
+      break
+    case 'posts':
+      component = <PostList />
+      break
+    default:
+      component = <EditUser />
+      break
+  }
+
   if (data) {
     return (
-      <div className="app-view">
+      <section className="app-view">
         <Helmet 
           title="Admin page" 
           meta={[
@@ -24,8 +39,8 @@ const AdminAbout = ({ authenticate }: Props) => {
             { property: "og:title", content: "Admin page" }
           ]}
         />  
-        <EditUser />
-      </div>
+        {component}
+      </section>
     )
   }
 
@@ -34,4 +49,4 @@ const AdminAbout = ({ authenticate }: Props) => {
 
 const mapStateToProps = (state: Object) => ({ authenticate: state.authenticate })
 
-export default  connect(mapStateToProps)(AdminAbout)
+export default  connect(mapStateToProps)(AdminSections)

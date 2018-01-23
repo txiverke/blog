@@ -35,7 +35,7 @@
 .app-header-title span {
   font-size: var(--minSize);
   font-family: Bold;
-  color: var(--textColor);
+  color: var(--selectColor);
 }
 
 .app-header-nav {

@@ -14,27 +14,6 @@ type Props = {
 const Header = (props: Props) => {
 
   const { data } = props.authenticate
-  let menu = null
-
-  if (data) {
-    menu = (
-    <div className="app-header-nav">
-      <Link to="/admin" className="app-header-nav-item icon-lock"></Link>
-      <SignOut />
-    </div>
-    )
-  } else {
-    menu = (
-      <div className="app-header-nav">
-        <Search />
-        <a 
-          href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
-          className="app-header-nav-item app-header-nav-maito icon-mail-envelope-open"
-          target="_top">
-          </a>
-      </div>
-    )
-  }
 
   return (
     <header className="app-header">
@@ -45,7 +24,22 @@ const Header = (props: Props) => {
           <span>frontend developer</span>
         </Link>
       </h1>
-      {menu}
+      {data && 
+        <div className="app-header-nav">
+          <Link to="/admin" className="app-header-nav-item icon-lock"></Link>
+          <SignOut />
+        </div>
+      }
+      {!data && 
+        <div className="app-header-nav">
+          <Search />
+          <a 
+            href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
+            className="app-header-nav-item app-header-nav-mailto icon-mail-envelope-open"
+            target="_top">
+            </a>
+        </div>
+      }
     </header>
   )
 }

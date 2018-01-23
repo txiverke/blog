@@ -25,10 +25,6 @@
   justify-content: center;
 }
 
-.app-content-form {
-  width: 350px;
-  padding-bottom: 5rem;
-}
 
 .app-content-column {
   flex-direction: column;
@@ -67,6 +63,10 @@
     .app-content {
       flex-direction: row;
     }
+    .app-content-section {
+      width: 800px;
+      padding-bottom: 5rem;
+    }
     .app-content-landing h2{
       margin: 0 3.5rem;
     }
@@ -84,6 +84,10 @@
   and (min-width: 850px) {
     .app-content {
       flex-direction: row;
+    }
+    .app-content-section {
+      width: 800px;
+      padding-bottom: 5rem;
     }
     .app-content-landing h2{
       margin: 0 3rem;
@@ -103,6 +107,10 @@
     .app-content {
       flex-direction: row;
     }
+    .app-content-section {
+      width: 800px;
+      padding-bottom: 5rem;
+    }
     .app-content-landing h2{
       margin: 0 3rem;
     }
@@ -120,6 +128,10 @@
   and (max-width: 649px) {
     .app-content {
       flex-direction: column;
+    }
+    .app-content-section {
+      width: 90%;
+      padding-bottom: 5rem;
     }
     .app-content-landing h2{
       margin: 1rem 0;

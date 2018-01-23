@@ -14,5 +14,6 @@
 @import './component/Loader.css';
 
 /** PROPERTY STYLES **/
+@import './property/BoxModel.css';
 @import './property/Image.css';
 @import './property/Text.css';

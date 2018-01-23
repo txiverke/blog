@@ -49,6 +49,26 @@ const user = (
   }
 }
 
+const posts = (
+  state: Data = {
+    completed: false,
+    data: [],
+    message: '',
+    error: false
+  }, 
+  action: Action
+) => {
+  switch(action.type) {
+    case ACTION.LOAD_POST_DATA_REQUEST: return newState(state, false, [], 'Loading post Data')
+    case ACTION.LOAD_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post data loaded.')
+    case ACTION.LOAD_POST_DATA_FAILURE: return newState(state, true, [], 'Get posts failed.', true)
+    case ACTION.REMOVE_POST_DATA_REQUEST: return newState(state, false, [], 'Removing post.')
+    case ACTION.REMOVE_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post removed.')
+    case ACTION.REMOVE_POST_DATA_FAILURE: return newState(state, true, [], 'Remove post failed.', true)
+    default: return state
+  }
+}
+
 const authenticate = (
   state: Auth = { 
     completed: false,
@@ -72,10 +92,9 @@ const authenticate = (
   }
 }
 
-
-
 export default combineReducers({ 
   statistic, 
   user, 
+  posts,
   authenticate, 
 })

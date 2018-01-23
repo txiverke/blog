@@ -1,7 +1,12 @@
-p, .txt {
+.txt {
   font-size: var(--textSize);
   font-family: Lighter;
   color: var(--textColor);
+  line-height: var(--maxSize);
+}
+
+.txt-center{
+  text-align: center;
 }
 
 .txt-huge {
@@ -67,12 +72,30 @@ p, .txt {
 }
 
 .tit-section {
-  font-size: var(-maxSise);
+  font-size: var(--titleSize);
   font-family: Lighter;
   border-bottom: 1px dotted var(--textColor);
   padding-bottom: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
+
+.tit-section-view {
+  font-size: var(--titleSize);
+  font-family: Lighter;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.subtit-section-view{
+  font-family: Bold;
+  font-size: var(--textSize);
+  color: var(--selectColor);
+  text-align: center;
+  margin-top: -0.25rem;
+  padding-top: 0;
+}
+
+
 
 .hidden {
   display: none

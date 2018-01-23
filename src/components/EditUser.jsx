@@ -53,69 +53,76 @@ class EditUser extends React.Component {
 
     if (completed) {
       return (
-        <form
-          noValidate
-          className="app-content-form" 
-          onSubmit={
-            (event) => {
-              event.preventDefault()
-              if (showFormErrors()) {
-                this.props.handleClick(config.api.profileId, this.handleData(event))
-              }
-          }}
-        >
-        <ShowMsg message={message} error={error} next={true} />
-        <h2 className="tit-section">Upload User</h2>
-        <SingleInput
-          name="firstname"
-          inputType="text"
-          title="First name"
-          placeholder="First name"
-          content={data.firstname}
-          pattern=".{2,}"
-          controlFunc={this.handleChange}
-        />
-        <SingleInput
-          name="lastname"
-          inputType="text"
-          title="Last name"
-          placeholder="Last name"
-          content={data.lastname}
-          pattern=".{2,}"
-          controlFunc={this.handleChange}
-        />
-        <SingleInput
-          name="username"
-          inputType="text"
-          title="Username"
-          placeholder="Username"
-          content={data.username}
-          pattern=".{2,}"
-          controlFunc={this.handleChange}
-        />
-        <SingleInput
-          name="job"
-          inputType="text"
-          title="Job"
-          placeholder="Job"
-          content={data.job}
-          pattern=".{2,}"
-          controlFunc={this.handleChange}
-        />
-        <Textarea
-          name="bio"
-          title="Bio"
-          content={data.bio}
-          pattern=".{6,}"
-          controlFunc={this.handleChange}
-        />
-        <button 
-          type="submit"
-          className="app-form-btn btn"
-        >
-        Upload Profile
-        </button>
-      </form>
+        <article className="app-form-grid"> 
+          <ShowMsg message={message} error={error} next={true} />
+          <h2 className="app-form-grid-header tit-section">Upload User</h2>
+          <form
+            noValidate
+            className="app-form-grid-body" 
+            onSubmit={
+              (event) => {
+                event.preventDefault()
+                if (showFormErrors()) {
+                  this.props.handleClick(config.api.profileId, this.handleData(event))
+                }
+            }}
+          >
+          <SingleInput
+            wrapper="app-form-grid-item1"
+            name="firstname"
+            inputType="text"
+            title="First name"
+            placeholder="First name"
+            content={data.firstname}
+            pattern=".{2,}"
+            controlFunc={this.handleChange}
+          />
+          <SingleInput
+            wrapper="app-form-grid-item2"
+            name="lastname"
+            inputType="text"
+            title="Last name"
+            placeholder="Last name"
+            content={data.lastname}
+            pattern=".{2,}"
+            controlFunc={this.handleChange}
+          />
+          <SingleInput
+            wrapper="app-form-grid-item1"
+            name="username"
+            inputType="text"
+            title="Username"
+            placeholder="Username"
+            content={data.username}
+            pattern=".{2,}"
+            controlFunc={this.handleChange}
+          />
+          <SingleInput
+            wrapper="app-form-grid-item2"
+            name="job"
+            inputType="text"
+            title="Job"
+            placeholder="Job"
+            content={data.job}
+            pattern=".{2,}"
+            controlFunc={this.handleChange}
+          />
+          <Textarea
+            wrapper="app-form-grid-whole"
+            name="bio"
+            title="Bio"
+            content={data.bio}
+            pattern=".{6,}"
+            controlFunc={this.handleChange}
+          />
+          <button 
+            type="submit"
+            className="app-form-btn btn"
+          >
+          Upload Profile
+          </button>
+        </form>
+      </article>
       )
     }
 

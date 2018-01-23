@@ -30,17 +30,17 @@ const Routes = () => (
     <Route 
       path="/admin/about-me"
       component={props => (
-        <RoutesAsync props={props} loadingPromise={import('./views/AdminAbout')} />
+        <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />
       )} />
     <Route 
       path="/admin/posts"
       component={props => (
-        <RoutesAsync props={props} loadingPromise={import('./views/AdminPosts')} />
+        <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />
       )} />
     <Route 
       path="/admin/projects"
       component={props => (
-        <RoutesAsync props={props} loadingPromise={import('./views/AdminProjects')} />
+        <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />
       )} />
     <Route 
       path="/admin"

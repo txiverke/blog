@@ -23,15 +23,11 @@ class ShowMsg extends React.Component {
   }
 
   componentDidMount() {
-    const { next, message } = this.props
-
-    if (this.state.message !== message && next) {
-      this.setValues(this.props)
-    }
+    this.setValues(this.props)
   }
 
   componentWillReceiveProps(nextProps: Object) {
-    const { next, message } = this.props
+    const { next, message } = nextProps
 
     if (this.state.message !== message && next) {
       this.setValues(nextProps)
@@ -47,7 +43,9 @@ class ShowMsg extends React.Component {
     
     this.reset()
     this.setState({ message, hidden: false })
-    this.timeout = setTimeout(() => { this.setState({ hidden: true }) }, duration)
+    this.timeout = setTimeout(() => { 
+      this.setState({ message: '', hidden: true }) 
+    }, duration)
   }
 
   reset() {
@@ -65,7 +63,7 @@ class ShowMsg extends React.Component {
       return (
         <div className="app-message">
           <p className={`app-message-item txt-message${style} ${classHidden}`}>
-            <span className={`icon-${icon}`}></span>
+            <span className={`mr5 icon-${icon}`}></span>
             <span className="app-message-txt test">{message}</span>
           </p>
         </div>
