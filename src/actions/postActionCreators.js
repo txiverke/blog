@@ -4,6 +4,30 @@ import * as ACTION from './actionsType'
 import config from '../config'
 import { handleToken } from '../utils/helpers'
 
+const setPromise = {
+  url: '',
+  options: { 
+    method: null,
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'access_token':  handleToken.get() || ''
+    }),
+    body: null,
+    mode: 'cors',
+    cache: 'default',
+  },
+  // $FlowFixMe
+  set method (val): string { this.options.method = val },
+  // $FlowFixMe
+  set body (val): Object { this.options.body = JSON.stringify(val) || null },
+  async response(id) {
+    let url = id ? `/${id}` : ''
+    const promise = await fetch(`${config.api.url}/posts${url}`, this.options)
+    const response = await promise.json()
+    return response
+  }
+}
+
 /** LOAD POST DATA */
 export const loadPostDataRequest = () => ({ type: ACTION.LOAD_POST_DATA_REQUEST })
 export const loadPostDataSuccess = (payload: Array<Object>) => ({
@@ -13,22 +37,12 @@ export const loadPostDataFailure = () => ({ type: ACTION.LOAD_POST_DATA_FAILURE 
 
 export const loadPostData = () => 
   async (dispatch: Function) => {
-    const token: ?string = handleToken.get()
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'access_token': token || ''
-    })
-    const options = { 
-      method: 'GET',
-      headers,
-      mode: 'cors',
-      cache: 'default',
-    }
-
     dispatch(loadPostDataRequest())
+
     try {
-      const promise = await fetch(`${config.api.url}/posts`, options)
-      const data = await promise.json()
+      // $FlowFixMe
+      setPromise.method = 'GET'
+      const data = await setPromise.response()
       return dispatch(loadPostDataSuccess(data))
     } catch (err) {
       return dispatch(loadPostDataFailure())
@@ -43,25 +57,14 @@ export const createPostDataFailure = () => ({ type: ACTION.CREATE_POST_DATA_FAIL
 
 export const createPostData = (obj: Object) => 
   async (dispatch: Function) => {
-    console.log(obj)
-    const token: ?string = handleToken.get()
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'access_token': token || ''
-    })
-    const options = { 
-      method: 'POST',
-      body: JSON.stringify(obj),
-      headers,
-      mode: 'cors',
-      cache: 'default',
-    }
-
     dispatch(createPostDataRequest())
 
     try {
-      const promise = await fetch(`${config.api.url}/posts/`, options)
-      const data = await promise.json()
+      // $FlowFixMe
+      setPromise.method = 'POST'
+      // $FlowFixMe
+      setPromise.body = obj
+      const data = await setPromise.response()
       return dispatch(createPostDataSuccess(data))
     } catch (err) {
       return dispatch(createPostDataFailure())
@@ -75,22 +78,12 @@ export const removePostDataFailure = () => ({ type: ACTION.REMOVE_POST_DATA_FAIL
 
 export const removePostData = (id: string) => 
   async (dispatch: Function) => {
-  const token: ?string = handleToken.get()
-  const headers = new Headers({
-    'Content-Type': 'application/json',
-    'access_token': token || ''
-  })
-  const options = { 
-    method: 'DELETE',
-    headers,
-    mode: 'cors',
-    cache: 'default',
-  }
   dispatch(removePostDataRequest())
 
   try {
-    const promise = await fetch(`${config.api.url}/posts/${id}`, options)
-    const data = await promise.json()
+    // $FlowFixMe
+    setPromise.method = 'DELETE'
+    const data = await setPromise.response(id)
     return dispatch(removePostDataSuccess(data))
   } catch (err) {
     return dispatch(removePostDataFailure())

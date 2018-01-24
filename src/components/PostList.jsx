@@ -31,7 +31,8 @@ class PostList extends React.Component {
     this.props.handleClickCreate(obj)
   }
 
-  removePost(id: string) {
+  removePost(event: SyntheticEvent, id: string) {
+    event.preventDefault()
     this.props.handleClickRemove(id)
   }
 
@@ -44,12 +45,12 @@ class PostList extends React.Component {
         <div className="app-content-grid"> 
           <CreatePost id={id} createPost={this.createPost} />
           <hr />
-          {data.map(item => 
+          {data.length > 0 && data.map(item => 
             <article className="app-list" key={item._id}>
               <h2>{item.title}</h2>
               <Link to="/" className="btn btn-icon icon-pen-angled"></Link>
               <button 
-                onClick={this.removePost(item._id)}
+                onClick={(e) => this.removePost(e, item._id)}
                 className="btn btn-icon icon-trash-can"></button>
             </article>
           )}

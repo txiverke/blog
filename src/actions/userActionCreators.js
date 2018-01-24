@@ -4,6 +4,33 @@ import * as ACTION from './actionsType'
 import config from '../config'
 import { handleToken } from '../utils/helpers'
 
+const setPromise = {
+  url: '',
+  options: { 
+    method: null,
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'access_token':  handleToken.get() || ''
+    }),
+    body: null,
+    mode: 'cors',
+    cache: 'default',
+  },
+  // $FlowFixMe
+  set options(options) { 
+    this.options.method = options.method
+    this.options.body = JSON.stringify(options.body) || null
+    this.url = options.url
+  },
+  async response(id) {
+    console.log(this.options)
+    const _id = id ? `/${id}` : ''
+    const promise = await fetch(`${config.api.url}/${this.url}${_id}`, this.options)
+    const response = await promise.json()
+    return response
+  }
+}
+
 /** LOGIN USER **/
 export const loginUserRequest = () => ({ type: ACTION.LOG_IN_USER_REQUEST })
 export const loginUserSuccess = (payload: Object) => ({ type: ACTION.LOG_IN_USER_SUCCESS, payload })
