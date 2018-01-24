@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom' 
 
-import { isAuthenticated } from '../actionCreators'
+import { isAuthenticated } from '../actions/userActionCreators'
 import SignInForm from '../containers/SignInForm'
 
 class SignIn extends React.Component {

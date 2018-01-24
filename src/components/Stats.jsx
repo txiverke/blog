@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import Loader from '../components/Loader'
 import { normalizeVal } from '../utils/helpers'
-import { loadStats } from '../actionCreators'
+import { loadStats } from '../actions/statsActionCreators'
 
 const sections = [
   { name: 'About me', url: 'about-me' },

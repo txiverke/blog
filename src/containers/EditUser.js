@@ -3,7 +3,7 @@
 import { connect } from 'react-redux'
 
 import EditUser from '../components/EditUser'
-import { uploadUserData } from '../actionCreators'
+import { uploadUserData } from '../actions/userActionCreators'
 
 
 const mapStateToProps = state => ({

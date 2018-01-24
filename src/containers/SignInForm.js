@@ -2,9 +2,7 @@
 
 import { connect } from 'react-redux'
 
-// @flow
-
-import { loginUser } from '../actionCreators'
+import { loginUser } from '../actions/userActionCreators'
 import SignInForm from '../components/SignInForm'
 
 const mapStateToProps = (state: Object) => ({

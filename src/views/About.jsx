@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import Loader from '../components/Loader'
 import ShowMsg from '../components/ShowMsg'
-import { loadUserData } from '../actionCreators'
+import { loadUserData } from '../actions/userActionCreators'
 import avatar from '../assets/imgs/about.jpg'
 import config from '../config'
 import pdf from '../assets/files/XavierVilaAlbiol_CV_en.pdf'

@@ -5,6 +5,10 @@
   flex-direction: row;
 }
 
+.app-content-grid {
+  width: 100%
+}
+
 .app-message {
   position: fixed;
   top: 5rem;

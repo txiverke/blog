@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux'
 
-import * as ACTION from './actions'
+import * as ACTION from './actions/actionsType'
 
 const newState = (state, ...args) => 
   Object.assign({}, state, {
@@ -62,6 +62,9 @@ const posts = (
     case ACTION.LOAD_POST_DATA_REQUEST: return newState(state, false, [], 'Loading post Data')
     case ACTION.LOAD_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post data loaded.')
     case ACTION.LOAD_POST_DATA_FAILURE: return newState(state, true, [], 'Get posts failed.', true)
+    case ACTION.CREATE_POST_DATA_REQUEST: return newState(state, false, [], 'Creating a new post.')
+    case ACTION.CREATE_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post created')
+    case ACTION.CREATE_POST_DATA_FAILURE: return newState(state, true, [], 'Create post failed.', true)
     case ACTION.REMOVE_POST_DATA_REQUEST: return newState(state, false, [], 'Removing post.')
     case ACTION.REMOVE_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post removed.')
     case ACTION.REMOVE_POST_DATA_FAILURE: return newState(state, true, [], 'Remove post failed.', true)

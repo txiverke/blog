@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux'
 
-import { logoutUser } from '../actionCreators'
+import { logoutUser } from '../actions/userActionCreators'
 import SignOut from '../components/SignOut'
 
 const mapStateToProps = (state: Object) => ({
