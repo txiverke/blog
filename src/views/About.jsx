@@ -22,7 +22,6 @@ class About extends React.Component {
   props: {
     user: User,
     dispatch: Function,
-    history: Object,
   }
 
   renderMsg = this.renderMsg.bind(this)
@@ -44,7 +43,6 @@ class About extends React.Component {
   render() {
     const { completed, data, message } = this.props.user
     const { txtMessage, next } = this.state
-    const { history } = this.props
 
     if (completed) {
       return (

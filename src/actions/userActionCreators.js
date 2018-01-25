@@ -1,4 +1,4 @@
-// flow
+// @flow
 
 import * as ACTION from './actionsType'
 import config from '../config'
@@ -29,7 +29,6 @@ export const loginUser = (obj: Object) =>
       dispatch(isAuthenticatedSuccess(data.token))
       return dispatch(loadUserData(config.api.profileId))
     } catch (err) {
-      console.log(err)
       dispatch(loginUserFailure())
     }
   }

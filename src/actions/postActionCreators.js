@@ -1,8 +1,7 @@
 // @flow
 
 import * as ACTION from './actionsType'
-import config from '../config'
-import { handleToken, setPromise } from '../utils/helpers'
+import { setPromise } from '../utils/helpers'
 
 const URL = 'posts'
 
@@ -47,7 +46,7 @@ export const createPostData = (obj: Object) =>
     }
 }
 
-/** CREATE POST */
+/** UPDATE POST */
 export const updatePostDataRequest = () => ({ type: ACTION.UPDATE_POST_DATA_REQUEST })
 export const updatePostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.UPDATE_POST_DATA_SUCCESS, payload })
 export const updatePostDataFailure = () => ({ type: ACTION.UPDATE_POST_DATA_FAILURE})

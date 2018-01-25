@@ -48,7 +48,6 @@ export const setPromise = {
   // $FlowFixMe
   set urls (val): string { this.url = val },
   async response() {
-    console.log(`${config.api.url}/${this.url}`)
     const promise = await fetch(`${config.api.url}/${this.url}`, this.options)
     const response = await promise.json()
     return response
