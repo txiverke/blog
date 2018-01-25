@@ -45,7 +45,7 @@ const EditUser = ({ dispatch, user, handleClick}: Props) => {
     return (
       <article className="app-form-grid"> 
         <ShowMsg message={message} error={error} next={true} />
-        <h2 className="app-form-grid-header tit-section">Upload User</h2>
+        <h2 className="app-form-grid-header tit-section">Update User</h2>
         <form
           noValidate
           className="app-form-grid-body" 
@@ -109,7 +109,7 @@ const EditUser = ({ dispatch, user, handleClick}: Props) => {
           type="submit"
           className="app-form-btn btn"
         >
-        Upload Profile
+        Update Profile
         </button>
       </form>
     </article>

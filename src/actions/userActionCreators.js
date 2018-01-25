@@ -2,7 +2,9 @@
 
 import * as ACTION from './actionsType'
 import config from '../config'
-import { handleToken } from '../utils/helpers'
+import { handleToken, setPromise } from '../utils/helpers'
+
+const URL = 'users'
 
 /** LOGIN USER **/
 export const loginUserRequest = () => ({ type: ACTION.LOG_IN_USER_REQUEST })
@@ -39,8 +41,7 @@ export const isAuthenticatedFailure = () => ({ type: ACTION.IS_AUTHENTICATED_FAI
 
 export const isAuthenticated = () => 
   (dispatch: Function) => {
-    handleToken.tokens
-    const token: ?string = handleToken.tokens
+    const token = handleToken.tokens
     dispatch(isAuthenticatedRequest())
 
     if (token) {
@@ -76,56 +77,34 @@ export const loadUserDataFailure = () => ({ type: ACTION.LOAD_USER_DATA_FAILURE 
 
 export const loadUserData = (id: string) =>
   async (dispatch: Function) => {
-    const token: ?string = handleToken.tokens
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'access_token': token || ''
-    })
-    const options = { 
-      method: 'GET',
-      headers,
-      mode: 'cors',
-      cache: 'default',
-    }
-
     dispatch(loadUserDataRequest())
 
     try {
-      const promise = await fetch(`${config.api.url}/users/${id}`, options)
-      const data = await promise.json()
+      setPromise.method = 'GET'
+      setPromise.urls = `${URL}/${id}`
+      const data = await setPromise.response()
       return dispatch(loadUserDataSuccess(data))
     } catch (err) {
       return dispatch(loadUserDataFailure())
     }
   }
 
-/** UPLOAD USER DATA **/
-export const uploadUserDataRequest = () => ({ type: ACTION.UPLOAD_USER_DATA_REQUEST })
-export const uploadUserDataSuccess = (payload: Object) => ({ type: ACTION.UPLOAD_USER_DATA_SUCCESS, payload })
-export const uploadUserDataFailure = () => ({ type: ACTION.UPLOAD_USER_DATA_FAILURE })
+/** UPDATE USER DATA **/
+export const updateUserDataRequest = () => ({ type: ACTION.UPDATE_USER_DATA_REQUEST })
+export const updateUserDataSuccess = (payload: Object) => ({ type: ACTION.UPDATE_USER_DATA_SUCCESS, payload })
+export const updateUserDataFailure = () => ({ type: ACTION.UPDATE_USER_DATA_FAILURE })
 
-export const uploadUserData = (id: string, obj: Object) =>
+export const updateUserData = (id: string, obj: Object) =>
   async (dispatch: Function) => {
-    const token: ?string = handleToken.tokens
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'access_token': token || ''
-    })
-    const options = { 
-      method: 'PUT',
-      body: JSON.stringify(obj),
-      headers,
-      mode: 'cors',
-      cache: 'default',
-    }
-
-    dispatch(uploadUserDataRequest())
+    dispatch(updateUserDataRequest())
 
     try {
-      const promise = await fetch(`${config.api.url}/users/${id}`, options)
-      const data = await promise.json()
-      return dispatch(uploadUserDataSuccess(data))
+      setPromise.method = 'PUT'
+      setPromise.body = obj
+      setPromise.urls = `${URL}/${id}`
+      const data = await setPromise.response()
+      return dispatch(updateUserDataSuccess(data))
     } catch (err) {
-      return dispatch(uploadUserDataFailure())
+      return dispatch(updateUserDataFailure())
     }
   }

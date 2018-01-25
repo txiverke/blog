@@ -6,11 +6,9 @@ import { handleToken, setPromise } from '../utils/helpers'
 
 const URL = 'posts'
 
-/** LOAD POST DATA */
+/** LOAD POST */
 export const loadPostDataRequest = () => ({ type: ACTION.LOAD_POST_DATA_REQUEST })
-export const loadPostDataSuccess = (payload: Array<Object>) => ({
-  type: ACTION.LOAD_POST_DATA_SUCCESS, payload
-})
+export const loadPostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.LOAD_POST_DATA_SUCCESS, payload })
 export const loadPostDataFailure = () => ({ type: ACTION.LOAD_POST_DATA_FAILURE })
 
 export const loadPostData = () => 
@@ -18,9 +16,7 @@ export const loadPostData = () =>
     dispatch(loadPostDataRequest())
 
     try {
-      // $FlowFixMe
       setPromise.method = 'GET'
-      // $FlowFixMe
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(loadPostDataSuccess(data))
@@ -41,16 +37,33 @@ export const createPostData = (obj: Object) =>
     dispatch(createPostDataRequest())
 
     try {
-      // $FlowFixMe
       setPromise.method = 'POST'
-      // $FlowFixMe
       setPromise.body = obj
-      // $FlowFixMe
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(createPostDataSuccess(data))
     } catch (err) {
       return dispatch(createPostDataFailure())
+    }
+}
+
+/** CREATE POST */
+export const updatePostDataRequest = () => ({ type: ACTION.UPDATE_POST_DATA_REQUEST })
+export const updatePostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.UPDATE_POST_DATA_SUCCESS, payload })
+export const updatePostDataFailure = () => ({ type: ACTION.UPDATE_POST_DATA_FAILURE})
+
+export const updatePostData = (obj: Object, id: string) => 
+  async (dispatch: Function) => {
+    dispatch(updatePostDataRequest())
+
+    try {
+      setPromise.method = 'PUT'
+      setPromise.body = obj
+      setPromise.urls = `${URL}/${id}`
+      const data = await setPromise.response()
+      return dispatch(updatePostDataSuccess(data))
+    } catch (err) {
+      return dispatch(updatePostDataFailure())
     }
 }
 
@@ -64,9 +77,7 @@ export const removePostData = (id: string) =>
   dispatch(removePostDataRequest())
 
   try {
-    // $FlowFixMe
     setPromise.method = 'DELETE'
-    // $FlowFixMe
     setPromise.urls = `${URL}/${id}`
     const data = await setPromise.response()
     return dispatch(removePostDataSuccess(data))

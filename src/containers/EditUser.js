@@ -3,7 +3,7 @@
 import { connect } from 'react-redux'
 
 import EditUser from '../components/EditUser'
-import { uploadUserData } from '../actions/userActionCreators'
+import { updateUserData } from '../actions/userActionCreators'
 
 
 const mapStateToProps = state => ({
@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: (id: string, obj: Object) => dispatch(uploadUserData(id, obj))
+  handleClick: (id: string, obj: Object) => dispatch(updateUserData(id, obj))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditUser)

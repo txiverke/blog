@@ -41,9 +41,9 @@ const user = (
     case ACTION.LOAD_USER_DATA_REQUEST: return newState(state, false, [], 'Loading User Data')
     case ACTION.LOAD_USER_DATA_SUCCESS: return newState(state, true, action.payload, 'User data loaded.')
     case ACTION.LOAD_USER_DATA_FAILURE: return newState(state, true, [], 'Get users failed.', true)
-    case ACTION.UPLOAD_USER_DATA_REQUEST: return newState(state, false, [], 'Uploading User Data')
-    case ACTION.UPLOAD_USER_DATA_SUCCESS: return newState(state, true, action.payload, 'User data uploaded.')
-    case ACTION.UPLOAD_USER_DATA_FAILURE: return newState(state, true, [], 'Upload users failed.', true)
+    case ACTION.UPDATE_USER_DATA_REQUEST: return newState(state, false, [], 'Updating User Data')
+    case ACTION.UPDATE_USER_DATA_SUCCESS: return newState(state, true, action.payload, 'User data updated.')
+    case ACTION.UPDATE_USER_DATA_FAILURE: return newState(state, true, [], 'Update users failed.', true)
     
     default: return state
   }
@@ -65,6 +65,9 @@ const posts = (
     case ACTION.CREATE_POST_DATA_REQUEST: return newState(state, false, [], 'Creating a new post.')
     case ACTION.CREATE_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post created')
     case ACTION.CREATE_POST_DATA_FAILURE: return newState(state, true, [], 'Create post failed.', true)
+    case ACTION.UPDATE_POST_DATA_REQUEST: return newState(state, false, [], 'Updating a new post.')
+    case ACTION.UPDATE_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post updated')
+    case ACTION.UPDATE_POST_DATA_FAILURE: return newState(state, true, [], 'Update post failed.', true)
     case ACTION.REMOVE_POST_DATA_REQUEST: return newState(state, false, [], 'Removing post.')
     case ACTION.REMOVE_POST_DATA_SUCCESS: return newState(state, true, action.payload, 'Post removed.')
     case ACTION.REMOVE_POST_DATA_FAILURE: return newState(state, true, [], 'Remove post failed.', true)
