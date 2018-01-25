@@ -6,9 +6,11 @@ import { connect } from 'react-redux'
 
 import Loader from '../components/Loader'
 import ShowMsg from '../components/ShowMsg'
+import ButtonCorner from '../components/ButtonCorner'
 import { loadUserData } from '../actions/userActionCreators'
 import avatar from '../assets/imgs/about.jpg'
 import config from '../config'
+// $FlowFixMe
 import pdf from '../assets/files/XavierVilaAlbiol_CV_en.pdf'
 
 class About extends React.Component {
@@ -19,7 +21,8 @@ class About extends React.Component {
   
   props: {
     user: User,
-    dispatch: Function
+    dispatch: Function,
+    history: Object,
   }
 
   renderMsg = this.renderMsg.bind(this)
@@ -41,6 +44,7 @@ class About extends React.Component {
   render() {
     const { completed, data, message } = this.props.user
     const { txtMessage, next } = this.state
+    const { history } = this.props
 
     if (completed) {
       return (
@@ -52,6 +56,7 @@ class About extends React.Component {
               { property: "og:title", content: `${data.firstname} ${data.lastname} - ${data.job}` }
             ]}
           />
+          <ButtonCorner label="Back" />
           <ShowMsg message={txtMessage} next={next} error={false} />
           <article className="app-content-section">
             <figure className="app-content-avatar">

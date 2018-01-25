@@ -54,6 +54,7 @@
 
 .txt-message,
 .txt-message-error {
+  font-family: Lighter;
   z-index: 100;
   background: var(--bgColor);
   font-size: var(--minSize);

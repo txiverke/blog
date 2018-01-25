@@ -4,33 +4,6 @@ import * as ACTION from './actionsType'
 import config from '../config'
 import { handleToken } from '../utils/helpers'
 
-const setPromise = {
-  url: '',
-  options: { 
-    method: null,
-    headers: new Headers({
-      'Content-Type': 'application/json',
-      'access_token':  handleToken.get() || ''
-    }),
-    body: null,
-    mode: 'cors',
-    cache: 'default',
-  },
-  // $FlowFixMe
-  set options(options) { 
-    this.options.method = options.method
-    this.options.body = JSON.stringify(options.body) || null
-    this.url = options.url
-  },
-  async response(id) {
-    console.log(this.options)
-    const _id = id ? `/${id}` : ''
-    const promise = await fetch(`${config.api.url}/${this.url}${_id}`, this.options)
-    const response = await promise.json()
-    return response
-  }
-}
-
 /** LOGIN USER **/
 export const loginUserRequest = () => ({ type: ACTION.LOG_IN_USER_REQUEST })
 export const loginUserSuccess = (payload: Object) => ({ type: ACTION.LOG_IN_USER_SUCCESS, payload })
@@ -49,13 +22,12 @@ export const loginUser = (obj: Object) =>
         headers 
       })
       const data = await promise.json()
-      handleToken.set(JSON.stringify(data.token))
+      handleToken.tokens = JSON.stringify(data.token)
       dispatch(loginUserSuccess(data.token))
       dispatch(isAuthenticatedSuccess(data.token))
       return dispatch(loadUserData(config.api.profileId))
-
-
     } catch (err) {
+      console.log(err)
       dispatch(loginUserFailure())
     }
   }
@@ -67,7 +39,8 @@ export const isAuthenticatedFailure = () => ({ type: ACTION.IS_AUTHENTICATED_FAI
 
 export const isAuthenticated = () => 
   (dispatch: Function) => {
-    const token: ?string = handleToken.get()
+    handleToken.tokens
+    const token: ?string = handleToken.tokens
     dispatch(isAuthenticatedRequest())
 
     if (token) {
@@ -84,7 +57,7 @@ export const logoutUserSuccess = () => ({ type: ACTION.LOG_OUT_USER_SUCCESS })
 export const logoutUserFailure = () => ({ type: ACTION.LOG_OUT_USER_FAILURE })
 
 export const logoutUser = () => (dispatch: Function) => {
-  const token = handleToken.get()
+  const token = handleToken.tokens
   dispatch(logoutUserRequest())
 
   if (token) {
@@ -103,7 +76,7 @@ export const loadUserDataFailure = () => ({ type: ACTION.LOAD_USER_DATA_FAILURE 
 
 export const loadUserData = (id: string) =>
   async (dispatch: Function) => {
-    const token: ?string = handleToken.get()
+    const token: ?string = handleToken.tokens
     const headers = new Headers({
       'Content-Type': 'application/json',
       'access_token': token || ''
@@ -133,7 +106,7 @@ export const uploadUserDataFailure = () => ({ type: ACTION.UPLOAD_USER_DATA_FAIL
 
 export const uploadUserData = (id: string, obj: Object) =>
   async (dispatch: Function) => {
-    const token: ?string = handleToken.get()
+    const token: ?string = handleToken.tokens
     const headers = new Headers({
       'Content-Type': 'application/json',
       'access_token': token || ''
