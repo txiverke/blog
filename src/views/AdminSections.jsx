@@ -17,6 +17,7 @@ const AdminSections = ({ authenticate, location }: Props) => {
   const { data } = authenticate
   const section = location.pathname.substr(location.pathname.lastIndexOf('/') + 1)
   let component = null
+  
   switch(section) {
     case 'about-me': 
       component = <EditUser />
@@ -31,7 +32,7 @@ const AdminSections = ({ authenticate, location }: Props) => {
 
   if (data) {
     return (
-      <section className="app-view">
+      <section className="app-view app-view-content">
         <Helmet 
           title="Admin page" 
           meta={[

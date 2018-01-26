@@ -1,0 +1,137 @@
+
+.app-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 100%;
+  padding-bottom: 1rem
+}
+
+.app-grid-header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end:2;
+  position: relative;
+}
+
+.app-grid-body {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end:3;
+  display: grid;
+  grid-template-columns: 48% 4% 48%;
+}
+
+.app-grid-item1,
+.app-grid-item2,
+.app-grid-whole {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  min-height: 5.1rem;
+}
+
+.app-grid-btn {
+  display: block;
+  margin-top: 1.5rem;
+  justify-self: start;
+}
+
+@media only screen 
+  and (min-width: 1200px) {
+    .app-grid {
+      grid-template-columns: auto 1024px auto;
+    }
+
+    .app-grid-header {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    
+    .app-grid-body {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .app-grid-item1 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .app-grid-item2 {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+}
+
+@media only screen 
+  and (max-width: 1199px) 
+  and (min-width: 850px) {
+    .app-grid {
+      grid-template-columns: auto 800px auto;
+    }
+
+    .app-grid-header {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    
+    .app-grid-body {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .app-grid-item1 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .app-grid-item2 {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+}
+
+@media only screen 
+  and (max-width: 849px) 
+  and (min-width: 650px) {
+    .app-grid {
+      grid-template-columns: auto 100% auto;
+    }
+
+    .app-grid-header {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    
+    .app-grid-body {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .app-grid-item1 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .app-grid-item2 {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+}
+
+@media only screen 
+  and (max-width: 649px) {
+    .app-grid {
+      grid-template-columns: auto 100% auto;
+    }
+    .app-grid-header {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    
+    .app-grid-body {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+}

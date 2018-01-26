@@ -13,23 +13,21 @@ export const loginUserFailure = () => ({ type: ACTION.LOG_IN_USER_FAILURE})
 
 export const loginUser = (obj: Object) =>
   async (dispatch: Function) => {
-    const headers = new Headers({ 'Content-Type': 'application/json' })
-
     dispatch(loginUserRequest())
 
     try {
       const promise = await fetch(config.api.auth, { 
         method: 'POST', 
         body: JSON.stringify(obj), 
-        headers 
+        headers: new Headers({ 'Content-Type': 'application/json' })
       })
       const data = await promise.json()
-      handleToken.tokens = JSON.stringify(data.token)
+
+      handleToken.set(JSON.stringify(data.token))
       dispatch(loginUserSuccess(data.token))
-      dispatch(isAuthenticatedSuccess(data.token))
-      return dispatch(loadUserData(config.api.profileId))
+      return dispatch(isAuthenticatedSuccess(data.token))
     } catch (err) {
-      dispatch(loginUserFailure())
+      return dispatch(loginUserFailure())
     }
   }
 
@@ -40,7 +38,7 @@ export const isAuthenticatedFailure = () => ({ type: ACTION.IS_AUTHENTICATED_FAI
 
 export const isAuthenticated = () => 
   (dispatch: Function) => {
-    const token = handleToken.tokens
+    const token = handleToken.get()
     dispatch(isAuthenticatedRequest())
 
     if (token) {
@@ -57,7 +55,7 @@ export const logoutUserSuccess = () => ({ type: ACTION.LOG_OUT_USER_SUCCESS })
 export const logoutUserFailure = () => ({ type: ACTION.LOG_OUT_USER_FAILURE })
 
 export const logoutUser = () => (dispatch: Function) => {
-  const token = handleToken.tokens
+  const token = handleToken.get()
   dispatch(logoutUserRequest())
 
   if (token) {

@@ -25,8 +25,31 @@
   text-decoration: none;
 }
 
+.btn:hover {
+  background: var(--selectColor);
+  color: var(--textColor);
+}
+
 .btn-icon {
   padding: 0.5rem 0.75rem;
+}
+
+.btn-clean,
+.btn-clean:hover {
+  border: none;
+  background: none;
+}
+
+.btn-show,
+.btn-hide{
+  font-size: var(--maxSize);
+}
+
+.btn-show {
+  transform: rotate(45deg);
+}
+.btn-hide {
+  transform: rotate(0deg);
 }
 
 .btn-centered {
@@ -34,11 +57,6 @@
   transform: translateX(-50%);
   display: block;
   position: absolute;
-}
-
-.btn:hover {
-  background: var(--selectColor);
-  color: var(--textColor);
 }
 
 .btn-close {

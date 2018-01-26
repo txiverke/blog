@@ -12,7 +12,7 @@ const Admin = props => {
 
   if (data) {
     return (
-      <section className="app-view">
+      <section className="app-view app-view-centered">
         <Helmet 
           title="Admin page" 
           meta={[

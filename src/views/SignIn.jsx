@@ -24,7 +24,7 @@ class SignIn extends React.Component {
 
     if (!data) {
       return (
-        <section className="app-view">
+        <section className="app-view app-view-centered">
           <Helmet 
             title="Welcome!" 
             meta={[

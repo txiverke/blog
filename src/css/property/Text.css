@@ -96,7 +96,10 @@
   padding-top: 0;
 }
 
-
+.app-separator {
+  border: none;
+  border-top: 1px dotted var(--textColor);
+}
 
 .hidden {
   display: none

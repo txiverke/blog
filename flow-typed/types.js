@@ -28,6 +28,12 @@ export type Auth = {
   error: boolean
 }
 
+declare type ElementEventTemplate<E> = {
+  target: E
+} & Event;
+
+declare type InputEvent = ElementEventTemplate<HTMLInputElement>;
+
 declare type ActionType =
 'LOAD_STATS_REQUEST' | 'LOAD_STATS_SUCCESS' | 'LOAD_STATS_FAILURE' | 
 'LOG_IN_USER_REQUEST' | 'LOG_IN_USER_SUCCESS' | 'LOG_IN_USER_FAILURE' |

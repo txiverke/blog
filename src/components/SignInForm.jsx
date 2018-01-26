@@ -24,25 +24,25 @@ type Props = {
 }
 
 const SignInForm = ({ authenticate, handleClick }: Props) => {
-  const { message, completed } = authenticate
+  const { message, completed, error } = authenticate
 
   return (
-    <article className="app-form-grid"> 
-      <ShowMsg message={message} error={true} next={completed} />
-      <h2 className="app-form-grid-header tit-section">Sign In</h2>
+    <article className="app-grid"> 
+      <ShowMsg message={message} error={error} next={completed} />
+      <h2 className="app-grid-header tit-section">Sign In</h2>
       <form
           noValidate
-          className="app-form-grid-body" 
+          className="app-grid-body" 
           onSubmit={
             (event) => {
+              event.preventDefault()
               if (showFormErrors()) {
-                event.preventDefault()
                 handleClick(handleData(event))
               }
           }}
         >
         <SingleInput
-          wrapper="app-form-grid-item1"
+          wrapper="app-grid-item1"
           name="username"
           inputType="text"
           title="Username"
@@ -51,7 +51,7 @@ const SignInForm = ({ authenticate, handleClick }: Props) => {
           controlFunc={handleChange}
         />
         <SingleInput
-          wrapper="app-form-grid-item2"        
+          wrapper="app-grid-item2"        
           name="password"
           inputType="password"
           title="Password"
@@ -61,7 +61,7 @@ const SignInForm = ({ authenticate, handleClick }: Props) => {
         />
         <button 
           type="submit"
-          className="app-form-btn btn"
+          className="app-grid-btn btn"
           disabled={!completed}
         >
         Sign In

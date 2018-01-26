@@ -15,5 +15,6 @@
 
 /** PROPERTY STYLES **/
 @import './property/BoxModel.css';
+@import './property/Grid.css';
 @import './property/Image.css';
 @import './property/Text.css';

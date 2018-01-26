@@ -46,7 +46,7 @@ class About extends React.Component {
 
     if (completed) {
       return (
-        <section className="app-view">
+        <section className="app-view app-view-centered">
           <Helmet 
             title="About me" 
             meta={[
