@@ -16,6 +16,7 @@ export const loadPostData = () =>
 
     try {
       setPromise.method = 'GET'
+      setPromise.body = null
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(loadPostDataSuccess(data))
@@ -58,7 +59,7 @@ export const updatePostDataRequest = () => ({ type: ACTION.UPDATE_POST_DATA_REQU
 export const updatePostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.UPDATE_POST_DATA_SUCCESS, payload })
 export const updatePostDataFailure = () => ({ type: ACTION.UPDATE_POST_DATA_FAILURE})
 
-export const updatePostData = (obj: Object, id: string) => 
+export const updatePostData = ( id: string, obj: Object,) => 
   async (dispatch: Function) => {
     dispatch(updatePostDataRequest())
 
@@ -84,6 +85,7 @@ export const removePostData = (id: string) =>
 
   try {
     setPromise.method = 'DELETE'
+    setPromise.body = null
     setPromise.urls = `${URL}/${id}`
     const data = await setPromise.response()
     return dispatch(removePostDataSuccess(data))

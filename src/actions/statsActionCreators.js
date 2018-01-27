@@ -16,6 +16,7 @@ export const loadStats = () =>
 
     try {
       setPromise.method = 'GET'
+      setPromise.body = null
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(loadStatsSuccess(data))

@@ -77,6 +77,7 @@ export const loadUserData = (id: string) =>
 
     try {
       setPromise.method = 'GET'
+      setPromise.body = null
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
       return dispatch(loadUserDataSuccess(data))
@@ -96,7 +97,7 @@ export const updateUserData = (id: string, obj: Object) =>
 
     try {
       setPromise.method = 'PUT'
-      setPromise.body = obj
+      setPromise.body = JSON.stringify(obj)
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
       return dispatch(updateUserDataSuccess(data))

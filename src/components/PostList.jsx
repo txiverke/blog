@@ -56,6 +56,13 @@ class PostList extends React.Component {
                     className="app-grid-list-item3 btn btn-icon icon-trash-can"></button>
                 </div>
               )}
+              {data.length === 0 && 
+                <div className="app-grid-list">
+                  <h3 className="app-grid-list-item1 txt">
+                    No posts created.
+                  </h3>
+                </div>
+              }
             </div>
           </article>
         </div>

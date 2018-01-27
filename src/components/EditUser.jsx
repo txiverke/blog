@@ -115,6 +115,7 @@ class EditUser extends React.Component {
           <button 
             type="submit"
             className="app-grid-btn btn"
+            disabled={!completed}
           >
           Update Profile
           </button>
