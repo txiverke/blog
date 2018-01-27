@@ -20,14 +20,16 @@ class Stats extends React.Component {
     statistic: Statistic,
     authenticate: Auth
   }
-  componentDidMount() {
-    const { dispatch, statistic } = this.props
 
-    if (Object.keys(statistic.data).length === 0) {
+  componentDidMount() {
+    const { dispatch, statistic, authenticate } = this.props
+
+    if (Object.keys(statistic.data).length === 0 || authenticate.data) {
       dispatch(loadStats())
     }
-    
   }
+
+
   getValue(section) {
     const { users, posts, projects } = this.props.statistic.data
 

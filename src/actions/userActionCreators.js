@@ -42,8 +42,7 @@ export const isAuthenticated = () =>
     dispatch(isAuthenticatedRequest())
 
     if (token) {
-      dispatch(isAuthenticatedSuccess(token))
-      return dispatch(loadUserData(config.api.profileId))
+      return dispatch(isAuthenticatedSuccess(token))
     }
 
     return dispatch(isAuthenticatedFailure())

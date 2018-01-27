@@ -30,17 +30,15 @@ export const setPromise = {
   options: { 
     method: null,
     headers: new Headers({
-      'Content-Type': 'application/json',
       'access_token': JSON.parse(localStorage.getItem(config.api.token))
     }),
     body: null,
     mode: 'cors',
-    cache: 'default',
   },
   // $FlowFixMe
   set method (val): string { this.options.method = val },
   // $FlowFixMe
-  set body (val): Object { this.options.body = JSON.stringify(val) || null },
+  set body (val): Object { this.options.body = val },
   // $FlowFixMe
   set urls (val): string { this.url = val },
 

@@ -36,8 +36,17 @@ export const createPostData = (obj: Object) =>
     dispatch(createPostDataRequest())
 
     try {
+      console.log('obj',obj)
+      let body = new FormData()
+      body.append('file', obj.file, obj.file.name);
+      body.append('title', obj.title)
+      body.append('content', obj.content)
+      body.append('tags', obj.tags)
+      body.append('link', obj.link)
+      body.append('creator', JSON.stringify(obj.creator))
+
       setPromise.method = 'POST'
-      setPromise.body = obj
+      setPromise.body = body
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(createPostDataSuccess(data))

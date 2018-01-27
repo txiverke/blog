@@ -4,40 +4,47 @@ import React from 'react'
 
 import SingleInput from './form/SingleInput'
 import Textarea from './form/Textarea'
+import ImageUploader from './form/ImageUploader'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
+import config from '../config'
 
 class CreatePost extends React.Component {
-  state = { show: true }
-
-  handleChange = this.handleChange.bind(this)
-  handleData = this.handleData.bind(this)
-  showContent = this.showContent.bind(this)
+  state = { 
+    post: {},
+    show: true 
+  }
 
   props: {
     createPost: Function,
-    id: string,
   }
+
+  handleChange = this.handleChange.bind(this)
+  handleImageChange = this.handleImageChange.bind(this)
+  handleData = this.handleData.bind(this)
+  showContent = this.showContent.bind(this)
 
   handleChange (event: InputEvent) {
     event.target.classList.add('active')
     showInputError(event.target)
   }
+
+  handleImageChange (file: File) {
+    const { post } = this.state
+    const obj = Object.assign(post, { file })
+
+    this.setState({ post: obj })    
+  }
   
   handleData (event: InputEvent, id: string) {
+    const { post } = this.state
     const title = event.target.elements.title.value.trim()
     const content = event.target.elements.content.value.trim()
-    const background = event.target.elements.background.value.trim()
     const link = event.target.elements.link.value.trim()
     const tags = event.target.elements.tags.value.trim()
-  
-    return {
-      title,
-      content,
-      background,
-      link,
-      tags,
-      creator: id
-    }
+    const creator = config.api.profileId
+    const obj = Object.assign(post, { title, content, link, tags, creator })
+
+    this.setState = ({ post: obj })
   }
 
   showContent (event: InputEvent) {
@@ -47,7 +54,7 @@ class CreatePost extends React.Component {
 
   render() {
     const { createPost } = this.props
-    const { show } = this.state
+    const { show, post } = this.state
     const classHidden = show ? '' : 'hidden'
     const classButton = show ? 'btn-hide' : 'btn-show'
 
@@ -61,12 +68,14 @@ class CreatePost extends React.Component {
         </header>
         <form
           noValidate
+          encType="multipart/form-data"
           className={`app-grid-body ${classHidden}`} 
           onSubmit={
             (event) => {
               event.preventDefault()
               if (showFormErrors()) {
-                createPost(this.handleData(event))
+                this.handleData(event)
+                createPost(post)
               }
           }}
         >
@@ -76,15 +85,6 @@ class CreatePost extends React.Component {
           inputType="text"
           title="Title"
           placeholder="Title"
-          pattern=".{6,}"
-          controlFunc={this.handleChange}
-        />
-        <SingleInput
-          wrapper="app-grid-item2"
-          name="background"
-          inputType="text"
-          title="Background"
-          placeholder="Background"
           pattern=".{6,}"
           controlFunc={this.handleChange}
         />
@@ -106,6 +106,9 @@ class CreatePost extends React.Component {
           pattern=".{2,}"
           controlFunc={this.handleChange}
         />
+        <ImageUploader 
+          handleImage={file => this.handleImageChange(file)}
+        />
         <Textarea
           wrapper="app-grid-whole"
           name="content"
@@ -113,6 +116,7 @@ class CreatePost extends React.Component {
           pattern=".{6,}"
           controlFunc={this.handleChange}
         />
+
         <button 
           type="submit"
           className="app-grid-btn btn"

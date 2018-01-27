@@ -41,7 +41,7 @@ class About extends React.Component {
   }
 
   render() {
-    const { completed, data, message } = this.props.user
+    const { completed, data, message, error } = this.props.user
     const { txtMessage, next } = this.state
 
     if (completed) {
@@ -55,7 +55,7 @@ class About extends React.Component {
             ]}
           />
           <ButtonCorner label="Back" />
-          <ShowMsg message={txtMessage} next={next} error={false} />
+          <ShowMsg message={txtMessage} next={next} error={error} />
           <article className="app-content-section">
             <figure className="app-content-avatar">
               <img 
@@ -80,7 +80,11 @@ class About extends React.Component {
       )
     }
 
-    return <Loader msg={message} />
+    return (
+      <div className="app-view app-view-centered">
+        <Loader msg={message} />
+      </div>
+    )
   }
 }
   

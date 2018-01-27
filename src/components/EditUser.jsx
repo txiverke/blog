@@ -25,7 +25,7 @@ class EditUser extends React.Component {
     const { user, dispatch } = this.props
     
     if (Object.keys(user.data).length === 0) {
-      dispatch(loadUserData)
+      dispatch(loadUserData(config.api.profileId))
     }
   }
 
