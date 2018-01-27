@@ -1,0 +1,71 @@
+// @flow
+
+import React from 'react'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
+
+import ShowMsg from '../components/ShowMsg'
+import Loader from '../components/Loader'
+import PostItem from '../components/PostItem'
+import { loadPostItem, updatePostData } from '../actions/postActionCreators'
+import { isAuthenticated } from '../actions/userActionCreators'
+
+class AdminEdit extends React.Component {
+  props: {
+    dispatch: Function,
+    post: Item,
+    authenticate: Auth,
+    match: Object
+  }
+
+  updatePost = this.updatePost.bind(this)
+
+  componentDidMount() {
+    const { dispatch, match } = this.props
+    dispatch(loadPostItem(match.params.id))
+    dispatch(isAuthenticated())
+  }
+
+  updatePost(id: string, obj: Object) {
+    const { dispatch } = this.props
+    dispatch(updatePostData(id, obj))
+  }
+
+  render() {
+    const { message, data, error, completed } = this.props.post
+
+    if (completed) {
+      return (
+        <section className="app-view app-view-content">
+          <Helmet 
+            title="Admin page" 
+            meta={[
+              { name: "description", content: "Admin page" },
+              { property: "og:title", content: "Admin page" }
+            ]}
+          />  
+          <ShowMsg message={message} error={error} next={true} />
+          <PostItem 
+            label="Update post" 
+            handlePost={this.updatePost} 
+            data={data}
+          />
+        </section>
+      )
+    }
+
+    return (
+      <div className="app-view app-view-centered">
+        <Loader msg={message} />
+      </div>
+    )
+    
+  }
+}
+
+const mapStateToProps = state => ({ 
+  authenticate: state.authenticate,
+  post: state.post 
+})
+
+export default connect(mapStateToProps)(AdminEdit)

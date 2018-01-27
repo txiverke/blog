@@ -8,14 +8,16 @@ import ImageUploader from './form/ImageUploader'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
 import config from '../config'
 
-class CreatePost extends React.Component {
+class PostItem extends React.Component {
   state = { 
     post: {},
     show: true 
   }
 
   props: {
-    createPost: Function,
+    label: string,
+    handlePost: Function,
+    data?: Object
   }
 
   handleChange = this.handleChange.bind(this)
@@ -53,7 +55,7 @@ class CreatePost extends React.Component {
   }
 
   render() {
-    const { createPost } = this.props
+    const { handlePost, label, data } = this.props
     const { show, post } = this.state
     const classHidden = show ? '' : 'hidden'
     const classButton = show ? 'btn-hide' : 'btn-show'
@@ -61,10 +63,13 @@ class CreatePost extends React.Component {
     return (
       <article className="app-grid"> 
         <header className="app-grid-header">
-          <h2 className="tit-section">Create Post</h2>
-          <button 
-            onClick={this.showContent}
-            className={`btn btn-icon btn-clean icon-x-circle tr2 ${classButton}`}></button>
+          <h2 className="tit-section">{label}</h2>
+          {!data && 
+            <button 
+              onClick={this.showContent}
+              className={`btn btn-icon btn-clean icon-x-circle tr2 ${classButton}`}>
+            </button>
+          }
         </header>
         <form
           noValidate
@@ -74,17 +79,20 @@ class CreatePost extends React.Component {
             (event) => {
               event.preventDefault()
               if (showFormErrors()) {
+                let id = data ? data._id : ''
                 this.handleData(event)
-                createPost(post)
+                console.log(post)
+                handlePost(id, post)
               }
           }}
         >
         <SingleInput
-          wrapper="app-grid-item1"
+          wrapper="app-grid-whole"
           name="title"
           inputType="text"
           title="Title"
           placeholder="Title"
+          content={data && data.title}
           pattern=".{6,}"
           controlFunc={this.handleChange}
         />
@@ -94,6 +102,7 @@ class CreatePost extends React.Component {
           inputType="text"
           title="Link"
           placeholder="Link"
+          content={data && data.link}
           pattern=".{6,}"
           controlFunc={this.handleChange}
         />
@@ -103,17 +112,26 @@ class CreatePost extends React.Component {
           inputType="text"
           title="Tags"
           placeholder="Tags"
+          content={data && data.tags}
           pattern=".{2,}"
           controlFunc={this.handleChange}
         />
         <ImageUploader 
           handleImage={file => this.handleImageChange(file)}
         />
+        {data && !post.file &&
+          <img 
+            src={`${config.api.public}/posts/${data.background}`} 
+            height="200" 
+            alt="Preview..." 
+          />
+        }
         <Textarea
           wrapper="app-grid-whole"
           name="content"
           title="Content"
           pattern=".{6,}"
+          content={data && data.content}
           controlFunc={this.handleChange}
         />
 
@@ -121,7 +139,7 @@ class CreatePost extends React.Component {
           type="submit"
           className="app-grid-btn btn"
         >
-        Create Post
+        {label}
         </button>
       </form>
     </article>
@@ -129,4 +147,4 @@ class CreatePost extends React.Component {
   }
 }
 
-export default CreatePost
+export default PostItem

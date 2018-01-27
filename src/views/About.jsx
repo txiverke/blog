@@ -20,7 +20,7 @@ class About extends React.Component {
   }
   
   props: {
-    user: User,
+    user: Item,
     dispatch: Function,
   }
 

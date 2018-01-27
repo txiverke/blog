@@ -43,7 +43,7 @@ export const setPromise = {
   set urls (val): string { this.url = val },
 
   async response() {
-    console.log(this.options)
+    console.log(`${config.api.url}/${this.url}`, this.options)
     const promise = await fetch(`${config.api.url}/${this.url}`, this.options)
     const response = await promise.json()
     return response

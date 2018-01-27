@@ -33,6 +33,11 @@ const Routes = () => (
         <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />
       )} />
     <Route 
+      path="/admin/posts/:id"
+      component={props => (
+        <RoutesAsync props={props} loadingPromise={import('./views/AdminEdit')} />
+      )} />  
+    <Route 
       path="/admin/posts"
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />

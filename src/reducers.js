@@ -29,7 +29,7 @@ const statistic = (
 }
 
 const user = (
-  state: User = {
+  state: Item = {
     completed: false,
     data: {},
     message: '',
@@ -75,6 +75,23 @@ const posts = (
   }
 }
 
+const post = (
+  state: Item = {
+    completed: false,
+    data: {},
+    message: '',
+    error: false
+  },
+  action: Action
+) => {
+  switch(action.type) {
+    case ACTION.LOAD_POST_ITEM_REQUEST: return newState(state, false, [], 'Loading post.')
+    case ACTION.LOAD_POST_ITEM_SUCCESS: return newState(state, true, action.payload, 'Post loaded.')
+    case ACTION.LOAD_POST_ITEM_FAILURE: return newState(state, true, [], 'Get post failed.', true)
+    default: return state
+  }
+}
+
 const authenticate = (
   state: Auth = { 
     completed: false,
@@ -102,5 +119,6 @@ export default combineReducers({
   statistic, 
   user, 
   posts,
+  post,
   authenticate, 
 })

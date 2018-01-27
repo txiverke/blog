@@ -7,7 +7,7 @@ export type Statistic = {
   error: boolean,
 }
 
-export type User = {
+export type Item = {
   completed: boolean,
   data: Object,
   message: string,
@@ -44,6 +44,7 @@ declare type ActionType =
 'UPDATE_USER_DATA_REQUEST' | 'UPDATE_USER_DATA_SUCCESS' | 'UPDATE_USER_DATA_FAILURE' |
 'LOG_OUT_USER_REQUEST' | 'LOG_OUT_USER_SUCCESS' | 'LOG_OUT_USER_FAILURE' |
 'LOAD_POST_DATA_REQUEST' | 'LOAD_POST_DATA_SUCCESS' | 'LOAD_POST_DATA_FAILURE' |
+'LOAD_POST_ITEM_REQUEST' | 'LOAD_POST_ITEM_SUCCESS' | 'LOAD_POST_ITEM_FAILURE' |
 'UPDATE_POST_DATA_REQUEST' | 'UPDATE_POST_DATA_SUCCESS' | 'UPDATE_POST_DATA_FAILURE';
 
 declare type ActionT<A: ActionType, P> = {
@@ -59,10 +60,10 @@ export type Action =
   ActionT<'LOG_IN_USER_SUCCESS', Data> |
   ActionT<'LOG_IN_USER_FAILURE', ''> |
   ActionT<'LOAD_USER_DATA_REQUEST', ''> |
-  ActionT<'LOAD_USER_DATA_SUCCESS', User> |
+  ActionT<'LOAD_USER_DATA_SUCCESS', Item> |
   ActionT<'LOAD_USER_DATA_FAILURE', ''> |
   ActionT<'UPDATE_USER_DATA_REQUEST', ''> |
-  ActionT<'UPDATE_USER_DATA_SUCCESS', User> |
+  ActionT<'UPDATE_USER_DATA_SUCCESS', Item> |
   ActionT<'UPDATE_USER_DATA_FAILURE', ''> |
   ActionT<'IS_AUTHENTICATED_REQUEST', ''> |
   ActionT<'IS_AUTHENTICATED_SUCCESS', Auth> |
@@ -70,6 +71,9 @@ export type Action =
   ActionT<'LOAD_POST_DATA_REQUEST', ''> |
   ActionT<'LOAD_POST_DATA_SUCCESS', Data> |
   ActionT<'LOAD_POST_DATA_FAILURE', ''> |
+  ActionT<'LOAD_POST_ITEM_REQUEST', ''> |
+  ActionT<'LOAD_POST_ITEM_SUCCESS', Item> |
+  ActionT<'LOAD_POST_ITEM_FAILURE', ''> |
   ActionT<'UPDATE_POST_DATA_REQUEST', ''> |
   ActionT<'UPDATE_POST_DATA_SUCCESS', Data> |
   ActionT<'UPDATE_POST_DATA_FAILURE', ''> |

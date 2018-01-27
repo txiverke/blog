@@ -5,7 +5,7 @@ import { setPromise } from '../utils/helpers'
 
 const URL = 'posts'
 
-/** LOAD POST */
+/** LOAD POSTS */
 export const loadPostDataRequest = () => ({ type: ACTION.LOAD_POST_DATA_REQUEST })
 export const loadPostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.LOAD_POST_DATA_SUCCESS, payload })
 export const loadPostDataFailure = () => ({ type: ACTION.LOAD_POST_DATA_FAILURE })
@@ -22,6 +22,27 @@ export const loadPostData = () =>
       return dispatch(loadPostDataSuccess(data))
     } catch (err) {
       return dispatch(loadPostDataFailure())
+    }
+
+}
+
+/** LOAD POST ITEM */
+export const loadPostItemRequest = () => ({ type: ACTION.LOAD_POST_ITEM_REQUEST })
+export const loadPostItemSuccess = (payload: Object) => ({ type: ACTION.LOAD_POST_ITEM_SUCCESS, payload })
+export const loadPostItemFailure = () => ({ type: ACTION.LOAD_POST_ITEM_FAILURE })
+
+export const loadPostItem = (id: string) => 
+  async (dispatch: Function) => {
+    dispatch(loadPostItemRequest())
+
+    try {
+      setPromise.method = 'GET'
+      setPromise.body = null
+      setPromise.urls = `${URL}/${id}`
+      const data = await setPromise.response()
+      return dispatch(loadPostItemSuccess(data))
+    } catch (err) {
+      return dispatch(loadPostItemFailure())
     }
 
 }
@@ -64,10 +85,19 @@ export const updatePostData = ( id: string, obj: Object,) =>
     dispatch(updatePostDataRequest())
 
     try {
+      let body = new FormData()
+      body.append('file', obj.file, obj.file.name);
+      body.append('title', obj.title)
+      body.append('content', obj.content)
+      body.append('tags', obj.tags)
+      body.append('link', obj.link)
+      body.append('creator', JSON.stringify(obj.creator))
+
       setPromise.method = 'PUT'
-      setPromise.body = obj
+      setPromise.body = body
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
+      console
       return dispatch(updatePostDataSuccess(data))
     } catch (err) {
       return dispatch(updatePostDataFailure())
