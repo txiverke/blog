@@ -20,7 +20,6 @@ export const loadPostData = () =>
       const data = await setPromise.response()
       return dispatch(loadPostDataSuccess(data))
     } catch (err) {
-      console.log(err)
       return dispatch(loadPostDataFailure())
     }
 
@@ -36,7 +35,6 @@ export const createPostData = (obj: Object) =>
     dispatch(createPostDataRequest())
 
     try {
-      console.log('obj',obj)
       let body = new FormData()
       body.append('file', obj.file, obj.file.name);
       body.append('title', obj.title)
