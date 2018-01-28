@@ -7,11 +7,11 @@ import { updateUserData } from '../actions/userActionCreators'
 
 
 const mapStateToProps = state => ({
-  user: state.user,
+  user: state.user
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: (id: string, obj: Object) => dispatch(updateUserData(id, obj))
+  handleClick: (obj: Object) => dispatch(updateUserData(obj))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditUser)

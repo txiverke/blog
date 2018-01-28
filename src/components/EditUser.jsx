@@ -60,10 +60,7 @@ class EditUser extends React.Component {
               (event) => {
                 event.preventDefault()
                 if (showFormErrors()) {
-                  handleClick(
-                    config.api.profileId, 
-                    this.handleData(event)
-                  )
+                  handleClick(this.handleData(event))
                 }
             }}
           >

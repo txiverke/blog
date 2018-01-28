@@ -88,6 +88,7 @@ const post = (
     case ACTION.LOAD_POST_ITEM_REQUEST: return newState(state, false, [], 'Loading post.')
     case ACTION.LOAD_POST_ITEM_SUCCESS: return newState(state, true, action.payload, 'Post loaded.')
     case ACTION.LOAD_POST_ITEM_FAILURE: return newState(state, true, [], 'Get post failed.', true)
+    case ACTION.UPDATE_POST_ITEM_SUCCESS: return newState(state, true, state.data, 'Post updated properly.')
     default: return state
   }
 }

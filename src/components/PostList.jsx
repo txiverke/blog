@@ -43,7 +43,7 @@ class PostList extends React.Component {
       return (
         <div className="app-content-grid"> 
           <ShowMsg message={message} error={error} next={true} />
-          <PostItem label="Create Post" handlePost={this.createPost} />
+          <PostItem label="Create Post" handlePost={obj => this.createPost(obj)} />
           <article className="app-grid">
             <h2 className="app-grid-header tit-section">Posts</h2>
             <div className="app-grid-body">
@@ -52,7 +52,7 @@ class PostList extends React.Component {
                   <h3 className="app-grid-list-item1">{item.title}</h3>
                   <Link to={`/admin/posts/${item._id}`} className="app-grid-list-item2 btn btn-icon icon-pen-angled"></Link>
                   <button 
-                    onClick={(e) => this.removePost(e, item._id)}
+                    onClick={e => this.removePost(e, item._id)}
                     className="app-grid-list-item3 btn btn-icon icon-trash-can"></button>
                 </div>
               )}

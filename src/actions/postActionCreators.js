@@ -30,6 +30,7 @@ export const loadPostData = () =>
 export const loadPostItemRequest = () => ({ type: ACTION.LOAD_POST_ITEM_REQUEST })
 export const loadPostItemSuccess = (payload: Object) => ({ type: ACTION.LOAD_POST_ITEM_SUCCESS, payload })
 export const loadPostItemFailure = () => ({ type: ACTION.LOAD_POST_ITEM_FAILURE })
+export const updatePostItemSucces = () => ({ type: ACTION.UPDATE_POST_ITEM_SUCCESS })
 
 export const loadPostItem = (id: string) => 
   async (dispatch: Function) => {
@@ -54,17 +55,19 @@ export const createPostDataFailure = () => ({ type: ACTION.CREATE_POST_DATA_FAIL
 
 export const createPostData = (obj: Object) => 
   async (dispatch: Function) => {
+    console.log('obj->',obj.file[0])
+
+    let body = new FormData()
+    body.append('file', obj.file, obj.file.name);
+    body.append('title', obj.title)
+    body.append('content', obj.content)
+    body.append('tags', obj.tags)
+    body.append('link', obj.link)
+    body.append('creator', JSON.stringify(obj.creator))
+    
     dispatch(createPostDataRequest())
-
+    
     try {
-      let body = new FormData()
-      body.append('file', obj.file, obj.file.name);
-      body.append('title', obj.title)
-      body.append('content', obj.content)
-      body.append('tags', obj.tags)
-      body.append('link', obj.link)
-      body.append('creator', JSON.stringify(obj.creator))
-
       setPromise.method = 'POST'
       setPromise.body = body
       setPromise.urls = URL
@@ -80,13 +83,15 @@ export const updatePostDataRequest = () => ({ type: ACTION.UPDATE_POST_DATA_REQU
 export const updatePostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.UPDATE_POST_DATA_SUCCESS, payload })
 export const updatePostDataFailure = () => ({ type: ACTION.UPDATE_POST_DATA_FAILURE})
 
-export const updatePostData = ( id: string, obj: Object,) => 
+export const updatePostData = (obj: Object, id: string) => 
   async (dispatch: Function) => {
     dispatch(updatePostDataRequest())
 
     try {
       let body = new FormData()
-      body.append('file', obj.file, obj.file.name);
+      if (obj.file) {
+        body.append('file', obj.file, obj.file.name)
+      }
       body.append('title', obj.title)
       body.append('content', obj.content)
       body.append('tags', obj.tags)
@@ -97,8 +102,8 @@ export const updatePostData = ( id: string, obj: Object,) =>
       setPromise.body = body
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
-      console
-      return dispatch(updatePostDataSuccess(data))
+      dispatch(updatePostDataSuccess(data))
+      return dispatch(updatePostItemSucces())
     } catch (err) {
       return dispatch(updatePostDataFailure())
     }

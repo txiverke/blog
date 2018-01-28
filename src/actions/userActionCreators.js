@@ -91,15 +91,16 @@ export const updateUserDataRequest = () => ({ type: ACTION.UPDATE_USER_DATA_REQU
 export const updateUserDataSuccess = (payload: Object) => ({ type: ACTION.UPDATE_USER_DATA_SUCCESS, payload })
 export const updateUserDataFailure = () => ({ type: ACTION.UPDATE_USER_DATA_FAILURE })
 
-export const updateUserData = (id: string, obj: Object) =>
+export const updateUserData = (obj: Object) =>
   async (dispatch: Function) => {
     dispatch(updateUserDataRequest())
 
     try {
       setPromise.method = 'PUT'
       setPromise.body = JSON.stringify(obj)
-      setPromise.urls = `${URL}/${id}`
-      const data = await setPromise.response()
+      setPromise.urls = `${URL}/${config.api.profileId}`
+      setPromise.types = 'application/json'
+      const data = await setPromise.response(true)
       return dispatch(updateUserDataSuccess(data))
     } catch (err) {
       return dispatch(updateUserDataFailure())

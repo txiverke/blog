@@ -26,9 +26,9 @@ class AdminEdit extends React.Component {
     dispatch(isAuthenticated())
   }
 
-  updatePost(id: string, obj: Object) {
+  updatePost(obj: Object, id: string) {
     const { dispatch } = this.props
-    dispatch(updatePostData(id, obj))
+    dispatch(updatePostData(obj, id))
   }
 
   render() {
@@ -47,7 +47,7 @@ class AdminEdit extends React.Component {
           <ShowMsg message={message} error={error} next={true} />
           <PostItem 
             label="Update post" 
-            handlePost={this.updatePost} 
+            handlePost={(obj, id) => this.updatePost(obj, id)} 
             data={data}
           />
         </section>
@@ -59,13 +59,12 @@ class AdminEdit extends React.Component {
         <Loader msg={message} />
       </div>
     )
-    
   }
 }
 
 const mapStateToProps = state => ({ 
   authenticate: state.authenticate,
-  post: state.post 
+  post: state.post, 
 })
 
 export default connect(mapStateToProps)(AdminEdit)

@@ -27,25 +27,33 @@ export const handleToken = {
 
 export const setPromise = {
   url: '',
+  type: '',
   options: { 
     method: null,
-    headers: new Headers({
-      'access_token': JSON.parse(localStorage.getItem(config.api.token))
-    }),
     body: null,
     mode: 'cors',
   },
-  // $FlowFixMe
   set method (val): string { this.options.method = val },
-  // $FlowFixMe
   set body (val): Object { this.options.body = val },
-  // $FlowFixMe
   set urls (val): string { this.url = val },
+  set types (val): string { this.type = val },
 
   async response() {
-    console.log(`${config.api.url}/${this.url}`, this.options)
-    const promise = await fetch(`${config.api.url}/${this.url}`, this.options)
+    let options = null
+    const headers = new Headers({ 'access_token': JSON.parse(localStorage.getItem(config.api.token))})
+
+    if (this.type) {
+      console.log(this.type)
+      headers.append('Content-Type', this.type)
+    } 
+
+    options = Object.assign({}, this.options, { headers })
+
+    console.log(`${config.api.url}/${this.url}`, options)
+
+    const promise = await fetch(`${config.api.url}/${this.url}`, options)
     const response = await promise.json()
+
     return response
   }
 }

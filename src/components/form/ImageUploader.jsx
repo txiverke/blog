@@ -32,7 +32,7 @@ class ImageUploader extends React.Component {
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl} height="200" alt="Preview..." />);
     } else {
-      $imagePreview = (<p className="txt-error">Please select an Image for Preview</p>);
+      $imagePreview = (<p className="txt">Please select an Image for Preview</p>);
     }
     
     return (

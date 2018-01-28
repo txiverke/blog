@@ -44,6 +44,7 @@ class PostItem extends React.Component {
     const link = event.target.elements.link.value.trim()
     const tags = event.target.elements.tags.value.trim()
     const creator = config.api.profileId
+    
     const obj = Object.assign(post, { title, content, link, tags, creator })
 
     this.setState = ({ post: obj })
@@ -81,8 +82,7 @@ class PostItem extends React.Component {
               if (showFormErrors()) {
                 let id = data ? data._id : ''
                 this.handleData(event)
-                console.log(post)
-                handlePost(id, post)
+                handlePost(post, id)
               }
           }}
         >
