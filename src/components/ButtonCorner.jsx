@@ -11,7 +11,7 @@ type Props = {
 const ButtonCorner = ({ label, styles }: Props) => 
   <Link
     to="/" 
-    className="btn btn-icon tr5 txt-tiny">
+    className="btn btn-icon btn-alpha tr5 txt-tiny">
     <span className={`mr5 ${styles}`}></span>
     {label}
   </Link>

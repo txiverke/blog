@@ -36,7 +36,7 @@ class AdminEdit extends React.Component {
 
     if (completed) {
       return (
-        <section className="app-view app-view-content">
+        <section className="app-view pb5">
           <Helmet 
             title="Admin page" 
             meta={[

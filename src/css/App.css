@@ -8,6 +8,7 @@
 @import './layout/Header.css';
 
 /** COMPONENT STYLES **/
+@import './component/Article.css';
 @import './component/Background.css';
 @import './component/Button.css';
 @import './component/Form.css';

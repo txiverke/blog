@@ -8,6 +8,10 @@ export const getSlug = (text: string) => {
 
 export const normalizeVal = (val: string) => Number(val) < 10 ? `0${val}` : val
 
+export const getItem = (text: string, separator?: string = '/') => {
+  return text.substr(text.lastIndexOf(separator) + 1)
+}
+
 export const handleToken = {
   TOKEN_KEY: config.api.token || '',
   get: function() {
@@ -31,26 +35,23 @@ export const setPromise = {
   options: { 
     method: null,
     body: null,
-    mode: 'cors',
+    mode: 'cors'
   },
+  // $FlowFixMe
   set method (val): string { this.options.method = val },
+  // $FlowFixMe
   set body (val): Object { this.options.body = val },
+  // $FlowFixMe
   set urls (val): string { this.url = val },
+  // $FlowFixMe
   set types (val): string { this.type = val },
 
   async response() {
-    let options = null
-    const headers = new Headers({ 'access_token': JSON.parse(localStorage.getItem(config.api.token))})
+    const headers = new Headers({ 'access_token': JSON.parse(localStorage.getItem(config.api.token)) })
 
-    if (this.type) {
-      console.log(this.type)
-      headers.append('Content-Type', this.type)
-    } 
+    if (this.type) headers.append('Content-Type', this.type)
 
-    options = Object.assign({}, this.options, { headers })
-
-    console.log(`${config.api.url}/${this.url}`, options)
-
+    const options = Object.assign({}, this.options, { headers })
     const promise = await fetch(`${config.api.url}/${this.url}`, options)
     const response = await promise.json()
 

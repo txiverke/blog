@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom'
 
 import EditUser from '../containers/EditUser'
 import PostList from '../containers/PostList'
+import { getItem } from '../utils/helpers'
 
 type Props = {
   authenticate: Auth,
@@ -15,7 +16,7 @@ type Props = {
 
 const AdminSections = ({ authenticate, location }: Props) => {
   const { data } = authenticate
-  const section = location.pathname.substr(location.pathname.lastIndexOf('/') + 1)
+  const section = getItem(location.pathname)
   let component = null
   
   switch(section) {
@@ -32,7 +33,7 @@ const AdminSections = ({ authenticate, location }: Props) => {
 
   if (data) {
     return (
-      <section className="app-view app-view-content">
+      <section className="app-view">
         <Helmet 
           title="Admin page" 
           meta={[

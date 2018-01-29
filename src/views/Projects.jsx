@@ -4,7 +4,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 const Projects = () =>
-  <div className="app-view">
+  <section className="app-view">
     <Helmet 
       title="Projects" 
       meta={[
@@ -13,6 +13,6 @@ const Projects = () =>
       ]}
     />
     <h1>Projects</h1>
-  </div>
+  </section>
 
 export default Projects

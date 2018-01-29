@@ -1,0 +1,21 @@
+.app-article{
+
+  padding-bottom: 2.5rem;
+}
+
+.app-article-img{
+  padding-bottom: 0.5rem !important;
+}
+
+.app-article-date {
+  font-family: Lighter;
+}
+.app-article-title{
+  font-family: Lighter;
+  font-size: var(--titleSize);
+  color: var(--selectColor);
+  text-decoration: none;
+  margin: 0;
+  padding: 0 0 0.5rem;
+  line-height: 2.25rem;
+}

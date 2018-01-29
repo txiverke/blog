@@ -1,3 +1,6 @@
+.mt0 { margin-top: 0; }
+.mb0 { margin-bottom: 0; }
+
 .mt5 { margin-top: 5px; }
 .ml5 { margin-left: 5px; }
 .mb5 { margin-bottom: 5px; }
@@ -7,6 +10,8 @@
 .ml10 { margin-left: 10px; }
 .mb10 { margin-bottom: 10px; }
 .mr10 { margin-right: 10px; }
+
+.pb5 { padding-bottom: 5rem;}
 
 .tr5 {
   position: fixed;

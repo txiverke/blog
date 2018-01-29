@@ -55,7 +55,7 @@ export const createPostDataFailure = () => ({ type: ACTION.CREATE_POST_DATA_FAIL
 
 export const createPostData = (obj: Object) => 
   async (dispatch: Function) => {
-    console.log('obj->',obj.file[0])
+    console.log('obj->',obj)
 
     let body = new FormData()
     body.append('file', obj.file, obj.file.name);

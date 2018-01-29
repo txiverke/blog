@@ -20,8 +20,8 @@
   background-image: none;
   border: 1px solid var(--selectColor);
   border-radius: 25px;
-  transition-property: color background;
-  transition-duration: 0.5s;
+  transition-property: color opacity background;
+  transition-duration: .3s;
   text-decoration: none;
 }
 
@@ -43,6 +43,14 @@
 .btn-show,
 .btn-hide{
   font-size: var(--maxSize);
+}
+
+.btn-alpha {
+  opacity: .5
+}
+
+.btn-alpha:hover {
+  opacity: 1
 }
 
 .btn-show {

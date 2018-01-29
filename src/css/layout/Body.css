@@ -11,20 +11,21 @@ body {
 .app-root {
   height: 100vh;
 }
-.app-view {
+.app-view,
+.app-view-content {
   position: relative;
   padding: 64px 1rem 0;
   display: flex;
   flex-direction: row;
-  min-height: 85vh;
+  min-height: 83vh;
+}
+
+.app-view-content {
+  flex-direction: column;
 }
 
 .app-view-centered {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.app-view-content {
-  padding-bottom: 5rem;
 }
