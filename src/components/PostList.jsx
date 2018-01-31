@@ -1,76 +1,44 @@
 // @flow
 
 import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-import { loadPostData } from '../actions/postActionCreators'
-import Loader from './Loader'
-import PostItem from './PostItem'
-import ShowMsg from './ShowMsg'
+import config from '../config'
 
-class PostList extends React.Component {
-  props: {
-    dispatch: Function,
-    posts: Data,
-    handleClickCreate: Function,
-    handleClickRemove: Function
-  }
-  removePost = this.removePost.bind(this)
-  createPost = this.createPost.bind(this)
-
-  componentDidMount() {
-    const { posts, dispatch } = this.props
-
-    if (posts.data.length === 0) {
-      dispatch(loadPostData())
-    }
-  }
-
-  createPost(obj: Object) {
-    this.props.handleClickCreate(obj)
-  }
-
-  removePost(event: SyntheticEvent, id: string) {
-    event.preventDefault()
-    this.props.handleClickRemove(id)
-  }
-
-  render() {
-    const { data, completed, message, error } = this.props.posts
-
-    if (completed) {
-      return (
-        <div className="app-content-grid"> 
-          <ShowMsg message={message} error={error} next={true} />
-          <PostItem label="Create Post" handlePost={obj => this.createPost(obj)} />
-          <article className="app-grid">
-            <h2 className="app-grid-header tit-section">Posts</h2>
-            <div className="app-grid-body">
-              {data.length > 0 && data.map(item => 
-                <div className="app-grid-list" key={item._id}>
-                  <h3 className="app-grid-list-item1">{item.title}</h3>
-                  <Link to={`/admin/posts/${item._id}`} className="app-grid-list-item2 btn btn-icon icon-pen-angled"></Link>
-                  <button 
-                    onClick={e => this.removePost(e, item._id)}
-                    className="app-grid-list-item3 btn btn-icon icon-trash-can"></button>
-                </div>
-              )}
-              {data.length === 0 && 
-                <div className="app-grid-list">
-                  <h3 className="app-grid-list-item1 txt">
-                    No posts created.
-                  </h3>
-                </div>
-              }
-            </div>
-          </article>
-        </div>
-      )
-    }
-
-    return <Loader msg={message} />
-  }
+type Props = {
+  data: Array<Object>
 }
 
-export default connect()(PostList)
+const PostList = (data: Props) => {
+  return (
+    <div className="mt325">
+      {data.data.map((item, index) => {
+        const d = new Date(item.created).toLocaleDateString()
+        const posClass = index%2 === 0 ? 'even' : 'odd'
+
+        return (
+          <article className={`app-article app-article-${posClass}`} key={item._id}>
+            <div to={item.link} className="app-article-content">
+              <figure className="app-article-img">
+                <img className="bg-item" src={`${config.api.public}/posts/${item.background}`} alt={item.title} />
+              </figure>
+              <h2 className="app-article-title">
+                <a href={item.link} target="_blank">{item.title}</a>
+              </h2>
+              <p className="app-article-txt txt mt0">{item.content}</p>
+              <p className="app-article-tags">
+                <span className="app-article-tag">
+                  <span>Topics : </span> 
+                  {item.tags}
+                </span>
+                <small className="app-article-date">{`Posted at ${String(d)}`}</small>
+              </p>
+            </div>
+            <div className="app-article-bg"></div>
+          </article>
+        )
+      })}
+    </div>
+  )
+}
+
+export default PostList

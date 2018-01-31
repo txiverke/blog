@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux'
 
-import PostList from '../components/PostList'
+import AdminPostList from '../components/AdminPostList'
 import { createPostData, removePostData } from '../actions/postActionCreators'
 
 const mapStateToProps = (state: Object) => ({
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch: Function) => ({
   handleClickRemove: (id: string) => dispatch(removePostData(id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList)
+export default connect(mapStateToProps, mapDispatchToProps)(AdminPostList)

@@ -11,7 +11,16 @@
 .mb10 { margin-bottom: 10px; }
 .mr10 { margin-right: 10px; }
 
+.mt325 { margin-top: 3.25rem; }
+.mt60 { margin-top: 60px;}
+
 .pb5 { padding-bottom: 5rem;}
+
+.tr1 {
+  position: fixed;
+  top: 0.85rem;
+  right: 4rem;
+}
 
 .tr5 {
   position: fixed;

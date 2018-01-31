@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import ShowMsg from '../components/ShowMsg'
 import Loader from '../components/Loader'
-import PostItem from '../components/PostItem'
+import AdminPostItem from '../components/AdminPostItem'
 import { loadPostItem, updatePostData } from '../actions/postActionCreators'
 import { isAuthenticated } from '../actions/userActionCreators'
 
@@ -45,7 +45,7 @@ class AdminEdit extends React.Component {
             ]}
           />  
           <ShowMsg message={message} error={error} next={true} />
-          <PostItem 
+          <AdminPostItem 
             label="Update post" 
             handlePost={(obj, id) => this.updatePost(obj, id)} 
             data={data}

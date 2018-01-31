@@ -16,7 +16,7 @@
   opacity: 0.4;
   border-bottom: 1px solid white;
   transition-property: opacity;
-  transition-duration: 0.5s;
+  transition-duration: 0.7s;
 }
 
 .app-header-bg-opaque {
@@ -55,7 +55,7 @@
 
 .app-header-nav-item{
   color: var(--textColor);
-  padding: 1.5rem 1.4rem;
+  padding: 1.3rem 1.4rem 1.5rem;
   text-decoration: none;
   font-size: var(--maxSize);
   transition: color;

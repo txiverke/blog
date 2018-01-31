@@ -5,34 +5,72 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import PostList from '../components/PostList'
 import Loader from '../components/Loader'
 import ShowMsg from '../components/ShowMsg'
 import ButtonCorner from '../components/ButtonCorner'
-import { loadPostData } from '../actions/postActionCreators'
+import Search from '../containers/Search'
+import { loadPostData, checkPostsTags } from '../actions/postActionCreators'
 import config from '../config'
-import { getSlug } from '../utils/helpers'
+import { getSlug, isEqual } from '../utils/helpers'
 
 class Posts extends React.Component {
+  state = {
+    tags: [],
+    posts: [],
+  }
 
   props: {
     dispatch: Function,
-    posts: Data
+    posts: Data,
+    tags: Tag,
   }
 
   componentDidMount() {
     const { dispatch, posts } = this.props
-    
+
     if (posts.data.length === 0) {
       dispatch(loadPostData())
     }
   }
+
+  componentWillReceiveProps(nextProps) {
+    const { tags, dispatch, posts  } = nextProps
+    if (!isEqual(tags.data, this.state.tags)) {
+      this.setState({ tags: [...tags.data] })
+      this.renderProperPosts(tags.data)
+    }
+  }
+
+  getTags(data) {
+    const listOfArr = data.map(item =>  item.tags.split(','))
+    return Array.from(new Set([].concat(...listOfArr).map(item => item.trim())))
+  }
   
+  renderProperPosts(tags) {
+    const { data } = this.props.posts
+    const postsTagged = []
+    
+    tags.filter(tag => {
+      return data.filter(item => {
+        if (item.tags.includes(tag)) {
+          postsTagged.push(item)
+        }
+      })
+    })
+      
+    this.setState({ posts: Array.from(new Set(postsTagged)) })
+  }
+
   render() {
     const { completed, data, message, error } = this.props.posts
+    const { posts } = this.state
 
     if (completed) {
+      const tags = this.getTags(data)
+
       return (
-        <section className="app-view-content">
+        <section className="app-article-wrapper">
           <Helmet 
             title="Posts" 
             meta={[
@@ -40,24 +78,10 @@ class Posts extends React.Component {
               { property: "og:title", content: "Posts about Frontend development" },
             ]}
           />
-          <ButtonCorner label="Back" />
           {error && <ShowMsg message={message} error={error} next={completed} />}
-          {data.map(item => {
-            const title = getSlug(String(`${item.title} ${item._id}`))
-            const d = new Date(item.created).toLocaleDateString()
-
-            return (
-              <article className="app-article mt10" key={item._id}>
-                <figure className="app-article-img bg-list-wrapper">
-                  <img className="bg-item" src={`${config.api.public}/posts/${item.background}`} alt={item.title} />
-                </figure>
-                <small className="app-article-date">{`Posted at ${String(d)}`}</small>
-                <h2 className="app-article-title tit-article">{item.title}</h2>
-                <p className="txt mt0">{item.content}</p>
-                <a className="btn" href={item.link} target="_blank">Read it in medium</a>
-              </article>
-            )
-          })}
+          <ButtonCorner label="Back" />
+          <Search tagsToRender={tags} />
+          <PostList data={posts} />
         </section>
       )
     }
@@ -70,6 +94,9 @@ class Posts extends React.Component {
   }
 } 
 
-const mapStateToProps = state => ({ posts: state.posts })
+const mapStateToProps = state => ({ 
+  posts: state.posts,
+  tags: state.tags 
+})
   
 export default connect(mapStateToProps)(Posts)

@@ -7,10 +7,6 @@ import { connect } from 'react-redux'
 import { getItem } from '../utils/helpers'
 import { loadPostItem, loadPostData } from '../actions/postActionCreators'
 
-type Props = {
-  match: Object
-}
-
 class PostView extends React.Component {
   state = {
     id: ''
@@ -40,7 +36,6 @@ class PostView extends React.Component {
 
   render () {
     const { data } = this.props.post
-    console.log(this.props.location)
     return (
       <section className="app-view-content">
           <Helmet 

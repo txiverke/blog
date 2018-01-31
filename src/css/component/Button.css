@@ -23,6 +23,7 @@
   transition-property: color opacity background;
   transition-duration: .3s;
   text-decoration: none;
+  z-index: 1000 !important;
 }
 
 .btn:hover {

@@ -28,6 +28,13 @@ export type Auth = {
   error: boolean
 }
 
+export type Tag = {
+  completed: boolean,
+  data: Array<string>,
+  message: string,
+  error: boolean
+}
+
 declare type ElementEventTemplate<E> = {
   target: E
 } & Event;
@@ -45,7 +52,8 @@ declare type ActionType =
 'LOG_OUT_USER_REQUEST' | 'LOG_OUT_USER_SUCCESS' | 'LOG_OUT_USER_FAILURE' |
 'LOAD_POST_DATA_REQUEST' | 'LOAD_POST_DATA_SUCCESS' | 'LOAD_POST_DATA_FAILURE' |
 'LOAD_POST_ITEM_REQUEST' | 'LOAD_POST_ITEM_SUCCESS' | 'LOAD_POST_ITEM_FAILURE' | 'UPDATE_POST_ITEM_SUCCESS' |
-'UPDATE_POST_DATA_REQUEST' | 'UPDATE_POST_DATA_SUCCESS' | 'UPDATE_POST_DATA_FAILURE';
+'UPDATE_POST_DATA_REQUEST' | 'UPDATE_POST_DATA_SUCCESS' | 'UPDATE_POST_DATA_FAILURE' |
+'CHECK_POSTS_TAGS_REQUEST' | 'CHECK_POSTS_TAGS_SUCCESS' | 'CHECK_POSTS_TAGS_FAILURE' ;
 
 declare type ActionT<A: ActionType, P> = {
   type: A,
@@ -83,4 +91,7 @@ export type Action =
   ActionT<'CREATE_POST_DATA_FAILURE', ''> |
   ActionT<'REMOVE_POST_DATA_REQUEST', ''> |
   ActionT<'REMOVE_POST_DATA_SUCCESS', Data> |
-  ActionT<'REMOVE_POST_DATA_FAILURE', ''>;
+  ActionT<'REMOVE_POST_DATA_FAILURE', ''> |
+  ActionT<'CHECK_POSTS_TAGS_REQUEST', ''> |
+  ActionT<'CHECK_POSTS_TAGS_SUCCESS', Tag> |
+  ActionT<'CHECK_POSTS_TAGS_FAILURE', ''>;

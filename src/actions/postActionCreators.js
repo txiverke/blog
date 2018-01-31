@@ -13,7 +13,6 @@ export const loadPostDataFailure = () => ({ type: ACTION.LOAD_POST_DATA_FAILURE 
 export const loadPostData = () => 
   async (dispatch: Function) => {
     dispatch(loadPostDataRequest())
-
     try {
       setPromise.method = 'GET'
       setPromise.body = null
@@ -55,7 +54,6 @@ export const createPostDataFailure = () => ({ type: ACTION.CREATE_POST_DATA_FAIL
 
 export const createPostData = (obj: Object) => 
   async (dispatch: Function) => {
-    console.log('obj->',obj)
 
     let body = new FormData()
     body.append('file', obj.file, obj.file.name);
@@ -111,7 +109,7 @@ export const updatePostData = (obj: Object, id: string) =>
 
 /** REMOVE POST */
 export const removePostDataRequest = () => ({ type: ACTION.REMOVE_POST_DATA_REQUEST })
-export const removePostDataSuccess = (payload: Array<Object>) => ({ type: ACTION.REMOVE_POST_DATA_SUCCESS, payload })
+export const removePostDataSuccess = (payload: Data) => ({ type: ACTION.REMOVE_POST_DATA_SUCCESS, payload })
 export const removePostDataFailure = () => ({ type: ACTION.REMOVE_POST_DATA_FAILURE})
 
 export const removePostData = (id: string) => 
@@ -128,3 +126,20 @@ export const removePostData = (id: string) =>
     return dispatch(removePostDataFailure())
   }
 }
+
+/** CHECK TAGS */
+
+export const checkPostsTagsRequest = () => ({ type: ACTION.CHECK_POSTS_TAGS_REQUEST })
+export const checkPostsTagsSuccess = (payload: Array<string>) => ({ type: ACTION.CHECK_POSTS_TAGS_SUCCESS, payload })
+export const checkPostsTagsFailure = () => ({ type: ACTION.CHECK_POSTS_TAGS_FAILURE })
+
+export const checkPostsTags = (arr: Array<string>) => 
+  (dispatch: Function) => {
+    dispatch(checkPostsTagsRequest())
+
+    if (Array.isArray(arr)) {
+      return dispatch(checkPostsTagsSuccess(arr))
+    } 
+
+    return dispatch(checkPostsTagsFailure())
+  }

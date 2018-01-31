@@ -8,7 +8,7 @@ import ImageUploader from './form/ImageUploader'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
 import config from '../config'
 
-class PostItem extends React.Component {
+class AdminPostItem extends React.Component {
   state = { 
     post: {},
     show: true 
@@ -44,8 +44,7 @@ class PostItem extends React.Component {
     const link = event.target.elements.link.value.trim()
     const tags = event.target.elements.tags.value.trim()
     const creator = config.api.profileId
-    
-    const obj = Object.assign(post, { title, content, link, tags, creator })
+    const obj = Object.assign(post, { title, content, link, tags: tags, creator })
 
     this.setState = ({ post: obj })
   }
@@ -147,4 +146,4 @@ class PostItem extends React.Component {
   }
 }
 
-export default PostItem
+export default AdminPostItem

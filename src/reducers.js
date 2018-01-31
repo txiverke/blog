@@ -2,6 +2,7 @@
 
 import { combineReducers } from 'redux'
 
+
 import * as ACTION from './actions/actionsType'
 
 const newState = (state, ...args) => 
@@ -116,10 +117,26 @@ const authenticate = (
   }
 }
 
+const tags = (
+  state: Tags = {
+    completed: false,
+    data: [],
+    message: '',
+    error: false
+  }, action: Action) => {
+  switch(action.type) {
+    case ACTION.CHECK_POSTS_TAGS_REQUEST: return newState(state, false, '', 'Checking tags.')
+    case ACTION.CHECK_POSTS_TAGS_SUCCESS: return newState(state, true, action.payload, 'Tags checked.')
+    case ACTION.CHECK_POSTS_TAGS_FAILURE: return newState(state, true, '', 'Check tags failed.', true)
+    default: return state
+  }
+}
+
 export default combineReducers({ 
   statistic, 
   user, 
   posts,
   post,
   authenticate, 
+  tags
 })

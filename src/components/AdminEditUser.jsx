@@ -11,7 +11,7 @@ import ShowMsg from './ShowMsg'
 import Textarea from './form/Textarea';
 import { loadUserData } from '../actions/userActionCreators'
 
-class EditUser extends React.Component {
+class AdminEditUser extends React.Component {
   props: {
     dispatch: Function,
     user: Item,
@@ -131,4 +131,4 @@ class EditUser extends React.Component {
 
 const mapStateToProps = state => ({ user: state.user })
 
-export default connect(mapStateToProps)(EditUser)
+export default connect(mapStateToProps)(AdminEditUser)

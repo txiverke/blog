@@ -58,3 +58,18 @@ export const setPromise = {
     return response
   }
 }
+
+export const isEqual = (arg1: Array<string>, arg2: Array<string>) => {
+  const a1 = arg1.sort()
+  const a2 = arg2.sort()
+
+  if (arg1.length === arg2.length) {
+    a1.forEach((item, i) => {
+      if (a1[i] !== a2[i]) return false 
+    })
+
+    return true
+  }
+
+  return false
+}

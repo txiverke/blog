@@ -13,6 +13,7 @@
 @import './component/Button.css';
 @import './component/Form.css';
 @import './component/Loader.css';
+@import './component/Search.css';
 
 /** PROPERTY STYLES **/
 @import './property/BoxModel.css';
