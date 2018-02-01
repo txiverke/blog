@@ -3,16 +3,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 import PostList from '../components/PostList'
 import Loader from '../components/Loader'
 import ShowMsg from '../components/ShowMsg'
 import ButtonCorner from '../components/ButtonCorner'
 import Search from '../containers/Search'
-import { loadPostData, checkPostsTags } from '../actions/postActionCreators'
-import config from '../config'
-import { getSlug, isEqual } from '../utils/helpers'
+import { loadPostData } from '../actions/postActionCreators'
+import { isEqual } from '../utils/helpers'
 
 class Posts extends React.Component {
   state = {
@@ -35,7 +33,8 @@ class Posts extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { tags, dispatch, posts  } = nextProps
+    const { tags } = nextProps
+
     if (!isEqual(tags.data, this.state.tags)) {
       this.setState({ tags: [...tags.data] })
       this.renderProperPosts(tags.data)
@@ -48,18 +47,21 @@ class Posts extends React.Component {
   }
   
   renderProperPosts(tags) {
-    const { data } = this.props.posts
+    const data = [...this.props.posts.data]
     const postsTagged = []
+    let added = []
     
-    tags.filter(tag => {
-      return data.filter(item => {
-        if (item.tags.includes(tag)) {
+    tags.forEach(tag => {
+      data.filter((item, i) => {
+        if (item.tags.includes(tag) && !added.includes(item._id)) {
           postsTagged.push(item)
+          added.push(item._id)
         }
+        return false
       })
     })
       
-    this.setState({ posts: Array.from(new Set(postsTagged)) })
+    this.setState({ posts: [...postsTagged] })
   }
 
   render() {
