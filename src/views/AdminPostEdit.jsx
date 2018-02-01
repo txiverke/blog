@@ -10,7 +10,7 @@ import AdminPostItem from '../components/AdminPostItem'
 import { loadPostItem, updatePostData } from '../actions/postActionCreators'
 import { isAuthenticated } from '../actions/userActionCreators'
 
-class AdminEdit extends React.Component {
+class AdminPostEdit extends React.Component {
   props: {
     dispatch: Function,
     post: Item,
@@ -45,6 +45,7 @@ class AdminEdit extends React.Component {
             ]}
           />  
           <ShowMsg message={message} error={error} next={true} />
+          {'this shiet'}
           <AdminPostItem 
             label="Update post" 
             handlePost={(obj, id) => this.updatePost(obj, id)} 
@@ -67,4 +68,4 @@ const mapStateToProps = state => ({
   post: state.post, 
 })
 
-export default connect(mapStateToProps)(AdminEdit)
+export default connect(mapStateToProps)(AdminPostEdit)

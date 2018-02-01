@@ -2,7 +2,6 @@
 
 import React from 'react'
 
-import ShowMsg from '../components/ShowMsg'
 import config from '../config'
 
 type Props = {
@@ -10,12 +9,10 @@ type Props = {
 }
 
 const PostList = (list: Props) => {
-  const message = "Select amongst the different tag buttons to handle the content."
-  const next = list.list.length === 0
+  const message = list.list.length === 0 ? <p className="txt txt-center">Press some tag button to see the content.</p> : ''
 
   return (
-    <div className="app-article-wrapper mt325">
-      <ShowMsg message={message} error={false} next={next} />
+    <div className="app-article-wrapper">
       {list.list.map((item, index) => {
         const d = new Date(item.created).toLocaleDateString()
         const posClass = index%2 === 0 ? 'even' : 'odd'
@@ -32,16 +29,18 @@ const PostList = (list: Props) => {
               <p className="app-article-txt txt mt0">{item.content}</p>
               <p className="app-article-tags">
                 <span className="app-article-tag">
-                  <span>Topics : </span> 
+                  <span>Tags : </span> 
                   {item.tags}
                 </span>
                 <small className="app-article-date">{`Posted at ${String(d)}`}</small>
               </p>
             </div>
             <div className="app-article-bg"></div>
+           
           </article>
         )
       })}
+       {message}
     </div>
   )
 }

@@ -13,7 +13,7 @@ export const getItem = (text: string, separator?: string = '/') => {
 }
 
 export const handleToken = {
-  TOKEN_KEY: config.api.token || '',
+  TOKEN_KEY: config.api.env || '',
   get: function() {
     if (localStorage.getItem(this.TOKEN_KEY) 
       && localStorage.getItem(this.TOKEN_KEY) !== 'undefined') {

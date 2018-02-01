@@ -3,7 +3,7 @@ dotenv.config()
 
 const config = {
   dev: 'development',
-  test: 'testing',
+  test: 'test',
   prod: 'production',
   env: process.env.NODE_ENV || ''
 }
@@ -11,6 +11,9 @@ const config = {
 let envConfig
 
 try {
+  if (config.env === 'test') {
+    config.env = 'testing'
+  }
   // eslint-disable-next-line
   envConfig = require(`./${config.env}`)
 } catch (e) {

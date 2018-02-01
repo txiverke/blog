@@ -50,7 +50,7 @@ class Posts extends React.Component {
     const data = [...this.props.posts.data]
     const postsTagged = []
     const added = []
-    
+
     tags.forEach(tag => {
       data.filter((item, i) => {
         if (item.tags.includes(tag) && !added.includes(item._id)) {
@@ -60,8 +60,10 @@ class Posts extends React.Component {
         return false
       })
     })
+
+    const postsSorted = postsTagged.sort((a, b) => a.created < b.created ? 1 : -1)
       
-    this.setState({ posts: [...postsTagged] })
+    this.setState({ posts: [...postsSorted] })
   }
 
   render() {
