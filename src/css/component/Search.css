@@ -1,7 +1,8 @@
 .app-search {
   position: fixed;
   top: 5rem;
-  left: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
   box-sizing: border-box;
   z-index: 3;
@@ -57,4 +58,32 @@
 
 .app-search-item-alpha {
   opacity: .2;
+}
+
+
+
+@media only screen 
+and (min-width: 650px) {
+  .app-search {
+    position: fixed;
+    top: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    box-sizing: border-box;
+    z-index: 100000;
+  }
+}
+
+@media only screen 
+  and (max-width: 649px) {
+    .app-search {
+      position: fixed;
+      top: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      box-sizing: border-box;
+      z-index: 3;
+    }
 }

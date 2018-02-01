@@ -49,7 +49,7 @@ class Posts extends React.Component {
   renderProperPosts(tags) {
     const data = [...this.props.posts.data]
     const postsTagged = []
-    let added = []
+    const added = []
     
     tags.forEach(tag => {
       data.filter((item, i) => {
@@ -72,7 +72,7 @@ class Posts extends React.Component {
       const tags = this.getTags(data)
 
       return (
-        <section className="app-article-wrapper">
+        <section className="">
           <Helmet 
             title="Posts" 
             meta={[
@@ -83,7 +83,7 @@ class Posts extends React.Component {
           {error && <ShowMsg message={message} error={error} next={completed} />}
           <ButtonCorner label="Back" />
           <Search tagsToRender={tags} />
-          <PostList data={posts} />
+          <PostList list={posts} />
         </section>
       )
     }
