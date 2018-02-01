@@ -9,6 +9,7 @@
 /layouts
 /src/components/__tests__/__snapshots__
 /src/views/__tests__/__snapshots__
+/src/actions/__tests__/__snapshots__
 
 # production
 /build
