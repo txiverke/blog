@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 import SignOut from '../containers/SignOut'
 import withWindowScroll from '../components/withWindowScroll'
+import { getSlug } from '../utils/helpers'
 
 type Props = {
   authenticate: Auth,
@@ -28,7 +29,7 @@ const Header = ({ authenticate, scroll }: Props) => {
       </h2>
       {data && 
         <div className="app-header-nav">
-          <Link to="/admin" className="app-header-nav-item icon-lock"></Link>
+          <Link to="/admin" className="app-header-nav-item icon-user"></Link>
           <SignOut />
         </div>
       }

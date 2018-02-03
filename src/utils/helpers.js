@@ -12,8 +12,43 @@ export const getItem = (text: string, separator?: string = '/') => {
   return text.substr(text.lastIndexOf(separator) + 1)
 }
 
+export const truncateText = (text: string, leng?: number = 10) => {
+    const lengTxt = text.split(' ')
+
+    if (lengTxt.length > leng) {
+      let result = ''
+      let space = ' '
+
+      lengTxt.forEach((item, i) => {
+        if (i === leng) space = '...'
+        if (i <= leng) {
+          result += `${item}${space}`
+        }
+      })
+
+      return result
+    }
+
+    return text
+}
+
+export const isEqual = (arg1: Array<string>, arg2: Array<string>) => {
+  const a1 = arg1.sort()
+  const a2 = arg2.sort()
+
+  if (arg1.length === arg2.length) {
+    a1.forEach((item, i) => {
+      if (a1[i] !== a2[i]) return false 
+    })
+
+    return true
+  }
+
+  return false
+}
+
 export const handleToken = {
-  TOKEN_KEY: config.api.env || '',
+  TOKEN_KEY: config.api.token || '',
   get: function() {
     if (localStorage.getItem(this.TOKEN_KEY) 
       && localStorage.getItem(this.TOKEN_KEY) !== 'undefined') {
@@ -59,17 +94,3 @@ export const setPromise = {
   }
 }
 
-export const isEqual = (arg1: Array<string>, arg2: Array<string>) => {
-  const a1 = arg1.sort()
-  const a2 = arg2.sort()
-
-  if (arg1.length === arg2.length) {
-    a1.forEach((item, i) => {
-      if (a1[i] !== a2[i]) return false 
-    })
-
-    return true
-  }
-
-  return false
-}

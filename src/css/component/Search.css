@@ -32,9 +32,13 @@
 
 .app-search-loupe {
   position: absolute;
-  top: 8px;
-  right: 1rem;
-  font-size: 1.5rem !important;
+  background: none;
+  border: none;
+  top: 6px;
+  right: 0.4rem;
+  cursor: pointer;
+  transform: rotate(0);
+  outline: none;
 }
 
 .app-search-item,

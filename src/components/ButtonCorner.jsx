@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 type Props = {
   label: string,
-  styles: string
+  styles?: string
 }
 
 const ButtonCorner = ({ label, styles }: Props) => 
@@ -17,7 +17,7 @@ const ButtonCorner = ({ label, styles }: Props) =>
   </Link>
 
 ButtonCorner.defaultProps = {
-  styles: 'icon-chevron-left'
+  styles: 'icon-cheveron-left'
 }
 
 export default ButtonCorner

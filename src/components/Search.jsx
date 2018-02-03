@@ -5,34 +5,59 @@ import React from 'react'
 import Tag from './Tag'
 import withWindowScroll from './withWindowScroll'
 
-type Props = {
-  item: Array<string>,
-  scroll: boolean,
-  handleClick: Function
-}
+class Search extends React.PureComponent {
+  state = {
+    reset: false
+  }
 
-const Search = ({ item, handleClick, scroll }: Props) => {
-  
-  const opacityClass = scroll ? '-opaque' : ''
+  props: {
+    tags: Array<string>,
+    handleTagClick: Function,
+    handleResetClick: Function,
+    scroll: boolean,
+  }
 
-  return (
-    <div className="app-search">
-      <button 
-        className={`app-search-bg${opacityClass}`} />
-      <div className="app-search-content">
-        <span className="app-search-loupe txt icon-search" />
-        {item.map(item => {
-          return (
-            <Tag 
-              handleClick={handleClick}
-              key={item} 
-              label={String(item)} 
-            /> 
-          )
-        })} 
+  handleResetClick = this.handleResetClick.bind(this)
+  handleTagClick = this.handleTagClick.bind(this)
+
+  handleTagClick(val: string) {
+    this.props.handleTagClick(val)
+    this.setState({ reset: false })
+  }
+
+  handleResetClick() {
+    this.props.handleResetClick()
+    this.setState({ reset: true })
+  }
+
+  render() {
+    const { scroll, tags } = this.props
+    const opacityClass = scroll ? '-opaque' : ''
+    const { reset } = this.state
+
+    return (
+      <div className="app-search">
+        <button 
+          className={`app-search-bg${opacityClass}`} />
+        <div className="app-search-content">
+          <button
+            onClick={this.handleResetClick}
+            className="app-search-loupe txt icon-spinner11" 
+          />
+          {tags.map(item => {
+            return (
+              <Tag 
+                handleClick={this.handleTagClick}
+                key={item} 
+                label={String(item)}
+                reset={reset} 
+              /> 
+            )
+          })} 
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 const SearchWithWindowScroll = withWindowScroll(Search)

@@ -19,7 +19,7 @@ const PostList = (list: Props) => {
 
         return (
           <article className={`app-article app-article-${posClass}`} key={item._id}>
-            <div to={item.link} className="app-article-content">
+            <div className="app-article-content">
               <figure className="app-article-img">
                 <img className="bg-item" src={`${config.api.public}/posts/${item.background}`} alt={item.title} />
               </figure>
@@ -34,9 +34,7 @@ const PostList = (list: Props) => {
                 </span>
                 <small className="app-article-date">{`Posted at ${String(d)}`}</small>
               </p>
-            </div>
-            <div className="app-article-bg"></div>
-           
+            </div>           
           </article>
         )
       })}

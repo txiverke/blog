@@ -7,6 +7,7 @@ import Search from '../components/Search'
 import { checkPostsTags } from '../actions/postActionCreators'
 
 class SearchContainer extends React.PureComponent {
+  
   props: {
     tagsToRender: Array<string>,
     dispatch: Function,
@@ -14,6 +15,7 @@ class SearchContainer extends React.PureComponent {
   }
 
   handleTagClick = this.handleTagClick.bind(this)
+  handleResetClick = this.handleResetClick.bind(this)
 
   componentDidMount() {
     const { tagsToRender, dispatch } = this.props
@@ -34,10 +36,20 @@ class SearchContainer extends React.PureComponent {
     dispatch(checkPostsTags(tags.data))
   }
 
+  handleResetClick () {
+    const { tagsToRender, dispatch } = this.props
+    dispatch(checkPostsTags(tagsToRender))
+  }
+
   render() {
     const { tagsToRender } = this.props
 
-    return <Search item={tagsToRender} handleClick={this.handleTagClick} />
+    return (
+      <Search 
+        tags={tagsToRender} 
+        handleTagClick={this.handleTagClick}
+        handleResetClick={this.handleResetClick} />
+    ) 
   }
 }
 

@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom'
 import { isAuthenticated } from '../actions/userActionCreators'
 import SignInForm from '../containers/SignInForm'
 
-class SignIn extends React.Component {
+class SignIn extends React.PureComponent {
   props: {
     authenticate: Auth,
     dispatch: Function,

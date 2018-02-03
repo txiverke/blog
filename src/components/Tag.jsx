@@ -4,15 +4,22 @@ import React from 'react'
 
 class Tag extends React.PureComponent {
   state = {
-    active: true
+    active: true,
   }
 
   props: {
     label: string,
-    handleClick: Function
+    handleClick: Function,
+    reset: boolean
   }
 
   handleClick = this.handleClick.bind(this)
+
+  componentWillReceiveProps(nextProps: Object) {
+    if (nextProps.reset) {
+      this.setState({ active: true })
+    }
+  }
 
   handleClick (e: InputEvent) {
     e.preventDefault()
