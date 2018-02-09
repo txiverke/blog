@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import Loader from '../components/Loader'
 import ShowMsg from '../components/ShowMsg'
-import ButtonCorner from '../components/ButtonCorner'
+import ButtonBack from '../components/ButtonBack'
 import { loadUserData } from '../actions/userActionCreators'
 import avatar from '../assets/imgs/about.jpg'
 import config from '../config'
@@ -22,6 +22,7 @@ class About extends React.Component {
   props: {
     user: Item,
     dispatch: Function,
+    location: Object
   }
 
   renderMsg = this.renderMsg.bind(this)
@@ -54,7 +55,7 @@ class About extends React.Component {
               { property: "og:title", content: `${data.firstname} ${data.lastname} - ${data.job}` }
             ]}
           />
-          <ButtonCorner label="Back" />
+          <ButtonBack />
           <ShowMsg message={txtMessage} next={next} error={error} />
           <article className="app-content-section">
             <figure className="app-content-avatar">
@@ -64,8 +65,8 @@ class About extends React.Component {
                 alt={`A pic of: ${data.firstname}`} 
             />
             </figure>
-            <h2 className="tit-section-view">{data.firstname} {data.lastname}</h2>
-            <h3 className="subtit-section-view">{data.job}</h3>
+            <h1 className="tit-section-view">{data.firstname} {data.lastname}</h1>
+            <h2 className="subtit-section-view">{data.job}</h2>
             <p className="txt txt-center">{data.bio}</p>
             <a
               href={pdf}

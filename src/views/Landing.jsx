@@ -19,7 +19,7 @@ const Landing = ({ location }: Props) => (
         { property: "og:title", content: "Landing page of xaviervila.tech" }
       ]}
     />
-    <Background title="Just a tes of bg" name="bg_1.png" location={location} />
+    <Background title="Landing page" />
     <Stats />
   </section>
 ) 

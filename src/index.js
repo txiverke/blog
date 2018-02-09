@@ -16,6 +16,6 @@ const wrapApp = (AppComponent, reduxStore) => (
       <AppComponent />
     </Provider>
   </BrowserRouter>
-);
+)
 
 ReactDOM.render(wrapApp(App, store), rootEl)

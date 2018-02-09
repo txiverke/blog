@@ -28,6 +28,11 @@ const Routes = () => (
         <RoutesAsync props={props} loadingPromise={import('./views/Posts')} />
       )} />
     <Route
+      path="/projects/:id"
+      component={props => (
+        <RoutesAsync props={props} loadingPromise={import('./views/ProjectView')} />
+      )} />
+    <Route
       path="/projects"
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/Projects')} />

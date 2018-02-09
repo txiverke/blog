@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import SignOut from '../containers/SignOut'
-import withWindowScroll from '../components/withWindowScroll'
-import { getSlug } from '../utils/helpers'
+import withWindow from '../components/withWindow'
 
 type Props = {
   authenticate: Auth,
@@ -14,25 +13,26 @@ type Props = {
 }
 
 const Header = ({ authenticate, scroll }: Props) => {
-
   const { data } = authenticate
-  let opacityClass = scroll ? '-opaque' : ''
+  const opacityClass = scroll ? '-opaque' : ''
 
   return (
     <header className="app-header">
       <div className={`app-header-bg${opacityClass}`}></div>
-      <h2 className="app-header-title">
+      <h1 className="app-header-title">
         <Link to="/">
           Xavier Vilà<br />
           <span>front-end developer</span>
         </Link>
-      </h2>
+      </h1>
+
       {data && 
         <div className="app-header-nav">
           <Link to="/admin" className="app-header-nav-item icon-user"></Link>
           <SignOut />
         </div>
       }
+
       {!data && 
         <div className="app-header-nav">
           <a 
@@ -48,6 +48,6 @@ const Header = ({ authenticate, scroll }: Props) => {
 
 const mapStateToProps = state => ({ authenticate: state.authenticate })
 
-const HeaderWithWindowScroll = withWindowScroll(Header)
+const HeaderWithWindowScroll = withWindow(Header)
 
 export default connect(mapStateToProps)(HeaderWithWindowScroll)

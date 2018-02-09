@@ -45,7 +45,6 @@ class AdminPostEdit extends React.Component {
             ]}
           />  
           <ShowMsg message={message} error={error} next={true} />
-          {'this shiet'}
           <AdminPostItem 
             label="Update post" 
             handlePost={(obj, id) => this.updatePost(obj, id)} 

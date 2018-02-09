@@ -3,7 +3,7 @@
 import React from 'react'
 
 import Tag from './Tag'
-import withWindowScroll from './withWindowScroll'
+import withWindow from './withWindow'
 
 class Search extends React.PureComponent {
   state = {
@@ -60,6 +60,6 @@ class Search extends React.PureComponent {
   }
 }
 
-const SearchWithWindowScroll = withWindowScroll(Search)
+const SearchWithWindowScroll = withWindow(Search)
 
 export default SearchWithWindowScroll

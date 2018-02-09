@@ -1,6 +1,6 @@
 import React from 'react'
 
-const withWindowScroll = (Component: React$Component<*,*,*>) => (
+const withWindow = (Component: React$Component<*,*,*>) => (
   class extends React.Component {
     state = {
       scroll: false
@@ -30,4 +30,4 @@ const withWindowScroll = (Component: React$Component<*,*,*>) => (
   }
 )
 
-export default withWindowScroll
+export default withWindow

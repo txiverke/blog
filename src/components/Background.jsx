@@ -3,31 +3,22 @@
 import React from 'react'
 
 import landingBg from '../assets/imgs/bg_1.png'
-import aboutBg from '../assets/imgs/bg_2.png'
 
 class Background extends React.Component {
   state = {
-    render: '',
-    img: null
+    render: ''
   }
+  
   props: {
-    name: string,
     title: string,
-    location: Object,
   }
+
   componentDidMount() {
     setTimeout(() => { 
       this.setState({ render: 'app-background-render' }) 
     })
   }
-  checkImgs() {
-    switch(this.props.location.pathname) {
-      case '/about-me':
-        return aboutBg
-      default:
-        return landingBg
-    }
-  }
+
   render() {
     const render = this.state.render
     
@@ -35,7 +26,7 @@ class Background extends React.Component {
       <figure className={`app-background ${render}`}>
         <img 
           className="app-background-img" 
-          src={this.checkImgs()} 
+          src={landingBg} 
           alt={`Background of ${this.props.title}`} 
         />
       </figure>

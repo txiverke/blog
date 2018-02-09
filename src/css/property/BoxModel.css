@@ -16,21 +16,18 @@
 
 .pb5 { padding-bottom: 5rem;}
 
-.tr1 {
-  position: fixed;
-  top: 0.85rem;
-  right: 4rem;
-}
-
-.tr5 {
+.tr {
   position: fixed;
   top: 5rem;
   right: 1rem;
 }
 
-.tr2 {
-  position: absolute;
-  top: 2rem;
-  right: 0;
+@media only screen 
+  and (max-width: 649px) {
+    .tr {
+      position: fixed;
+      top: 0.85rem;
+      right: 4rem;
+    }
 }
 

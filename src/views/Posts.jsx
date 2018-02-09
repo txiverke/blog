@@ -7,12 +7,12 @@ import { connect } from 'react-redux'
 import PostList from '../components/PostList'
 import Loader from '../components/Loader'
 import ShowMsg from '../components/ShowMsg'
-import ButtonCorner from '../components/ButtonCorner'
+import ButtonBack from '../components/ButtonBack'
 import Search from '../containers/Search'
 import { loadPostData } from '../actions/postActionCreators'
 import { isEqual } from '../utils/helpers'
 
-class Posts extends React.Component {
+class Posts extends React.PureComponent {
   state = {
     tags: [],
     posts: [],
@@ -82,9 +82,10 @@ class Posts extends React.Component {
               { property: "og:title", content: "Posts about Frontend development" },
             ]}
           />
+          <ButtonBack />
           {error && <ShowMsg message={message} error={error} next={completed} />}
-          <ButtonCorner label="Back" />
           <Search tagsToRender={tags} />
+          <h1 className="hidden">Posts</h1>
           <PostList list={posts} />
         </section>
       )

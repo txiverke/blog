@@ -14,7 +14,7 @@ const sections = [
   { name: 'Projects', url:'projects'}
 ]
 
-class Stats extends React.Component {
+class Stats extends React.PureComponent {
   props: {
     dispatch: Function,
     statistic: Statistic,

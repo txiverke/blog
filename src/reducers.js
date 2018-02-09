@@ -94,6 +94,23 @@ const post = (
   }
 }
 
+const projects = (
+  state: Data = {
+    completed: false,
+    data: [],
+    message: '',
+    error: false
+  },
+  action: Action
+) => {
+  switch(action.type) {
+    case ACTION.LOAD_PROJECT_DATA_REQUEST: return newState(state, false, [], 'Loading projects.')
+    case ACTION.LOAD_PROJECT_DATA_SUCCESS: return newState(state, true, action.payload, 'Projects loaded.')
+    case ACTION.LOAD_PROJECT_DATA_FAILURE: return newState(state, true, [], 'Get projects failed.', true)
+    default: return state
+  }
+}
+
 const authenticate = (
   state: Auth = { 
     completed: false,
@@ -118,7 +135,7 @@ const authenticate = (
 }
 
 const tags = (
-  state: Tags = {
+  state: Tag = {
     completed: false,
     data: [],
     message: '',
@@ -137,6 +154,7 @@ export default combineReducers({
   user, 
   posts,
   post,
+  projects,
   authenticate, 
   tags
 })

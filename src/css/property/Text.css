@@ -29,7 +29,7 @@
 }
 
 .txt-tiny {
-  font-size: var(--tinySize);
+  font-size: var(--tinySize) !important;
   font-family: Lighter;
   color: var(--selectColor);
   text-align: center;
