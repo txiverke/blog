@@ -1,13 +1,10 @@
 // @flow
 
 import React from 'react'
-import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom' 
 
 import Loader from '../components/Loader'
-import ShowMsg from '../components/ShowMsg'
-import ButtonBack from '../components/ButtonBack'
 import { loadProjectData } from '../actions/projectActionCreators'
 import { getSlug } from '../utils/helpers'
 
@@ -45,13 +42,11 @@ class Projects extends React.Component {
   }
 
   render() {
-    const { message, error } = this.props.projects
+    const { message } = this.props.projects
     const { slug } = this.state
 
     if (slug) {
-      return (
-        <Redirect to={`projects/${slug}`} />
-      )
+      return <Redirect to={`projects/${slug}`} />
     }
 
     return (
