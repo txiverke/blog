@@ -45,7 +45,7 @@ const Routes = () => (
     <Route 
       path="/admin/posts/:id"
       component={props => (
-        <RoutesAsync props={props} loadingPromise={import('./views/AdminPostEdit')} />
+        <RoutesAsync props={props} loadingPromise={import('./views/AdminPostView')} />
       )} />  
     <Route 
       path="/admin/posts"

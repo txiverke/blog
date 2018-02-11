@@ -26,3 +26,90 @@ const URL = 'projects'
     dispatch(loadProjectDataFailure())
   }
  }
+
+ /**
+  * CREATE A PROJECT
+  */
+
+  export const createProjectDataRequest = () => ({ type: ACTION.CREATE_PROJECT_DATA_REQUEST })
+  export const createProjectDataSuccess = (payload: Array<Object>) => ({ type: ACTION.CREATE_PROJECT_DATA_SUCCESS, payload })
+  export const createProjectDataFailure = () => ({ type: ACTION.CREATE_PROJECT_DATA_FAILURE })
+
+  export const createProjectData = (obj: Object) => 
+    async (dispatch: Function) => {
+      dispatch(createProjectDataRequest())
+
+      try {
+        const body = new FormData()
+        body.append('title', obj.title)
+        body.append('file', obj.file, obj.file.name)
+        body.append('subtitle', obj.subtitle)
+        body.append('summary', obj.summary)
+        body.append('content', obj.content)
+        body.append('link', obj.link)
+
+        setPromise.method = 'POST'
+        setPromise.body = body
+        setPromise.urls = URL
+
+        const data = await setPromise.response()
+        dispatch(createProjectDataSuccess(data))
+      } catch (err) {
+        dispatch(createProjectDataFailure())
+      }
+  }
+
+  /**
+   * UPDATE PROJECT
+   */
+
+  export const updateProjectDataRequest = () => ({ type: ACTION.UPDATE_PROJECT_DATA_REQUEST })
+  export const updateProjectDataSuccess = (payload: Array<Object>) => ({ type: ACTION.UPDATE_PROJECT_DATA_SUCCESS, payload })
+  export const updateProjectDataFailure = () => ({ type: ACTION.UPDATE_PROJECT_DATA_FAILURE })
+
+  export const updateProjectData = (obj: Object) => 
+    async (dispatch: Function) => {
+      dispatch(updateProjectDataRequest())
+
+      try {
+        const body = new FormData()
+        body.append('title', obj.title)
+        if (obj.file) body.append('file', obj.file, obj.file.name)
+        body.append('subtitle', obj.subtitle)
+        body.append('summary', obj.summary)
+        body.append('content', obj.content)
+        body.append('link', obj.link)
+
+        setPromise.method = 'PUT'
+        setPromise.body = body
+        setPromise.urls = URL
+
+        const data = await setPromise.response()
+        dispatch(updateProjectDataSuccess(data))
+      } catch (err) {
+        dispatch(updateProjectDataFailure())
+      }
+  }
+
+  /**
+   * REMOVE PROJECT
+   */
+  export const removeProjectDataRequest = () => ({ type: ACTION.REMOVE_PROJECT_DATA_REQUEST })
+  export const removeProjectDataSuccess = (payload: Array<Object>) => ({ type: ACTION.REMOVE_PROJECT_DATA_SUCCESS, payload })
+  export const removeProjectDataFailure = () => ({ type: ACTION.REMOVE_PROJECT_DATA_FAILURE })
+
+  export const removeProjectData = (id: string) => 
+    async (dispatch: Function) => {
+      dispatch(removeProjectDataRequest())
+
+      try {
+        setPromise.method = 'DELETE'
+        setPromise.body = null
+        setPromise.urls = `${URL}/${id}`
+
+        const data = await setPromise.response()
+        dispatch(removeProjectDataSuccess(data))
+      } catch (err) {
+        dispatch(removeProjectDataFailure())
+      }
+  }

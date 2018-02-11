@@ -5,8 +5,9 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import AdminEditUser from '../containers/AdminEditUser'
+import AdminUserItem from '../containers/AdminUserItem'
 import AdminPostList from '../containers/AdminPostList'
+import AdminProjectList from '../containers/AdminProjectList'
 import { getItem } from '../utils/helpers'
 
 type Props = {
@@ -21,13 +22,16 @@ const AdminSections = ({ authenticate, location }: Props) => {
   
   switch(section) {
     case 'about-me': 
-      component = <AdminEditUser />
+      component = <AdminUserItem />
       break
     case 'posts':
       component = <AdminPostList />
       break
+    case 'projects':
+      component = <AdminProjectList />
+      break
     default:
-      component = <AdminEditUser />
+      component = <AdminUserItem />
       break
   }
 

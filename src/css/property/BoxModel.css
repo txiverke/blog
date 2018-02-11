@@ -22,6 +22,12 @@
   right: 1rem;
 }
 
+.tr2 {
+  position: absolute;
+  top: 2.25rem;
+  right: 0;
+}
+
 @media only screen 
   and (max-width: 649px) {
     .tr {

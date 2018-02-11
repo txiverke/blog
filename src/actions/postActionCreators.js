@@ -54,21 +54,20 @@ export const createPostDataFailure = () => ({ type: ACTION.CREATE_POST_DATA_FAIL
 
 export const createPostData = (obj: Object) => 
   async (dispatch: Function) => {
-
-    let body = new FormData()
-    body.append('file', obj.file, obj.file.name);
-    body.append('title', obj.title)
-    body.append('content', obj.content)
-    body.append('tags', obj.tags)
-    body.append('link', obj.link)
-    body.append('creator', JSON.stringify(obj.creator))
-    
     dispatch(createPostDataRequest())
     
     try {
+      const body = new FormData()
+      body.append('file', obj.file, obj.file.name);
+      body.append('title', obj.title)
+      body.append('content', obj.content)
+      body.append('tags', obj.tags)
+      body.append('link', obj.link)
+
       setPromise.method = 'POST'
       setPromise.body = body
       setPromise.urls = URL
+
       const data = await setPromise.response()
       return dispatch(createPostDataSuccess(data))
     } catch (err) {
@@ -87,14 +86,11 @@ export const updatePostData = (obj: Object, id: string) =>
 
     try {
       let body = new FormData()
-      if (obj.file) {
-        body.append('file', obj.file, obj.file.name)
-      }
+      if (obj.file) body.append('file', obj.file, obj.file.name)
       body.append('title', obj.title)
       body.append('content', obj.content)
       body.append('tags', obj.tags)
       body.append('link', obj.link)
-      body.append('creator', JSON.stringify(obj.creator))
 
       setPromise.method = 'PUT'
       setPromise.body = body

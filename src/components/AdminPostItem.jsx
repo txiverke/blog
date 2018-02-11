@@ -37,14 +37,13 @@ class AdminPostItem extends React.Component {
     this.setState({ post: obj })    
   }
   
-  handleData (event: InputEvent, id: string) {
+  handleData (event: InputEvent) {
     const { post } = this.state
     const title = event.target.elements.title.value.trim()
     const content = event.target.elements.content.value.trim()
     const link = event.target.elements.link.value.trim()
     const tags = event.target.elements.tags.value.trim()
-    const creator = config.api.profileId
-    const obj = Object.assign(post, { title, content, link, tags: tags, creator })
+    const obj = Object.assign(post, { title, content, link, tags })
 
     this.setState = ({ post: obj })
   }

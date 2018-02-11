@@ -16,11 +16,11 @@
 }
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?dr7mbq');
-  src:  url('../fonts/icomoon.eot?dr7mbq#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?dr7mbq') format('truetype'),
-    url('../fonts/icomoon.woff?dr7mbq') format('woff'),
-    url('../fonts/icomoon.svg?dr7mbq#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?wp6ou1');
+  src:  url('../fonts/icomoon.eot?wp6ou1#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?wp6ou1') format('truetype'),
+    url('../fonts/icomoon.woff?wp6ou1') format('woff'),
+    url('../fonts/icomoon.svg?wp6ou1#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +48,9 @@
 }
 .icon-user:before {
   content: "\e903";
+}
+.icon-like:before {
+  content: "\e908";
 }
 .icon-mail-envelope-open:before {
   content: "\e900";

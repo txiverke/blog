@@ -107,6 +107,15 @@ const projects = (
     case ACTION.LOAD_PROJECT_DATA_REQUEST: return newState(state, false, [], 'Loading projects.')
     case ACTION.LOAD_PROJECT_DATA_SUCCESS: return newState(state, true, action.payload, 'Projects loaded.')
     case ACTION.LOAD_PROJECT_DATA_FAILURE: return newState(state, true, [], 'Get projects failed.', true)
+    case ACTION.CREATE_PROJECT_DATA_REQUEST: return newState(state, false, [], 'Creating a new project.')
+    case ACTION.CREATE_PROJECT_DATA_SUCCESS: return newState(state, true, action.payload, 'Project created')
+    case ACTION.CREATE_PROJECT_DATA_FAILURE: return newState(state, true, [], 'Create project failed.', true)
+    case ACTION.UPDATE_PROJECT_DATA_REQUEST: return newState(state, false, [], 'Updating a new project.')
+    case ACTION.UPDATE_PROJECT_DATA_SUCCESS: return newState(state, true, action.payload, 'Project updated')
+    case ACTION.UPDATE_PROJECT_DATA_FAILURE: return newState(state, true, [], 'Update project failed.', true)
+    case ACTION.REMOVE_PROJECT_DATA_REQUEST: return newState(state, false, [], 'Removing project.')
+    case ACTION.REMOVE_PROJECT_DATA_SUCCESS: return newState(state, true, action.payload, 'Project removed.')
+    case ACTION.REMOVE_PROJECT_DATA_FAILURE: return newState(state, true, [], 'Remove project failed.', true)
     default: return state
   }
 }

@@ -41,11 +41,6 @@
   background: none;
 }
 
-.btn-show,
-.btn-hide{
-  font-size: var(--maxSize);
-}
-
 .btn-alpha {
   opacity: .5
 }

@@ -11,15 +11,16 @@ import ShowMsg from './ShowMsg'
 import Textarea from './form/Textarea';
 import { loadUserData } from '../actions/userActionCreators'
 
-class AdminEditUser extends React.Component {
+class AdminUserItem extends React.PureComponent {
   props: {
     dispatch: Function,
     user: Item,
     handleClick: Function
   }
 
-  handleChange = this.handleChange.bind(this)
-  handleData = this.handleData.bind(this)
+  handleChange = AdminUserItem.handleChange.bind(this)
+  handleData = AdminUserItem.handleData.bind(this)
+  handleSubmit = this.handleSubmit.bind(this)
 
   componentDidMount() {
     const { user, dispatch } = this.props
@@ -29,12 +30,12 @@ class AdminEditUser extends React.Component {
     }
   }
 
-  handleChange(event) {
+  static handleChange(event) {
     event.target.classList.add('active')
     showInputError(event.target)
   }
   
-  handleData(event) {
+  static handleData(event) {
     const firstname = event.target.elements.firstname.value.trim()
     const lastname = event.target.elements.lastname.value.trim()
     const username = event.target.elements.username.value.trim()
@@ -44,10 +45,17 @@ class AdminEditUser extends React.Component {
     return { firstname, lastname, username, bio, job }
   }
 
+  handleSubmit(event) {
+    event.preventDefault()
+
+    if (showFormErrors()) {
+      this.props.handleClick(this.handleData(event))
+    }
+  }
+
   render() {
     const {completed, message, error, data} = this.props.user
-    const { handleClick } = this.props
-
+    
     if (completed) {
       return (
         <article className="app-grid"> 
@@ -56,13 +64,7 @@ class AdminEditUser extends React.Component {
           <form
             noValidate
             className="app-grid-body" 
-            onSubmit={
-              (event) => {
-                event.preventDefault()
-                if (showFormErrors()) {
-                  handleClick(this.handleData(event))
-                }
-            }}
+            onSubmit={this.handleSubmit}
           >
           <SingleInput
             wrapper="app-grid-item1"
@@ -126,9 +128,6 @@ class AdminEditUser extends React.Component {
   
     return <Loader msg={message} />
   }
-  
 }
 
-const mapStateToProps = state => ({ user: state.user })
-
-export default connect(mapStateToProps)(AdminEditUser)
+export default connect()(AdminUserItem)

@@ -56,7 +56,7 @@ class ShowMsg extends React.Component {
     const { error } = this.props
     const { hidden, message } = this.state
     const style = error ? '-error' : ''
-    const icon = error ? 'alert-triangle' : 'thumbs-up'
+    const icon = error ? 'alert-triangle' : 'like'
     const classHidden = hidden ? 'hidden' : ''
 
     if (!hidden && message) {
