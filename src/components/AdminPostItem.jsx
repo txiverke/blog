@@ -8,82 +8,76 @@ import ImageUploader from './form/ImageUploader'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
 import config from '../config'
 
-class AdminPostItem extends React.Component {
-  state = { 
-    post: {},
-    show: true 
+type Props = {
+  label: string,
+  handlePost: Function,
+  data?: Object
+}
+
+const AdminPostItem = ({label, handlePost, data}: Props) => {
+  
+  const post = {}
+  const hidden = data ? '' : 'hidden'
+
+  function showContent (event: InputEvent) {
+    const button = event.target.classList
+    const form = document.querySelector('.app-grid-body').classList
+
+    if (button.contains('btn-hide')) {
+      button.remove('btn-hide')
+      button.add('btn-show')
+      form.add('hidden')
+    } else {
+      button.remove('btn-show')
+      button.add('btn-hide')
+      form.remove('hidden')
+    }
   }
 
-  props: {
-    label: string,
-    handlePost: Function,
-    data?: Object
-  }
-
-  handleChange = this.handleChange.bind(this)
-  handleImageChange = this.handleImageChange.bind(this)
-  handleData = this.handleData.bind(this)
-  showContent = this.showContent.bind(this)
-
-  handleChange (event: InputEvent) {
+  function handleChange (event: InputEvent) {
     event.target.classList.add('active')
     showInputError(event.target)
   }
 
-  handleImageChange (file: File) {
-    const { post } = this.state
-    const obj = Object.assign(post, { file })
-
-    this.setState({ post: obj })    
-  }
-  
-  handleData (event: InputEvent) {
-    const { post } = this.state
+  function handleData (event: InputEvent) {
     const title = event.target.elements.title.value.trim()
     const content = event.target.elements.content.value.trim()
     const link = event.target.elements.link.value.trim()
     const tags = event.target.elements.tags.value.trim()
-    const obj = Object.assign(post, { title, content, link, tags })
 
-    this.setState = ({ post: obj })
+    return Object.assign(post, { title, content, link, tags })
   }
 
-  showContent (event: InputEvent) {
-    event.preventDefault()
-    this.setState({ show: !this.state.show })
-  }
+  function handleImageChange (file: File) {
+    if (file) document.querySelector('.app-preview').classList.add('hidden')
 
-  render() {
-    const { handlePost, label, data } = this.props
-    const { show, post } = this.state
-    const classHidden = show ? '' : 'hidden'
-    const classButton = show ? 'btn-hide' : 'btn-show'
-
-    return (
-      <article className="app-grid"> 
-        <header className="app-grid-header">
-          <h2 className="tit-section">{label}</h2>
-          {!data && 
-            <button 
-              onClick={this.showContent}
-              className={`btn btn-icon btn-clean icon-x-circle tr2 ${classButton}`}>
-            </button>
-          }
-        </header>
-        <form
-          noValidate
-          encType="multipart/form-data"
-          className={`app-grid-body ${classHidden}`} 
-          onSubmit={
-            (event) => {
-              event.preventDefault()
-              if (showFormErrors()) {
-                let id = data ? data._id : ''
-                this.handleData(event)
-                handlePost(post, id)
-              }
-          }}
-        >
+    return Object.assign(post, { file })
+  } 
+  
+  return (
+    <article className="app-grid"> 
+      <header className="app-grid-header">
+        <h2 className="tit-section">{label}</h2>
+        {!data && 
+          <button 
+            onClick={showContent}
+            className="btn btn-icon btn-clean icon-close btn-show tr2">
+          </button>
+        }
+      </header>
+      <form
+        noValidate
+        encType="multipart/form-data"
+        className={`app-grid-body ${hidden}`} 
+        onSubmit={
+          (event) => {
+            event.preventDefault()
+            if (showFormErrors()) {
+              let id = data ? data._id : ''
+              handlePost(handleData(event), id)
+            }
+        }}
+      >
         <SingleInput
           wrapper="app-grid-whole"
           name="title"
@@ -92,7 +86,7 @@ class AdminPostItem extends React.Component {
           placeholder="Title"
           content={data && data.title}
           pattern=".{6,}"
-          controlFunc={this.handleChange}
+          controlFunc={handleChange}
         />
         <SingleInput
           wrapper="app-grid-item1"
@@ -102,7 +96,7 @@ class AdminPostItem extends React.Component {
           placeholder="Link"
           content={data && data.link}
           pattern=".{6,}"
-          controlFunc={this.handleChange}
+          controlFunc={handleChange}
         />
         <SingleInput
           wrapper="app-grid-item2"
@@ -112,13 +106,14 @@ class AdminPostItem extends React.Component {
           placeholder="Tags"
           content={data && data.tags}
           pattern=".{2,}"
-          controlFunc={this.handleChange}
+          controlFunc={handleChange}
         />
         <ImageUploader 
-          handleImage={file => this.handleImageChange(file)}
+          handleImage={file => handleImageChange(file)}
         />
         {data && !post.file &&
           <img 
+            className="app-preview"
             src={`${config.api.public}/posts/${data.background}`} 
             height="200" 
             alt="Preview..." 
@@ -130,9 +125,8 @@ class AdminPostItem extends React.Component {
           title="Content"
           pattern=".{6,}"
           content={data && data.content}
-          controlFunc={this.handleChange}
+          controlFunc={handleChange}
         />
-
         <button 
           type="submit"
           className="app-grid-btn btn"
@@ -141,8 +135,7 @@ class AdminPostItem extends React.Component {
         </button>
       </form>
     </article>
-    )
-  }
+  )
 }
 
 export default AdminPostItem

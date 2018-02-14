@@ -6,11 +6,11 @@ import { connect } from 'react-redux'
 
 import ShowMsg from '../components/ShowMsg'
 import Loader from '../components/Loader'
-import AdminPostItem from '../components/AdminPostItem'
-import { loadPostItem, updatePostData } from '../actions/postActionCreators'
+import AdminProjectItem from '../components/AdminProjectItem'
+import { loadProjectItem, updateProjectData } from '../actions/projectActionCreators'
 import { isAuthenticated } from '../actions/userActionCreators'
 
-class AdminPostView extends React.Component {
+class AdminProjectView extends React.Component {
   state = {
     data: {}
   }
@@ -22,21 +22,21 @@ class AdminPostView extends React.Component {
     match: Object
   }
 
-  updatePost = this.updatePost.bind(this)
+  updateProject = this.updateProject.bind(this)
 
   componentDidMount() {
     const { dispatch, match } = this.props
-    dispatch(loadPostItem(match.params.id))
+    dispatch(loadProjectItem(match.params.id))
     dispatch(isAuthenticated())
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ data: nextProps.item.data })
+    this.setState({ data: nextProps.item.data})
   }
 
-  updatePost(obj: Object, id: string) {
+  updateProject(obj: Object, id: string) {
     const { dispatch } = this.props
-    dispatch(updatePostData(obj, id))
+    dispatch(updateProjectData(obj, id))
   }
 
   render() {
@@ -54,9 +54,9 @@ class AdminPostView extends React.Component {
             ]}
           />  
           <ShowMsg message={message} error={error} next={true} />
-          <AdminPostItem 
-            label="Update post" 
-            handlePost={(obj, id) => this.updatePost(obj, id)} 
+          <AdminProjectItem 
+            label="Update project" 
+            handleProject={(obj, id) => this.updateProject(obj, id)} 
             data={data}
           />
         </section>
@@ -76,4 +76,4 @@ const mapStateToProps = state => ({
   item: state.item, 
 })
 
-export default connect(mapStateToProps)(AdminPostView)
+export default connect(mapStateToProps)(AdminProjectView)

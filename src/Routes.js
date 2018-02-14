@@ -53,6 +53,11 @@ const Routes = () => (
         <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />
       )} />
     <Route 
+      path="/admin/projects/:id"
+      component={props => (
+        <RoutesAsync props={props} loadingPromise={import('./views/AdminProjectView')} />
+      )} /> 
+    <Route 
       path="/admin/projects"
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/AdminSections')} />

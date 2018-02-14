@@ -16,9 +16,10 @@ type Props = {
 
 const AdminProjectItem = ({ label, handleProject, data }: Props) => {
 
-  const post = {}
+  const project = {}
+  const hidden = data ? '' : 'hidden'
 
-  const showContent = (event:InputEvent) => {
+  function showContent (event:InputEvent) {
     const button = event.target.classList
     const form = document.querySelector('.app-grid-body').classList
 
@@ -33,25 +34,27 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
     }
   }
 
-  const handleData = (event: InputEvent) => {
+  function handleChange (event: InputEvent) {
+    event.target.classList.add('active')
+    showInputError(event.target)
+  }
+
+  function handleData (event: InputEvent) {
     const title = event.target.elements.title.value.trim()
     const subtitle = event.target.elements.subtitle.value.trim()
     const link = event.target.elements.link.value.trim()
     const summary = event.target.elements.summary.value.trim()
     const content = event.target.elements.content.value.trim()
 
-    return Object.assign(post, { title, subtitle, link, summary, content })
+    return Object.assign(project, { title, subtitle, link, summary, content })
   }
 
-  const handleImageChange = (file: File) => {
-    return Object.assign(post, { file })
-  } 
+  function handleImageChange (file: File) {
+    if (file) document.querySelector('.app-preview').classList.add('hidden')
 
-  const handleChange = (event: InputEvent) => {
-    event.target.classList.add('active')
-    showInputError(event.target)
+    return Object.assign(project, { file })
   }
-
+  
   return (
     <article className="app-grid"> 
       <header className="app-grid-header">
@@ -66,12 +69,13 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
       <form
         noValidate
         encType="multipart/form-data"
-        className="app-grid-body hidden"
+        className={`app-grid-body ${hidden}`}
         onSubmit={
           (event: InputEvent) => {
             event.preventDefault()
             if (showFormErrors()) {
-              handleProject(handleData(event)) 
+              let id = data ? data._id : ''
+              handleProject(handleData(event), id) 
             }
           }
         }
@@ -106,6 +110,17 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
           pattern=".{6,}"
           controlFunc={handleChange}
         />
+         <ImageUploader 
+          handleImage={file => handleImageChange(file)}
+        />
+        {data && !project.file &&
+          <img 
+            className="app-preview"
+            src={`${config.api.public}/projects/${data.background}`} 
+            height="200" 
+            alt="Preview..." 
+          />
+      }
         <Textarea
           wrapper="app-grid-whole"
           name="summary"
@@ -122,16 +137,6 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
           content={data && data.content}
           controlFunc={handleChange}
         />
-         <ImageUploader 
-          handleImage={file => handleImageChange(file)}
-        />
-        {data && !post.file &&
-          <img 
-            src={`${config.api.public}/projects/${data.background}`} 
-            height="200" 
-            alt="Preview..." 
-          />
-        }
         <button 
           type="submit"
           className="app-grid-btn btn"

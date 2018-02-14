@@ -27,6 +27,28 @@ const URL = 'projects'
   }
  }
 
+ /** LOAD PROJECT ITEM */
+export const loadProjectItemRequest = () => ({ type: ACTION.LOAD_PROJECT_ITEM_REQUEST })
+export const loadProjectItemSuccess = (payload: Object) => ({ type: ACTION.LOAD_PROJECT_ITEM_SUCCESS, payload })
+export const loadProjectItemFailure = () => ({ type: ACTION.LOAD_PROJECT_ITEM_FAILURE })
+export const updateProjectItemSucces = () => ({ type: ACTION.UPDATE_PROJECT_ITEM_SUCCESS })
+
+export const loadProjectItem = (id: string) => 
+  async (dispatch: Function) => {
+    dispatch(loadProjectItemRequest())
+
+    try {
+      setPromise.method = 'GET'
+      setPromise.body = null
+      setPromise.urls = `${URL}/${id}`
+      const data = await setPromise.response()
+      return dispatch(loadProjectItemSuccess(data))
+    } catch (err) {
+      return dispatch(loadProjectItemFailure())
+    }
+
+}
+
  /**
   * CREATE A PROJECT
   */
@@ -67,10 +89,10 @@ const URL = 'projects'
   export const updateProjectDataSuccess = (payload: Array<Object>) => ({ type: ACTION.UPDATE_PROJECT_DATA_SUCCESS, payload })
   export const updateProjectDataFailure = () => ({ type: ACTION.UPDATE_PROJECT_DATA_FAILURE })
 
-  export const updateProjectData = (obj: Object) => 
+  export const updateProjectData = (obj: Object, id: string) => 
     async (dispatch: Function) => {
       dispatch(updateProjectDataRequest())
-
+      console.log('obj', obj)
       try {
         const body = new FormData()
         body.append('title', obj.title)
@@ -82,7 +104,7 @@ const URL = 'projects'
 
         setPromise.method = 'PUT'
         setPromise.body = body
-        setPromise.urls = URL
+        setPromise.urls = `${URL}/${id}`
 
         const data = await setPromise.response()
         dispatch(updateProjectDataSuccess(data))
