@@ -47,6 +47,8 @@ export const isEqual = (arg1: Array<string>, arg2: Array<string>) => {
   return false
 }
 
+console.log(config)
+
 export const handleToken = {
   TOKEN_KEY: config.api.token || '',
   get: function() {
