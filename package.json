@@ -23,7 +23,6 @@
     "eject": "react-scripts eject",
     "flow": "flow"
   },
-  "proxy": "http://localhost:8888",
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

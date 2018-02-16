@@ -49,7 +49,9 @@ const AdminPostItem = ({label, handlePost, data}: Props) => {
   }
 
   function handleImageChange (file: File) {
-    if (file) document.querySelector('.app-preview').classList.add('hidden')
+    if (document.querySelector('.app-preview') && file) {
+      document.querySelector('.app-preview').classList.add('hidden')
+    }
 
     return Object.assign(post, { file })
   } 

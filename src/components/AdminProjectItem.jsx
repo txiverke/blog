@@ -50,7 +50,9 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
   }
 
   function handleImageChange (file: File) {
-    if (file) document.querySelector('.app-preview').classList.add('hidden')
+    if (document.querySelector('.app-preview') && file) {
+      document.querySelector('.app-preview').classList.add('hidden')
+    }
 
     return Object.assign(project, { file })
   }

@@ -9,6 +9,7 @@ import Loader from '../components/Loader'
 import ButtonBack from '../components/ButtonBack'
 import { loadProjectData } from '../actions/projectActionCreators'
 import { getItem, getSlug } from '../utils/helpers'
+import config from '../config'
 
 class ProjectView extends React.PureComponent {
   state = {
@@ -16,6 +17,7 @@ class ProjectView extends React.PureComponent {
     next: '',
     prev: '',
     notFound: false,
+    render: ''
   }
 
   props: {
@@ -32,7 +34,7 @@ class ProjectView extends React.PureComponent {
       dispatch(loadProjectData())
     } else {
       const id = getItem(this.props.match.params.id, '-')
-      this.getData(data, id)
+      this.getProject(data, id)
     }
   }
 
@@ -41,11 +43,11 @@ class ProjectView extends React.PureComponent {
 
     if (data && data.length) {
       const id = getItem(this.props.match.params.id, '-')
-      this.getData(data, id)
+      this.getProject(data, id)
     }
   }
 
-  getData(data: Array<Object>, id: string) {
+  getProject(data: Array<Object>, id: string) {
     const result = data.filter(item => item._id === id)
     const index = data.map(item => item._id).indexOf(id)
 
@@ -58,6 +60,9 @@ class ProjectView extends React.PureComponent {
         next: getSlug(String(`${data[next].title} ${data[next]._id}`)),
         prev: getSlug(String(`${data[prev].title} ${data[prev]._id}`)),
       })
+      setTimeout(() => { 
+        this.setState({ render: 'app-background-render' }) 
+      })
     } else {
       this.setState({ notFound: true})
     }
@@ -65,11 +70,11 @@ class ProjectView extends React.PureComponent {
 
   render() {
     const { message } = this.props.projects
-    const { data, next, prev, notFound } = this.state
+    const { data, next, prev, notFound, render } = this.state
 
-    if (data && !notFound) {
+    if (Object.keys(data).length && !notFound) {
       return (
-        <div className="app-view">
+        <section className="app-view-100">
           <Helmet 
             title={data.title} 
             meta={[
@@ -78,12 +83,31 @@ class ProjectView extends React.PureComponent {
             ]}
           />
           <ButtonBack />
-          {data.title}
-          <Link to={next}>Next</Link>
-          <Link to={prev}>Prev</Link>
-        </div>
+          <article className="app-article-full">
+            <figure className="app-article-figure">
+              <header className="app-article-figure-title ">
+                <h1 className="tit-section-background ">{data.title}</h1>
+                <h2 className="subtit-section-background">{data.subtitle}</h2>
+              </header>
+              <img className={`app-article-figure-img ${render}`} src={`${config.api.public}/projects/${data.background}`} alt={data.title} />
+            </figure>
+            <div className="app-article-content-txt">
+              <p>{data.summary}</p>
+              <p>{data.content}</p>
+              <a className="btn" href={`https://${data.link}`} target="_blank">Check the project</a>
+            </div>
+          </article>
+          <nav className="app-article-nav">
+            <Link className="btn-prev icon-cheveron-left" to={prev}>
+              <span className="hidden">Prev</span>
+            </Link>
+            <Link className="btn-next icon-cheveron-left" to={next}>
+              <span className="hidden">Next</span>
+            </Link>
+          </nav>
+        </section>
       )
-    } else if(data && notFound) {
+    } else if(Object.keys(data).length && notFound) {
       return <Redirect to="/projects" />
     }
 

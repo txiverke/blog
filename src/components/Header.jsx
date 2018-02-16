@@ -19,28 +19,28 @@ const Header = ({ authenticate, scroll }: Props) => {
   return (
     <header className="app-header">
       <div className={`app-header-bg${opacityClass}`}></div>
-      <h1 className="app-header-title">
+      <h2 className="app-header-title">
         <Link to="/">
           Xavier Vilà<br />
           <span>front-end developer</span>
         </Link>
-      </h1>
+      </h2>
 
       {data && 
-        <div className="app-header-nav">
+        <nav className="app-header-nav">
           <Link to="/admin" className="app-header-nav-item icon-user"></Link>
           <SignOut />
-        </div>
+        </nav>
       }
 
       {!data && 
-        <div className="app-header-nav">
+        <nav className="app-header-nav">
           <a 
             href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
             className="app-header-nav-item app-header-nav-mailto icon-mail-envelope-open"
             target="_top">
             </a>
-        </div>
+        </nav>
       }
     </header>
   )

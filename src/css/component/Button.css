@@ -78,3 +78,32 @@
   text-decoration: none;
 }
 
+.btn-next,
+.btn-prev {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  color: var(--selectColor);
+  border: 1px solid var(--selectColor);
+  border-radius: 25px;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 0.5;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+
+.btn-next {
+  position: absolute;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.btn-next:hover,
+.btn-prev:hover {
+  background: var(--selectColor);
+  color: var(--textColor);
+  opacity: 1;
+}
+

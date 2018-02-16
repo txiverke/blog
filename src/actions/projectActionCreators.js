@@ -92,7 +92,6 @@ export const loadProjectItem = (id: string) =>
   export const updateProjectData = (obj: Object, id: string) => 
     async (dispatch: Function) => {
       dispatch(updateProjectDataRequest())
-      console.log('obj', obj)
       try {
         const body = new FormData()
         body.append('title', obj.title)
