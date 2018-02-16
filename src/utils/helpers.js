@@ -2,8 +2,6 @@
 
 import config from '../config'
 
-console.log(config)
-
 export const getSlug = (text: string) => {
   return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
 }
