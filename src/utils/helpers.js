@@ -83,7 +83,7 @@ export const setPromise = {
 
   async response() {
     console.log(JSON.parse(localStorage.getItem(config.api.token)) )
-    const headers = new Headers({ 'access_token': JSON.parse(localStorage.getItem(config.api.token)) })
+    const headers = new Headers({ 'access-token': JSON.parse(localStorage.getItem(config.api.token)) })
 
     if (this.type) headers.append('Content-Type', this.type)
 
