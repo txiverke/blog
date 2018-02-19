@@ -21,6 +21,7 @@ const AdminPostItem = ({label, handlePost, data}: Props) => {
 
   function showContent (event: InputEvent) {
     const button = event.target.classList
+    // $FlowFixMe
     const form = document.querySelector('.app-grid-body').classList
 
     if (button.contains('btn-hide')) {
@@ -50,6 +51,7 @@ const AdminPostItem = ({label, handlePost, data}: Props) => {
 
   function handleImageChange (file: File) {
     if (document.querySelector('.app-preview') && file) {
+      // $FlowFixMe
       document.querySelector('.app-preview').classList.add('hidden')
     }
 

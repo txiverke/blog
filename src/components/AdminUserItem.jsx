@@ -26,12 +26,12 @@ class AdminUserItem extends React.PureComponent {
     }
   }
 
-  static handleChange = (event) => {
+  handleChange = (event) => {
     event.target.classList.add('active')
     showInputError(event.target)
   }
   
-  static handleData = (event) => {
+  handleData = (event) => {
     const firstname = event.target.elements.firstname.value.trim()
     const lastname = event.target.elements.lastname.value.trim()
     const username = event.target.elements.username.value.trim()
