@@ -16,8 +16,6 @@ class AdminPostList extends React.Component {
     handleClickCreate: Function,
   }
   
-  createPost = this.createPost.bind(this)
-
   componentDidMount() {
     const { posts, dispatch } = this.props
 
@@ -26,7 +24,7 @@ class AdminPostList extends React.Component {
     }
   }
 
-  createPost(obj: Object) {
+  createPost = (obj: Object) => {
     this.props.handleClickCreate(obj)
   }
 

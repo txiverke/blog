@@ -22,8 +22,6 @@ class AdminProjectView extends React.Component {
     match: Object
   }
 
-  updateProject = this.updateProject.bind(this)
-
   componentDidMount() {
     const { dispatch, match } = this.props
     dispatch(loadProjectItem(match.params.id))
@@ -34,7 +32,7 @@ class AdminProjectView extends React.Component {
     this.setState({ data: nextProps.item.data})
   }
 
-  updateProject(obj: Object, id: string) {
+  updateProject = (obj: Object, id: string) => {
     const { dispatch } = this.props
     dispatch(updateProjectData(obj, id))
   }

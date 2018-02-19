@@ -25,8 +25,6 @@ class About extends React.Component {
     location: Object
   }
 
-  renderMsg = this.renderMsg.bind(this)
-
   componentDidMount() {
     const { dispatch, user } = this.props
     
@@ -35,7 +33,7 @@ class About extends React.Component {
     }
   }
 
-  renderMsg() {
+  renderMsg = () => {
     this.setState({
       txtMessage: 'Thanks for downloading my Résumé.'
     })

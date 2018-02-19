@@ -13,15 +13,13 @@ class Tag extends React.PureComponent {
     reset: boolean
   }
 
-  handleClick = this.handleClick.bind(this)
-
   componentWillReceiveProps(nextProps: Object) {
     if (nextProps.reset) {
       this.setState({ active: true })
     }
   }
 
-  handleClick (e: InputEvent) {
+  handleClick  = (e: InputEvent) => {
     e.preventDefault()
     
     this.setState({ active: !this.state.active })

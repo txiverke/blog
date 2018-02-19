@@ -82,6 +82,7 @@ export const setPromise = {
   set types (val): string { this.type = val },
 
   async response() {
+    // $FlowFixMe
     const headers = new Headers({ 'access-token': JSON.parse(localStorage.getItem(config.api.token)) })
 
     if (this.type) headers.append('Content-Type', this.type)

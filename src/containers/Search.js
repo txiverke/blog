@@ -14,15 +14,12 @@ class SearchContainer extends React.PureComponent {
     tags: Tag
   }
 
-  handleTagClick = this.handleTagClick.bind(this)
-  handleResetClick = this.handleResetClick.bind(this)
-
   componentDidMount() {
     const { tagsToRender, dispatch } = this.props
     dispatch(checkPostsTags(tagsToRender))
   }
 
-  handleTagClick (val) {
+  handleTagClick = (val) => {
     const { tags, dispatch } = this.props
     const exist = tags.data.includes(val)
     
@@ -36,7 +33,7 @@ class SearchContainer extends React.PureComponent {
     dispatch(checkPostsTags(tags.data))
   }
 
-  handleResetClick () {
+  handleResetClick = () => {
     const { tagsToRender, dispatch } = this.props
     dispatch(checkPostsTags(tagsToRender))
   }

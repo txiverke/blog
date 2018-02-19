@@ -17,15 +17,12 @@ class Search extends React.PureComponent {
     scroll: boolean,
   }
 
-  handleResetClick = this.handleResetClick.bind(this)
-  handleTagClick = this.handleTagClick.bind(this)
-
-  handleTagClick(val: string) {
+  handleTagClick = (val: string) => {
     this.props.handleTagClick(val)
     this.setState({ reset: false })
   }
 
-  handleResetClick() {
+  handleResetClick = () => {
     this.props.handleResetClick()
     this.setState({ reset: true })
   }

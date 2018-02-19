@@ -8,9 +8,8 @@ class ImageUploader extends React.Component {
   state = {
     imagePreviewUrl: ''
   } 
-  handleImageChange = this.handleImageChange.bind(this)
 
-  handleImageChange(event: InputEvent) {
+  handleImageChange = (event: InputEvent) => {
     event.preventDefault();
     let reader = new FileReader();
     let file = event.target.files[0];

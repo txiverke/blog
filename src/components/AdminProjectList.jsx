@@ -11,8 +11,6 @@ import { loadProjectData } from '../actions/projectActionCreators'
 
 class AdminProjectList extends React.Component {
   
-  createPost = this.createPost.bind(this)
-
   props: {
     dispatch: Function,
     projects: Data,
@@ -27,7 +25,7 @@ class AdminProjectList extends React.Component {
     }
   }
 
-  createPost(obj: Object) {
+  createPost = (obj: Object) => {
     this.props.handleCreateProject(obj)
   }
 

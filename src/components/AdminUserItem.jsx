@@ -18,10 +18,6 @@ class AdminUserItem extends React.PureComponent {
     handleClick: Function
   }
 
-  handleChange = AdminUserItem.handleChange.bind(this)
-  handleData = AdminUserItem.handleData.bind(this)
-  handleSubmit = this.handleSubmit.bind(this)
-
   componentDidMount() {
     const { user, dispatch } = this.props
     
@@ -30,12 +26,12 @@ class AdminUserItem extends React.PureComponent {
     }
   }
 
-  static handleChange(event) {
+  static handleChange = (event) => {
     event.target.classList.add('active')
     showInputError(event.target)
   }
   
-  static handleData(event) {
+  static handleData = (event) => {
     const firstname = event.target.elements.firstname.value.trim()
     const lastname = event.target.elements.lastname.value.trim()
     const username = event.target.elements.username.value.trim()
@@ -45,7 +41,7 @@ class AdminUserItem extends React.PureComponent {
     return { firstname, lastname, username, bio, job }
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault()
 
     if (showFormErrors()) {

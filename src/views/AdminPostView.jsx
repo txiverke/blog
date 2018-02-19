@@ -22,8 +22,6 @@ class AdminPostView extends React.Component {
     match: Object
   }
 
-  updatePost = this.updatePost.bind(this)
-
   componentDidMount() {
     const { dispatch, match } = this.props
     dispatch(loadPostItem(match.params.id))
@@ -34,7 +32,7 @@ class AdminPostView extends React.Component {
     this.setState({ data: nextProps.item.data })
   }
 
-  updatePost(obj: Object, id: string) {
+  updatePost = (obj: Object, id: string) => {
     const { dispatch } = this.props
     dispatch(updatePostData(obj, id))
   }
