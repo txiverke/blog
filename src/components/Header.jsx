@@ -6,15 +6,25 @@ import { connect } from 'react-redux'
 
 import SignOut from '../containers/SignOut'
 import withWindow from '../components/withWindow'
+import { updateAppLanguage } from '../actions/languageActionCreators'
+import { getDictionary } from '../utils/dictionary'
 
 type Props = {
+  dispatch: Function,
   authenticate: Auth,
-  scroll: boolean
+  language: Object,
+  scroll: boolean,
 }
 
-const Header = ({ authenticate, scroll }: Props) => {
+const Header = ({ dispatch, authenticate, language, scroll }: Props) => {
   const { data } = authenticate
   const opacityClass = scroll ? '-opaque' : ''
+  const nextLang = language.current === 'eng' ? 'cat' : 'eng'
+  const DIC = getDictionary(language.current)
+
+  const handleClick = () => {
+    dispatch(updateAppLanguage(nextLang))
+  }
 
   return (
     <header className="app-header">
@@ -22,7 +32,7 @@ const Header = ({ authenticate, scroll }: Props) => {
       <h2 className="app-header-title">
         <Link to="/">
           Xavier Vilà<br />
-          <span>front-end developer</span>
+          <span>{DIC.FRONTEND}</span>
         </Link>
       </h2>
 
@@ -35,6 +45,15 @@ const Header = ({ authenticate, scroll }: Props) => {
 
       {!data && 
         <nav className="app-header-nav">
+          <div className="app-header-nav-item first-item">
+            <button
+              className="app-header-nav-lang"
+              onClick={handleClick}
+            >
+              <span className="icon icon-chat-3"></span>
+              <span className="txt">{nextLang.toUpperCase()}</span>
+            </button>
+          </div>
           <a 
             href="mailto:xavi.vila.albiol@gmail.com?subject=Hi Xavi"
             className="app-header-nav-item app-header-nav-mailto icon-mail-envelope-open"
@@ -46,7 +65,10 @@ const Header = ({ authenticate, scroll }: Props) => {
   )
 }
 
-const mapStateToProps = state => ({ authenticate: state.authenticate })
+const mapStateToProps = state => ({ 
+  authenticate: state.authenticate,
+  language: state.language 
+})
 
 const HeaderWithWindowScroll = withWindow(Header)
 

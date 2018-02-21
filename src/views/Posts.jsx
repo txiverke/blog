@@ -11,21 +11,26 @@ import ButtonBack from '../components/ButtonBack'
 import Search from '../containers/Search'
 import { loadPostData } from '../actions/postActionCreators'
 import { isEqual } from '../utils/helpers'
+import { getDictionary } from '../utils/dictionary'
 
 class Posts extends React.PureComponent {
   state = {
     tags: [],
     posts: [],
+    DIC: {}
   }
 
   props: {
     dispatch: Function,
     posts: Data,
     tags: Tag,
+    language: Object
   }
 
   componentDidMount() {
-    const { dispatch, posts } = this.props
+    const { dispatch, posts, language } = this.props
+
+    this.setState({ DIC: getDictionary(language.current)})
 
     if (posts.data.length === 0) {
       dispatch(loadPostData())
@@ -34,6 +39,12 @@ class Posts extends React.PureComponent {
 
   componentWillReceiveProps(nextProps) {
     const { tags } = nextProps
+    const old = this.props.language.current
+    const current = nextProps.language.current
+
+    if (old !== current) {
+      this.setState({ DIC: getDictionary(current)})
+    }
 
     if (!isEqual(tags.data, this.state.tags)) {
       this.setState({ tags: [...tags.data] })
@@ -68,7 +79,7 @@ class Posts extends React.PureComponent {
 
   render() {
     const { completed, data, message, error } = this.props.posts
-    const { posts } = this.state
+    const { posts, DIC } = this.state
 
     if (completed) {
       const tags = this.getTags(data)
@@ -76,16 +87,16 @@ class Posts extends React.PureComponent {
       return (
         <section className="">
           <Helmet 
-            title="Posts" 
+            title={DIC.POSTS} 
             meta={[
-              { name:"description", content: "Posts about Frontend development" },
-              { property: "og:title", content: "Posts about Frontend development" },
+              { name:"description", content: `${DIC.POSTS}` },
+              { property: "og:title", content: `${DIC.POSTS}` },
             ]}
           />
           <ButtonBack />
           {error && <ShowMsg message={message} error={error} next={completed} />}
           <Search tagsToRender={tags} />
-          <h1 className="hidden">Posts</h1>
+          <h1 className="hidden">{DIC.POSTS}</h1>
           <PostList list={posts} />
         </section>
       )
@@ -101,7 +112,8 @@ class Posts extends React.PureComponent {
 
 const mapStateToProps = state => ({ 
   posts: state.posts,
-  tags: state.tags 
+  tags: state.tags ,
+  language: state.language
 })
   
 export default connect(mapStateToProps)(Posts)

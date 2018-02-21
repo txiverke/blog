@@ -12,6 +12,19 @@ export const getItem = (text: string, separator?: string = '/') => {
   return text.substr(text.lastIndexOf(separator) + 1)
 }
 
+export const getLanguage = () => {
+  const langStored = localStorage.getItem('xavierVilaTechLang')
+  let nextLang = ''
+
+  if (langStored && langStored !== 'undefined') {
+    nextLang = langStored
+  } else {
+    nextLang = 'eng'
+  }
+
+  return nextLang
+}
+
 export const truncateText = (text: string, leng?: number = 10) => {
     const lengTxt = text.split(' ')
 

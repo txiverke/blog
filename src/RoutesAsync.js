@@ -15,8 +15,8 @@ class RoutesAsync extends React.Component {
   component = null
 
   async componentDidMount() {
-    const module = await this.props.loadingPromise
-    this.component = module.default
+    const { default: component } = await this.props.loadingPromise
+    this.component = component
     this.setState({ loaded: true })
   }
 

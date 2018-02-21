@@ -6,9 +6,11 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom' 
 
 import Stats from '../components/Stats'
+import { getDictionary } from '../utils/dictionary'
 
 const Admin = props => { 
   const { data } = props.authenticate
+  const DIC =  getDictionary(props.language.current)
 
   if (data) {
     return (
@@ -20,7 +22,7 @@ const Admin = props => {
             { property: "og:title", content: "Admin page" }
           ]}
         />
-        <Stats />
+        <Stats DIC={DIC}/>
       </section>
     )
   }
@@ -28,6 +30,9 @@ const Admin = props => {
   return <Redirect to="/sign-in" />
 } 
 
-const mapStateToProps = state =>({ authenticate: state.authenticate })
+const mapStateToProps = state =>({ 
+  authenticate: state.authenticate,
+  language: state.language 
+})
 
 export default connect(mapStateToProps)(Admin)

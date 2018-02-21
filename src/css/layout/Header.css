@@ -42,7 +42,7 @@
 
 .app-header-title span {
   font-size: var(--minSize);
-  font-family: Bold;
+  font-family: Regular;
   color: var(--selectColor);
 }
 
@@ -55,20 +55,79 @@
 }
 
 .app-header-nav-item{
+  position: relative;
+  background: transparent;
+  border: none;
   color: var(--textColor);
-  padding: 1.3rem 1.4rem 1.5rem;
+  padding: 1.3rem 1rem 1.5rem 1rem;
   text-decoration: none;
   font-size: var(--maxSize);
   transition: color;
   transition-duration: 0.5s;
+  outline: none;
+  overflow: hidden;
 }
 
-.app-header-nav-item:hover {
+.app-header-nav-item:hover,
+.app-header-nav-item:hover > span.txt {
+  outline: none;
+  cursor: pointer;
   color: var(--selectColor);
+}
+
+.app-header-nav-item.first-item{
+  padding: 0;
 }
 
 a.app-header-nav-item {
   font-size: 1.3rem;
+}
+
+.app-header-nav-lang {
+  position: relative;
+  background: transparent;
+  padding: 2rem 1.5rem;
+  border: none;
+  color: var(--textColor);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.app-header-nav-lang:hover > span.icon {
+  color: var(--selectColor);
+  top: 4rem;
+  opacity: 0;
+}
+
+.app-header-nav-lang:hover > span.txt {
+  color: var(--selectColor);
+  top: 1.2rem;
+  opacity: 1;
+}
+
+.app-header-nav-lang > span.icon {
+  position: absolute;
+  top: 1.3rem;
+  left:0.85rem;
+  font-size: 1.2rem;
+  color: var(--textColor);
+  opacity: 1;
+  transition-property: color top opacity;
+  transition-duration: .25s;
+}
+
+.app-header-nav-lang > span.txt{
+  position: absolute;
+  top: -2rem;
+  left: 0.8rem;
+  font-family: Lighter;
+  text-transform: uppercase;
+  font-size: var(--minSize);
+  color: var(--textColor);
+  opacity: 0;
+  transition-property: color top opacity;
+  transition-duration: .25s;
 }
 
 a.app-header-nav-mailto:hover:after {

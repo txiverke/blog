@@ -2,8 +2,8 @@
 
 import { combineReducers } from 'redux'
 
-
 import * as ACTION from './actions/actionsType'
+import { getLanguage } from './utils/helpers'
 
 const newState = (state, ...args) => 
   Object.assign({}, state, {
@@ -162,6 +162,14 @@ const tags = (
   }
 }
 
+
+const language = ( state: Object = { current: getLanguage() }, action: Action) => {
+  switch(action.type) {
+    case ACTION.UPDATE_APP_LANGUAGE: return Object.assign({}, state, { current: action.payload })
+    default: return state
+  }
+}
+
 export default combineReducers({ 
   statistic, 
   user, 
@@ -169,5 +177,6 @@ export default combineReducers({
   item,
   projects,
   authenticate, 
-  tags
+  tags,
+  language
 })

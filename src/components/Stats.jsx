@@ -8,17 +8,14 @@ import Loader from '../components/Loader'
 import { normalizeVal } from '../utils/helpers'
 import { loadStats } from '../actions/statsActionCreators'
 
-const sections = [
-  { name: 'About me', url: 'about-me' },
-  { name: 'Posts', url:'posts' },
-  { name: 'Projects', url:'projects'}
-]
+const sections = [{ url: 'about-me' }, { url: 'posts' }, { url: 'projects'}]
 
 class Stats extends React.PureComponent {
   props: {
     dispatch: Function,
     statistic: Statistic,
-    authenticate: Auth
+    authenticate: Auth,
+    DIC: Object
   }
 
   componentDidMount() {
@@ -42,16 +39,15 @@ class Stats extends React.PureComponent {
   }
 
   render() {
-    const { authenticate, statistic } = this.props
+    const { authenticate, statistic, DIC } = this.props
     const url = authenticate.data ? '/admin': ''
-    const label = authenticate.data ? 'EDIT' : ''
-    
+    const label = authenticate.data ? DIC.EDIT : ''
 
     if (statistic.completed) {
       return (
         <div className="app-content">
         {sections.map(item => {
-          const title = item.name.toUpperCase()
+          const title = DIC[item.url.toUpperCase()]
           return (
             <article key={item.url} className="app-content-landing">
               <h2>

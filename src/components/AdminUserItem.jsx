@@ -36,9 +36,11 @@ class AdminUserItem extends React.PureComponent {
     const lastname = event.target.elements.lastname.value.trim()
     const username = event.target.elements.username.value.trim()
     const bio = event.target.elements.bio.value.trim()
+    const bio_cat = event.target.elements.bio_cat.value.trim()
     const job = event.target.elements.job.value.trim()
+    const job_cat = event.target.elements.job_cat.value.trim()
   
-    return { firstname, lastname, username, bio, job }
+    return { firstname, lastname, username, bio, bio_cat, job, job_cat }
   }
 
   handleSubmit = (event) => {
@@ -102,11 +104,29 @@ class AdminUserItem extends React.PureComponent {
             pattern=".{2,}"
             controlFunc={this.handleChange}
           />
+          <SingleInput
+            wrapper="app-grid-item2"
+            name="job_cat"
+            inputType="text"
+            title="Job cat"
+            placeholder="Job cat"
+            content={data.job_cat}
+            pattern=".{2,}"
+            controlFunc={this.handleChange}
+          />
           <Textarea
             wrapper="app-grid-whole"
             name="bio"
             title="Bio"
             content={data.bio}
+            pattern=".{6,}"
+            controlFunc={this.handleChange}
+          />
+          <Textarea
+            wrapper="app-grid-whole"
+            name="bio_cat"
+            title="Bio cat"
+            content={data.bio_cat}
             pattern=".{6,}"
             controlFunc={this.handleChange}
           />
