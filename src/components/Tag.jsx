@@ -19,9 +19,7 @@ class Tag extends React.PureComponent {
     }
   }
 
-  handleClick  = (e: InputEvent) => {
-    e.preventDefault()
-    
+  handleClick  = (e: InputEvent) => {    
     this.setState({ active: !this.state.active })
     this.props.handleClick(e.target.dataset.value)
   }

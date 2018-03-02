@@ -71,6 +71,4 @@ const SignInForm = ({ authenticate, handleClick }: Props) => {
   )
 }
 
-  
-
 export default SignInForm

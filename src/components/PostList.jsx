@@ -5,15 +5,16 @@ import React from 'react'
 import config from '../config'
 
 type Props = {
-  list: Array<Object>
+  list: Array<Object>,
+  DIC: Object,
 }
 
-const PostList = (list: Props) => {
-  const message = list.list.length === 0 ? <p className="txt txt-center">Press some tag button to see the content.</p> : ''
+const PostList = ({ list, DIC }: Props) => {
+  const message = list.length === 0 ? <p className="txt txt-center">{DIC.NO_POSTS_MSG}</p> : ''
 
   return (
     <div className="app-article-wrapper">
-      {list.list.map((item, index) => {
+      {list.map((item, index) => {
         const d = new Date(item.created).toLocaleDateString()
         const posClass = index%2 === 0 ? 'even' : 'odd'
 
@@ -32,7 +33,7 @@ const PostList = (list: Props) => {
                   <span>Tags : </span> 
                   {item.tags}
                 </span>
-                <small className="app-article-date">{`Posted at ${String(d)}`}</small>
+                <small className="app-article-date">{`${DIC.POSTED_AT} ${String(d)}`}</small>
               </p>
             </div>           
           </article>

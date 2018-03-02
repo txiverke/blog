@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-class ShowMsg extends React.Component {
+class ShowMsg extends React.PureComponent {
   state = {
     message: '',
     hidden: true
@@ -38,8 +38,8 @@ class ShowMsg extends React.Component {
     this.reset()
   }
 
-  setValues(nextProps: Object) {
-    const { duration, message } = nextProps
+  setValues(props: Object) {
+    const { duration, message } = props
     
     this.reset()
     this.setState({ message, hidden: false })

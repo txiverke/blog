@@ -12,13 +12,13 @@ import './css/App.css'
 const App = () => {
   return (
     <main className="app-root">
-      <Helmet titleTemplate={`%s | Xavier Vilà - frontend developer`} defaultTitle="Xavi Vilà - frontend developer" >
+      <Helmet titleTemplate={`%s | Xavier Vilà - front-end developer`} defaultTitle="Xavi Vilà - front-end developer" >
         <link rel="canonical" href="http://xaviervila.tech" />
         <meta name="description" content="Personal page of Xavier Vilà" />
       </Helmet>
       <Header />
       <Routes />
-      <Footer />
+      <Footer year={new Date()} />
     </main>
   )
 }

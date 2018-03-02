@@ -24,6 +24,6 @@ describe('<ShowMsg />', () => {
   it('should render the right icon', () => {
     const component = shallow(<ShowMsg message='test' next={true} error={false} />)
     expect(component.find('.icon-alert-triangle').length).toEqual(0)
-    expect(component.find('.icon-thumbs-up').length).toEqual(1)
+    expect(component.find('.icon-like').length).toEqual(1)
   })
 })

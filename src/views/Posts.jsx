@@ -97,7 +97,7 @@ class Posts extends React.PureComponent {
           {error && <ShowMsg message={message} error={error} next={completed} />}
           <Search tagsToRender={tags} />
           <h1 className="hidden">{DIC.POSTS}</h1>
-          <PostList list={posts} />
+          <PostList list={posts} DIC={DIC} />
         </section>
       )
     }

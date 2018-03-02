@@ -3,7 +3,7 @@
 import React from 'react'
 
 type Props = {
-  wrapper: string,
+  wrapper?: string,
   title: string,
   name: string,
   rows?: Number,

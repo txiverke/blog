@@ -48,6 +48,7 @@ class Stats extends React.PureComponent {
         <div className="app-content">
         {sections.map(item => {
           const title = DIC[item.url.toUpperCase()]
+          
           return (
             <article key={item.url} className="app-content-landing">
               <h2>
