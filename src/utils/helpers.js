@@ -6,7 +6,7 @@ export const getSlug = (text: string) => {
   return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
 }
 
-export const normalizeVal = (val: string) => Number(val) < 10 ? `0${val}` : val
+export const normalizeVal = (val: string) => Number(val) < 10 ? `0${val}` : String(val)
 
 export const getItem = (text: string, separator?: string = '/') => {
   return text.substr(text.lastIndexOf(separator) + 1)
@@ -32,11 +32,12 @@ export const truncateText = (text: string, leng?: number = 10) => {
       let result = ''
       let space = ' '
 
-      lengTxt.forEach((item, i) => {
-        if (i === leng) space = '...'
-        if (i <= leng) {
+      lengTxt.some((item, i) => {
+        if (i < leng) {
+          if (i === leng - 1) space = '...'
           result += `${item}${space}`
         }
+        if (i === leng) return true
       })
 
       return result
@@ -65,8 +66,7 @@ export const handleToken = {
   get: function() {
     if (localStorage.getItem(this.TOKEN_KEY) 
       && localStorage.getItem(this.TOKEN_KEY) !== 'undefined') {
-      // $FlowFixMe
-      return JSON.parse(localStorage.getItem(this.TOKEN_KEY))
+      return localStorage.getItem(this.TOKEN_KEY)
     }
   },
   set: function(val: string) {
