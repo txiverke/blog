@@ -33,4 +33,5 @@ const NotFound = (props: Props) => {
 
 const mapStateToProps = state => ({ language: state.language })
 
+export const Unwrapped = NotFound
 export default connect(mapStateToProps)(NotFound)

@@ -26,4 +26,5 @@ describe('<ShowMsg />', () => {
     expect(component.find('.icon-alert-triangle').length).toEqual(0)
     expect(component.find('.icon-like').length).toEqual(1)
   })
+  
 })

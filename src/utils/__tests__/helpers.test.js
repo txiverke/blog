@@ -1,4 +1,5 @@
 import * as H from '../helpers'
+import { setPromise } from '../__mocks__/setPromise'
 
 describe('Helpers functions', () => {
   describe('getSlug', () => {
@@ -94,6 +95,24 @@ describe('Helpers functions', () => {
       H.handleToken.remove()
       result = H.handleToken.get()
       expect(result).toBeUndefined()
+    })
+  })
+
+  describe('setPromise', () => {
+    it('should return user name when method is GET', async () => {
+      setPromise.method = 'GET'
+      setPromise.body = null
+      setPromise.urls = 4
+      const data = await setPromise.response()
+      expect(data.name).toEqual('Mark')
+    })
+
+    it('should add a user when method is PUT', async () => {
+      setPromise.method = 'PUT'
+      setPromise.body = { name: 'test'}
+      setPromise.urls = null
+      const data = await setPromise.response()
+      expect(Object.keys(data).length).toEqual(3)
     })
   })
 })

@@ -37,7 +37,7 @@ class Posts extends React.PureComponent {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     const { tags } = nextProps
     const old = this.props.language.current
     const current = nextProps.language.current
@@ -52,12 +52,12 @@ class Posts extends React.PureComponent {
     }
   }
 
-  getTags(data) {
+  getTags(data: Array<Object>) {
     const listOfArr = data.map(item =>  item.tags.split(','))
     return Array.from(new Set([].concat(...listOfArr).map(item => item.trim())))
   }
   
-  renderProperPosts(tags) {
+  renderProperPosts(tags: Array<string>) {
     const data = [...this.props.posts.data]
     const postsTagged = []
     const added = []
@@ -115,5 +115,6 @@ const mapStateToProps = state => ({
   tags: state.tags ,
   language: state.language
 })
-  
+
+export const Unwrapped = Posts
 export default connect(mapStateToProps)(Posts)

@@ -14,7 +14,6 @@ type Props = {
 }
 
 const Landing = ({location, language}: Props)  => {
-
   const DIC = getDictionary(language.current)
 
   return (
@@ -34,4 +33,5 @@ const Landing = ({location, language}: Props)  => {
 
 const mapStateToProps = state => ({ language: state.language })
 
+export const Unwrapped = Landing
 export default connect(mapStateToProps)(Landing)
