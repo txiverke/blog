@@ -22,7 +22,7 @@ const App = () => {
         <meta name="description" content={DIC.DESCRIPTION}  />
       </Helmet>
       <Header />
-      {/*<Routes />*/}
+      <Routes />
       <Footer year={currentYear} />
     </main>
   )
