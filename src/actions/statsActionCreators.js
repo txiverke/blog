@@ -15,8 +15,11 @@ export const loadStats = () =>
     dispatch(loadStatsRequest())
 
     try {
+      // $FlowFixMe
       setPromise.method = 'GET'
+      // $FlowFixMe
       setPromise.body = null
+      // $FlowFixMe
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(loadStatsSuccess(data))

@@ -1,4 +1,3 @@
-import request from 'supertest-as-promised'
 import * as action from '../statsActionCreators'
 import * as type from '../actionsType'
 

@@ -3,9 +3,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
 import Loader from '../components/Loader'
-import ShowMsg from '../components/ShowMsg'
 import ButtonBack from '../components/ButtonBack'
 import { loadUserData } from '../actions/userActionCreators'
 import avatar from '../assets/imgs/about.jpg'
@@ -74,8 +74,8 @@ class About extends React.Component {
               { property: "og:title", content: `${data.firstname} ${data.lastname} - ${job}` }
             ]}
           />
+          <ReactMessages message={txtMessage} next={next} error={error} icon={'thumbs-up'} />
           <ButtonBack label={DIC.BACK} />
-          <ShowMsg message={txtMessage} next={next} error={error} />
           <article className="app-content-section">
             <figure className="app-content-avatar">
               <img 

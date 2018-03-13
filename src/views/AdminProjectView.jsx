@@ -3,8 +3,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
-import ShowMsg from '../components/ShowMsg'
 import Loader from '../components/Loader'
 import AdminProjectItem from '../components/AdminProjectItem'
 import { loadProjectItem, updateProjectData } from '../actions/projectActionCreators'
@@ -51,7 +51,7 @@ class AdminProjectView extends React.Component {
               { property: "og:title", content: "Admin page" }
             ]}
           />  
-          <ShowMsg message={message} error={error} next={true} />
+          <ReactMessages message={message} error={error} next={true} />
           <AdminProjectItem 
             label="Update project" 
             handleProject={(obj, id) => this.updateProject(obj, id)} 

@@ -3,10 +3,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
 import PostList from '../components/PostList'
 import Loader from '../components/Loader'
-import ShowMsg from '../components/ShowMsg'
 import ButtonBack from '../components/ButtonBack'
 import Search from '../containers/Search'
 import { loadPostData } from '../actions/postActionCreators'
@@ -94,7 +94,7 @@ class Posts extends React.PureComponent {
             ]}
           />
           <ButtonBack />
-          {error && <ShowMsg message={message} error={error} next={completed} />}
+          {error && <ReactMessages message={message} error={error} next={completed} />}
           <Search tagsToRender={tags} />
           <h1 className="hidden">{DIC.POSTS}</h1>
           <PostList list={posts} DIC={DIC} />

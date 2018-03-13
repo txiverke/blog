@@ -76,8 +76,11 @@ export const loadUserData = (id: string) =>
     dispatch(loadUserDataRequest())
 
     try {
+      // $FlowFixMe
       setPromise.method = 'GET'
+      // $FlowFixMe
       setPromise.body = null
+      // $FlowFixMe
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
       return dispatch(loadUserDataSuccess(data))
@@ -96,9 +99,13 @@ export const updateUserData = (obj: Object) =>
     dispatch(updateUserDataRequest())
 
     try {
+      // $FlowFixMe
       setPromise.method = 'PUT'
+      // $FlowFixMe
       setPromise.body = JSON.stringify(obj)
+      // $FlowFixMe
       setPromise.urls = `${URL}/${config.api.profileId}`
+      // $FlowFixMe
       setPromise.types = 'application/json'
       const data = await setPromise.response(true)
       return dispatch(updateUserDataSuccess(data))

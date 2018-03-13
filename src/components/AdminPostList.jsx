@@ -2,11 +2,11 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
 import AdminPostItem from './AdminPostItem'
 import AdminList from '../containers/AdminList'
 import Loader from './Loader'
-import ShowMsg from './ShowMsg'
 import { loadPostData } from '../actions/postActionCreators'
 
 class AdminPostList extends React.Component {
@@ -34,7 +34,7 @@ class AdminPostList extends React.Component {
     if (completed) {
       return (
         <div className="app-content-grid"> 
-          <ShowMsg message={message} error={error} next={true} />
+          <ReactMessages message={message} error={error} next={true} />
           <AdminPostItem label="Create Post" handlePost={obj => this.createPost(obj)} />
           <AdminList type="posts" data={data} />
         </div>

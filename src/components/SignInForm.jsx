@@ -1,10 +1,10 @@
 // @flow
 
 import React from 'react'
+import ReactMessages from 'react-messages'
 
 import SingleInput from './form/SingleInput'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
-import ShowMsg from './ShowMsg'
 
 const handleChange = event => {
   event.target.classList.add('active')
@@ -25,10 +25,11 @@ type Props = {
 
 const SignInForm = ({ authenticate, handleClick }: Props) => {
   const { message, completed, error } = authenticate
+  const errorIcon = error === true ? 'warning' : ''
 
   return (
     <article className="app-grid"> 
-      <ShowMsg message={message} error={error} next={completed} />
+      <ReactMessages message={message} error={error} next={completed} icon={errorIcon} duration={100000}/>
       <h2 className="app-grid-header tit-section">Sign In</h2>
       <form
           noValidate

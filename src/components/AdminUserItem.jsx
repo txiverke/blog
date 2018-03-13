@@ -2,12 +2,12 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
 import SingleInput from './form/SingleInput'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
 import config from '../config'
 import Loader from './Loader'
-import ShowMsg from './ShowMsg'
 import Textarea from './form/Textarea';
 import { loadUserData } from '../actions/userActionCreators'
 
@@ -57,7 +57,7 @@ class AdminUserItem extends React.PureComponent {
     if (completed) {
       return (
         <article className="app-grid"> 
-          <ShowMsg message={message} error={error} next={true} />
+          <ReactMessages message={message} error={error} next={true} />
           <h2 className="app-grid-header tit-section">Update User</h2>
           <form
             noValidate

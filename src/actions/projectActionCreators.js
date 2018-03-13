@@ -17,8 +17,11 @@ const URL = 'projects'
   dispatch(loadProjectDataRequest())
 
   try {
+    // $FlowFixMe
     setPromise.method = 'GET'
+    // $FlowFixMe
     setPromise.body = null
+    // $FlowFixMe
     setPromise.urls = URL
     const data = await setPromise.response()
     return dispatch(loadProjectDataSuccess(data))
@@ -38,8 +41,11 @@ export const loadProjectItem = (id: string) =>
     dispatch(loadProjectItemRequest())
 
     try {
+      // $FlowFixMe
       setPromise.method = 'GET'
+      // $FlowFixMe
       setPromise.body = null
+      // $FlowFixMe
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
       return dispatch(loadProjectItemSuccess(data))
@@ -70,8 +76,11 @@ export const loadProjectItem = (id: string) =>
         body.append('content', obj.content)
         body.append('link', obj.link)
 
+        // $FlowFixMe
         setPromise.method = 'POST'
+        // $FlowFixMe
         setPromise.body = body
+        // $FlowFixMe
         setPromise.urls = URL
 
         const data = await setPromise.response()
@@ -101,8 +110,11 @@ export const loadProjectItem = (id: string) =>
         body.append('content', obj.content)
         body.append('link', obj.link)
 
+        // $FlowFixMe
         setPromise.method = 'PUT'
+        // $FlowFixMe
         setPromise.body = body
+        // $FlowFixMe
         setPromise.urls = `${URL}/${id}`
 
         const data = await setPromise.response()
@@ -124,8 +136,11 @@ export const loadProjectItem = (id: string) =>
       dispatch(removeProjectDataRequest())
 
       try {
+        // $FlowFixMe
         setPromise.method = 'DELETE'
+        // $FlowFixMe
         setPromise.body = null
+        // $FlowFixMe
         setPromise.urls = `${URL}/${id}`
 
         const data = await setPromise.response()

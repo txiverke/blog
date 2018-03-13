@@ -14,8 +14,11 @@ export const loadPostData = () =>
   async (dispatch: Function) => {
     dispatch(loadPostDataRequest())
     try {
+      // $FlowFixMe
       setPromise.method = 'GET'
+      // $FlowFixMe
       setPromise.body = null
+      // $FlowFixMe      
       setPromise.urls = URL
       const data = await setPromise.response()
       return dispatch(loadPostDataSuccess(data))
@@ -36,8 +39,11 @@ export const loadPostItem = (id: string) =>
     dispatch(loadPostItemRequest())
 
     try {
+      // $FlowFixMe      
       setPromise.method = 'GET'
+      // $FlowFixMe      
       setPromise.body = null
+      // $FlowFixMe      
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
       return dispatch(loadPostItemSuccess(data))
@@ -64,8 +70,11 @@ export const createPostData = (obj: Object) =>
       body.append('tags', obj.tags)
       body.append('link', obj.link)
 
+      // $FlowFixMe      
       setPromise.method = 'POST'
+      // $FlowFixMe
       setPromise.body = body
+      // $FlowFixMe
       setPromise.urls = URL
 
       const data = await setPromise.response()
@@ -92,8 +101,11 @@ export const updatePostData = (obj: Object, id: string) =>
       body.append('tags', obj.tags)
       body.append('link', obj.link)
 
+      // $FlowFixMe
       setPromise.method = 'PUT'
+      // $FlowFixMe
       setPromise.body = body
+      // $FlowFixMe
       setPromise.urls = `${URL}/${id}`
       const data = await setPromise.response()
       dispatch(updatePostDataSuccess(data))
@@ -113,8 +125,11 @@ export const removePostData = (id: string) =>
   dispatch(removePostDataRequest())
 
   try {
+    // $FlowFixMe
     setPromise.method = 'DELETE'
+    // $FlowFixMe
     setPromise.body = null
+    // $FlowFixMe
     setPromise.urls = `${URL}/${id}`
     const data = await setPromise.response()
     return dispatch(removePostDataSuccess(data))

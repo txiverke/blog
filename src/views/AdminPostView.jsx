@@ -3,8 +3,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
-import ShowMsg from '../components/ShowMsg'
 import Loader from '../components/Loader'
 import AdminPostItem from '../components/AdminPostItem'
 import { loadPostItem, updatePostData } from '../actions/postActionCreators'
@@ -51,7 +51,7 @@ class AdminPostView extends React.Component {
               { property: "og:title", content: "Admin page" }
             ]}
           />  
-          <ShowMsg message={message} error={error} next={true} />
+          <ReactMessages message={message} error={error} next={true} />
           <AdminPostItem 
             label="Update post" 
             handlePost={(obj, id) => this.updatePost(obj, id)} 

@@ -38,6 +38,7 @@ export const truncateText = (text: string, leng?: number = 10) => {
           result += `${item}${space}`
         }
         if (i === leng) return true
+        return false
       })
 
       return result

@@ -1,4 +1,4 @@
-.txt {
+p, .txt {
   font-size: var(--textSize);
   font-family: Lighter;
   color: var(--textColor);

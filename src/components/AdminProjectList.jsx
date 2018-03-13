@@ -2,10 +2,10 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import ReactMessages from 'react-messages'
 
 import AdminList from '../containers/AdminList'
 import AdminProjectItem from '../components/AdminProjectItem'
-import ShowMsg from './ShowMsg'
 import Loader from './Loader'
 import { loadProjectData } from '../actions/projectActionCreators'
 
@@ -35,7 +35,7 @@ class AdminProjectList extends React.Component {
     if (completed) {
       return (
         <div className="app-content-grid"> 
-          <ShowMsg message={message} error={error} next={true} />
+          <ReactMessages message={message} error={error} next={true} />
           <AdminProjectItem label="Create Project" handleProject={this.createPost} />
           <AdminList type="projects" data={data} />
         </div>
