@@ -24,7 +24,7 @@ const PostList = ({ list, DIC }: Props) => {
               <figure className="app-article-img">
                 <a 
                   className="btn btn-icon app-article-icon"
-                  href={`https://twitter.com/intent/tweet?text=${item.title}&url=https://${item.link}&hashtags=${item.tags}`}
+                  href={`https://twitter.com/intent/tweet?text=${item.title}&url=${item.link}&hashtags=${item.tags}`}
                   >
                   <span className="icon-twitter"></span>
                 </a>
