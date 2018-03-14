@@ -22,6 +22,12 @@ const PostList = ({ list, DIC }: Props) => {
           <article className={`app-article app-article-${posClass}`} key={item._id}>
             <div className="app-article-content">
               <figure className="app-article-img">
+                <a 
+                  className="btn btn-icon app-article-icon"
+                  href={`https://twitter.com/intent/tweet?text=${item.title}&url=https://${item.link}&hashtags=${item.tags}`}
+                  >
+                  <span className="icon-twitter"></span>
+                </a>
                 <img className="bg-item" src={`${config.api.public}/posts/${item.background}`} alt={item.title} />
               </figure>
               <h2 className="app-article-title">

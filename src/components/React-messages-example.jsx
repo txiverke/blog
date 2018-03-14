@@ -1,7 +1,7 @@
+// @flow
+
 import React from 'react'
 import ReactMessages from 'react-messages'
-
-import SingleInput from './form/SingleInput'
 
 class ReactMessagesExample extends React.PureComponent {
   state = {

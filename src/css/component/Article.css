@@ -49,6 +49,17 @@
   overflow: hidden;
 }
 
+.app-article-icon {
+  color: var(--textColor);
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  transition-property: color;
+  transition-duration: .5s;
+  z-index: 9999;
+  text-decoration: none;
+}
+
 .app-article-title {
   margin: 0;
   padding: 0 1rem 0.25rem;
