@@ -79,7 +79,7 @@ class ProjectView extends React.PureComponent {
           <Helmet 
             title={data.title} 
             meta={[
-              { name:"description", content: data.title },
+              { name:"description", content: data.summary },
               { property: "og:title", content: data.title }
             ]}
           />
