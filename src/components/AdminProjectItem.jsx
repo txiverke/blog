@@ -44,10 +44,11 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
     const title = event.target.elements.title.value.trim()
     const subtitle = event.target.elements.subtitle.value.trim()
     const link = event.target.elements.link.value.trim()
+    const extra = event.target.elements.extra.value.trim()
     const summary = event.target.elements.summary.value.trim()
     const content = event.target.elements.content.value.trim()
 
-    return Object.assign(project, { title, subtitle, link, summary, content })
+    return Object.assign(project, { title, subtitle, link, extra, summary, content })
   }
 
   function handleImageChange (file: File) {
@@ -92,7 +93,7 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
           placeholder="Title"
           content={data && data.title}
           pattern=".{6,}"
-          controlFunc={(e: InputEvent) => handleChange(e)}
+          controlFunc={handleChange}
         />
         <SingleInput 
           wrapper="app-grid-item1"
@@ -113,6 +114,15 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
           content={data && data.link}
           pattern=".{6,}"
           controlFunc={handleChange}
+        />
+        <SingleInput 
+          wrapper="app-grid-whole"
+          name="extra"
+          inputType="text"
+          title="Add extra content"
+          placeholder="Add extra content"
+          content={data && data.extra}
+          required={false}
         />
          <ImageUploader 
           handleImage={file => handleImageChange(file)}

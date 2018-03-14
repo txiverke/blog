@@ -29,7 +29,7 @@ const SignInForm = ({ authenticate, handleClick }: Props) => {
 
   return (
     <article className="app-grid"> 
-      <ReactMessages message={message} error={error} next={completed} icon={errorIcon} duration={100000}/>
+      <ReactMessages message={message} error={error} next={completed} icon={errorIcon}  />
       <h2 className="app-grid-header tit-section">Sign In</h2>
       <form
           noValidate

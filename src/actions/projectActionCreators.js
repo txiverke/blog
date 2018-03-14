@@ -75,6 +75,7 @@ export const loadProjectItem = (id: string) =>
         body.append('summary', obj.summary)
         body.append('content', obj.content)
         body.append('link', obj.link)
+        body.append('extra', obj.extra)
 
         // $FlowFixMe
         setPromise.method = 'POST'
@@ -109,6 +110,7 @@ export const loadProjectItem = (id: string) =>
         body.append('summary', obj.summary)
         body.append('content', obj.content)
         body.append('link', obj.link)
+        body.append('extra', obj.extra)
 
         // $FlowFixMe
         setPromise.method = 'PUT'

@@ -10,6 +10,7 @@ import ButtonBack from '../components/ButtonBack'
 import { loadProjectData } from '../actions/projectActionCreators'
 import { getItem, getSlug } from '../utils/helpers'
 import config from '../config'
+import RoutesAsync from '../RoutesAsync'
 
 class ProjectView extends React.PureComponent {
   state = {
@@ -85,26 +86,26 @@ class ProjectView extends React.PureComponent {
           <ButtonBack />
           <article className="app-article-full">
             <figure className="app-article-figure">
-              <header className="app-article-figure-title ">
-                <h1 className="tit-section-background ">{data.title}</h1>
-                <h2 className="subtit-section-background">{data.subtitle}</h2>
-              </header>
               <img className={`app-article-figure-img ${render}`} src={`${config.api.public}/projects/${data.background}`} alt={data.title} />
             </figure>
             <div className="app-article-content-txt">
+              <h1 className="app-article-full-title">{data.title}</h1>
+              <h2 className="app-article-full-subtitle">{data.subtitle}</h2>
+              <nav className="app-article-nav">
+                <Link className="btn-prev icon-cheveron-left" to={prev}>
+                  <span className="hidden">Prev</span>
+                </Link>
+                <Link className="btn-next icon-cheveron-left" to={next}>
+                  <span className="hidden">Next</span>
+                </Link>
+              </nav>
               <p>{data.summary}</p>
               <p>{data.content}</p>
+              {/*$FlowFixMe */}
+              {data.extra && <RoutesAsync loadingPromise={import(`../components/${data.extra}`)} />}
               <a className="btn" href={`https://${data.link}`} target="_blank">Check the project</a>
             </div>
           </article>
-          <nav className="app-article-nav">
-            <Link className="btn-prev icon-cheveron-left" to={prev}>
-              <span className="hidden">Prev</span>
-            </Link>
-            <Link className="btn-next icon-cheveron-left" to={next}>
-              <span className="hidden">Next</span>
-            </Link>
-          </nav>
         </section>
       )
     } else if(Object.keys(data).length && notFound) {

@@ -11,7 +11,6 @@ describe('<ImageUploader />', () => {
 
   it('should handle events', () => {
     const component = shallow(<ImageUploader />)
-    const mockedEvent = { target: { files: ['test-image.png'] } }
     expect(component.find('SingleInput').length).toEqual(1)
   })
 })
