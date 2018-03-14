@@ -44,7 +44,10 @@
   padding: 1rem;
   width: 100%;
   height: 2rem;
+  min-height: 2rem;
   font-size: var(--minSize);
+  background: white;
+  color: var(--bgColor);
 }
 
 .app-range {
