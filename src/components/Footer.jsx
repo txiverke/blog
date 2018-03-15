@@ -9,11 +9,9 @@ const socialMedia = [
   { name: 'Instagram', url: 'https://www.instagram.com/txiverke/' },
 ]
 
-type Props = {
-  year: Date
-}
+const year = new Date()
 
-const Footer = ({ year }: Props) => (
+const Footer = () => (
   <footer className="app-footer">
     <ul className="app-footer-list">
     {socialMedia.map(item => 

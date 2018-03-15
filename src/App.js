@@ -11,7 +11,6 @@ import { getDictionary } from './utils/dictionary'
 
 import './css/App.css'
 
-const currentYear = new Date()
 const DIC = getDictionary(getLanguage())
 
 const App = () => {
@@ -23,7 +22,7 @@ const App = () => {
       </Helmet>
       <Header />
       <Routes />
-      <Footer year={currentYear} />
+      <Footer />
     </main>
   )
 }

@@ -13,12 +13,12 @@ class ReactMessagesExample extends React.PureComponent {
     error: false
   }
 
-  handleSelect = (e) => {
+  handleSelect = (e: InputEvent) => {
     const icon = e.target.value
     this.setState({ icon, next: false })
   }
 
-  handleDuration = (e) => {
+  handleDuration = (e: InputEvent) => {
     const duration = Number(e.target.value) 
     this.setState({ duration, next: false })
   }
@@ -28,7 +28,7 @@ class ReactMessagesExample extends React.PureComponent {
     this.setState({ error: !error, next: false })
   }
 
-  handleChange = (e) => {
+  handleChange = (e: InputEvent) => {
     const newMessage = e.target.value
 
     this.setState({ newMessage, next: false })
