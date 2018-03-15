@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`statsActionCreators should return LOAD_STATS_FAILURE action 1`] = `
+Object {
+  "type": "LOAD_STATS_FAILURE",
+}
+`;
+
+exports[`statsActionCreators should return LOAD_STATS_REQUEST action 1`] = `
+Object {
+  "type": "LOAD_STATS_REQUEST",
+}
+`;
+
+exports[`statsActionCreators should return LOAD_STATS_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "testing": true,
+  },
+  "type": "LOAD_STATS_SUCCESS",
+}
+`;

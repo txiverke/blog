@@ -1,0 +1,422 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> should render itself 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NotFound
+    language={
+        Object {
+            "current": "eng",
+          }
+    }
+    location={
+        Object {
+            "pathname": "test-path",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HelmetWrapper
+          defer={true}
+          encodeSpecialCharacters={true}
+          title="Page not found"
+/>,
+        <h1
+          className="app-content-column"
+>
+          <span
+                    className="txt-huge"
+          >
+                    404
+          </span>
+          <br />
+          <span
+                    className="txt"
+          >
+                    Sorry, but the url: 
+                    <span
+                              className="txt-highlight"
+                    >
+                               
+                               xaviervila.techtest-path  
+                               
+                    </span>
+                     does not exist.
+          </span>
+          <br />
+          <Link
+                    className="btn mt10"
+                    replace={false}
+                    to="/"
+          >
+                    Back to the landing page
+          </Link>
+</h1>,
+      ],
+      "className": "app-view app-view-centered",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "defer": true,
+          "encodeSpecialCharacters": true,
+          "title": "Page not found",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="txt-huge"
+>
+              404
+</span>,
+            <br />,
+            <span
+              className="txt"
+>
+              Sorry, but the url: 
+              <span
+                            className="txt-highlight"
+              >
+                             
+                             xaviervila.techtest-path  
+                             
+              </span>
+               does not exist.
+</span>,
+            <br />,
+            <Link
+              className="btn mt10"
+              replace={false}
+              to="/"
+>
+              Back to the landing page
+</Link>,
+          ],
+          "className": "app-content-column",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "404",
+              "className": "txt-huge",
+            },
+            "ref": null,
+            "rendered": "404",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Sorry, but the url: ",
+                <span
+                  className="txt-highlight"
+>
+                   
+                   xaviervila.techtest-path  
+                   
+</span>,
+                " does not exist.",
+              ],
+              "className": "txt",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Sorry, but the url: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    " ",
+                    " xaviervila.techtest-path  ",
+                    " ",
+                  ],
+                  "className": "txt-highlight",
+                },
+                "ref": null,
+                "rendered": Array [
+                  " ",
+                  " xaviervila.techtest-path  ",
+                  " ",
+                ],
+                "type": "span",
+              },
+              " does not exist.",
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Back to the landing page",
+              "className": "btn mt10",
+              "replace": false,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Back to the landing page",
+            "type": [Function],
+          },
+        ],
+        "type": "h1",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+            title="Page not found"
+/>,
+          <h1
+            className="app-content-column"
+>
+            <span
+                        className="txt-huge"
+            >
+                        404
+            </span>
+            <br />
+            <span
+                        className="txt"
+            >
+                        Sorry, but the url: 
+                        <span
+                                    className="txt-highlight"
+                        >
+                                     
+                                     xaviervila.techtest-path  
+                                     
+                        </span>
+                         does not exist.
+            </span>
+            <br />
+            <Link
+                        className="btn mt10"
+                        replace={false}
+                        to="/"
+            >
+                        Back to the landing page
+            </Link>
+</h1>,
+        ],
+        "className": "app-view app-view-centered",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "defer": true,
+            "encodeSpecialCharacters": true,
+            "title": "Page not found",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="txt-huge"
+>
+                404
+</span>,
+              <br />,
+              <span
+                className="txt"
+>
+                Sorry, but the url: 
+                <span
+                                className="txt-highlight"
+                >
+                                 
+                                 xaviervila.techtest-path  
+                                 
+                </span>
+                 does not exist.
+</span>,
+              <br />,
+              <Link
+                className="btn mt10"
+                replace={false}
+                to="/"
+>
+                Back to the landing page
+</Link>,
+            ],
+            "className": "app-content-column",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "404",
+                "className": "txt-huge",
+              },
+              "ref": null,
+              "rendered": "404",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Sorry, but the url: ",
+                  <span
+                    className="txt-highlight"
+>
+                     
+                     xaviervila.techtest-path  
+                     
+</span>,
+                  " does not exist.",
+                ],
+                "className": "txt",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Sorry, but the url: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      " xaviervila.techtest-path  ",
+                      " ",
+                    ],
+                    "className": "txt-highlight",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    " xaviervila.techtest-path  ",
+                    " ",
+                  ],
+                  "type": "span",
+                },
+                " does not exist.",
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Back to the landing page",
+                "className": "btn mt10",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Back to the landing page",
+              "type": [Function],
+            },
+          ],
+          "type": "h1",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

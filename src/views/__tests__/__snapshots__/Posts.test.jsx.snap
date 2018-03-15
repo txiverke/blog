@@ -1,0 +1,381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Posts /> should render itself 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Posts
+    language={
+        Object {
+            "current": "eng",
+          }
+    }
+    posts={
+        Object {
+            "completed": true,
+            "data": Array [
+              Object {
+                "__v": 0,
+                "_id": "5a86250a6e51f10ae32d5bc1",
+                "background": "69372c7db575f3e1483e66bbe30d55b91518781651399.jpeg",
+                "content": "Just a new postJust a new postJust a new post",
+                "created": "2018-02-16T00:25:46.636Z",
+                "link": "https://google.com",
+                "tags": "Just a new post",
+                "title": "Just a new post",
+              },
+            ],
+            "error": false,
+            "message": "string",
+          }
+    }
+    tags={
+        Array [
+            "",
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HelmetWrapper
+          defer={true}
+          encodeSpecialCharacters={true}
+          meta={
+                    Array [
+                              Object {
+                                "content": "POSTS",
+                                "name": "description",
+                              },
+                              Object {
+                                "content": "POSTS",
+                                "property": "og:title",
+                              },
+                            ]
+          }
+          title="POSTS"
+/>,
+        <ButtonBack
+          label="Back"
+          route="/"
+/>,
+        false,
+        <Connect(SearchContainer)
+          tagsToRender={
+                    Array [
+                              "Just a new post",
+                            ]
+          }
+/>,
+        <h1
+          className="hidden"
+>
+          POSTS
+</h1>,
+        <PostList
+          DIC={
+                    Object {
+                              "ABOUT-ME": "ABOUT ME",
+                              "BACK": "Back",
+                              "BACK_TO": "Back to the landing page",
+                              "CONTACT": "CONTACT",
+                              "DESCRIPTION": "Hi I'm Xavi, a front-end developer from Lleida (Catalunya) currently living with my wife and our dog and two cats in Ferndale (Michigan).",
+                              "DOWNLOAD_RESUME": "Download Résumé",
+                              "EDIT": "EDIT",
+                              "FRONTEND": "Front-end developer",
+                              "NOT_EXIST": " does not exist.",
+                              "NO_POSTS_MSG": "Press a tag button to see content.",
+                              "PAGE_NOT_FOUND": "Page not found",
+                              "POSTED_AT": "Posted at ",
+                              "POSTS": "POSTS",
+                              "PROJECTS": "PROJECTS",
+                              "RESUME": "Thanks for downloading my Résumé.",
+                              "SORRY": "Sorry, but the url: ",
+                              "WELCOME": "Welcome to ",
+                            }
+          }
+          list={Array []}
+/>,
+      ],
+      "className": "",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "defer": true,
+          "encodeSpecialCharacters": true,
+          "meta": Array [
+            Object {
+              "content": "POSTS",
+              "name": "description",
+            },
+            Object {
+              "content": "POSTS",
+              "property": "og:title",
+            },
+          ],
+          "title": "POSTS",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "label": "Back",
+          "route": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "tagsToRender": Array [
+            "Just a new post",
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "POSTS",
+          "className": "hidden",
+        },
+        "ref": null,
+        "rendered": "POSTS",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "DIC": Object {
+            "ABOUT-ME": "ABOUT ME",
+            "BACK": "Back",
+            "BACK_TO": "Back to the landing page",
+            "CONTACT": "CONTACT",
+            "DESCRIPTION": "Hi I'm Xavi, a front-end developer from Lleida (Catalunya) currently living with my wife and our dog and two cats in Ferndale (Michigan).",
+            "DOWNLOAD_RESUME": "Download Résumé",
+            "EDIT": "EDIT",
+            "FRONTEND": "Front-end developer",
+            "NOT_EXIST": " does not exist.",
+            "NO_POSTS_MSG": "Press a tag button to see content.",
+            "PAGE_NOT_FOUND": "Page not found",
+            "POSTED_AT": "Posted at ",
+            "POSTS": "POSTS",
+            "PROJECTS": "PROJECTS",
+            "RESUME": "Thanks for downloading my Résumé.",
+            "SORRY": "Sorry, but the url: ",
+            "WELCOME": "Welcome to ",
+          },
+          "list": Array [],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+            meta={
+                        Array [
+                                    Object {
+                                      "content": "POSTS",
+                                      "name": "description",
+                                    },
+                                    Object {
+                                      "content": "POSTS",
+                                      "property": "og:title",
+                                    },
+                                  ]
+            }
+            title="POSTS"
+/>,
+          <ButtonBack
+            label="Back"
+            route="/"
+/>,
+          false,
+          <Connect(SearchContainer)
+            tagsToRender={
+                        Array [
+                                    "Just a new post",
+                                  ]
+            }
+/>,
+          <h1
+            className="hidden"
+>
+            POSTS
+</h1>,
+          <PostList
+            DIC={
+                        Object {
+                                    "ABOUT-ME": "ABOUT ME",
+                                    "BACK": "Back",
+                                    "BACK_TO": "Back to the landing page",
+                                    "CONTACT": "CONTACT",
+                                    "DESCRIPTION": "Hi I'm Xavi, a front-end developer from Lleida (Catalunya) currently living with my wife and our dog and two cats in Ferndale (Michigan).",
+                                    "DOWNLOAD_RESUME": "Download Résumé",
+                                    "EDIT": "EDIT",
+                                    "FRONTEND": "Front-end developer",
+                                    "NOT_EXIST": " does not exist.",
+                                    "NO_POSTS_MSG": "Press a tag button to see content.",
+                                    "PAGE_NOT_FOUND": "Page not found",
+                                    "POSTED_AT": "Posted at ",
+                                    "POSTS": "POSTS",
+                                    "PROJECTS": "PROJECTS",
+                                    "RESUME": "Thanks for downloading my Résumé.",
+                                    "SORRY": "Sorry, but the url: ",
+                                    "WELCOME": "Welcome to ",
+                                  }
+            }
+            list={Array []}
+/>,
+        ],
+        "className": "",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "defer": true,
+            "encodeSpecialCharacters": true,
+            "meta": Array [
+              Object {
+                "content": "POSTS",
+                "name": "description",
+              },
+              Object {
+                "content": "POSTS",
+                "property": "og:title",
+              },
+            ],
+            "title": "POSTS",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "label": "Back",
+            "route": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "tagsToRender": Array [
+              "Just a new post",
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "POSTS",
+            "className": "hidden",
+          },
+          "ref": null,
+          "rendered": "POSTS",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "DIC": Object {
+              "ABOUT-ME": "ABOUT ME",
+              "BACK": "Back",
+              "BACK_TO": "Back to the landing page",
+              "CONTACT": "CONTACT",
+              "DESCRIPTION": "Hi I'm Xavi, a front-end developer from Lleida (Catalunya) currently living with my wife and our dog and two cats in Ferndale (Michigan).",
+              "DOWNLOAD_RESUME": "Download Résumé",
+              "EDIT": "EDIT",
+              "FRONTEND": "Front-end developer",
+              "NOT_EXIST": " does not exist.",
+              "NO_POSTS_MSG": "Press a tag button to see content.",
+              "PAGE_NOT_FOUND": "Page not found",
+              "POSTED_AT": "Posted at ",
+              "POSTS": "POSTS",
+              "PROJECTS": "PROJECTS",
+              "RESUME": "Thanks for downloading my Résumé.",
+              "SORRY": "Sorry, but the url: ",
+              "WELCOME": "Welcome to ",
+            },
+            "list": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
