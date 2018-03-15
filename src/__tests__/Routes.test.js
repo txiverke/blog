@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import Routes from '../Routes'
 
 describe('<Routes />', () => {

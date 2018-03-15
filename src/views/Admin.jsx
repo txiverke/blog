@@ -8,9 +8,14 @@ import { Redirect } from 'react-router-dom'
 import Stats from '../components/Stats'
 import { getDictionary } from '../utils/dictionary'
 
-const Admin = props => { 
-  const { data } = props.authenticate
-  const DIC =  getDictionary(props.language.current)
+type Props = {
+  authenticate: Object,
+  language: Object
+}
+
+const Admin = ({authenticate, language}: Props) => { 
+  const { data } = authenticate
+  const DIC =  getDictionary(language.current)
 
   if (data) {
     return (
@@ -35,4 +40,5 @@ const mapStateToProps = state =>({
   language: state.language 
 })
 
+export const Unwrapped = Admin
 export default connect(mapStateToProps)(Admin)
