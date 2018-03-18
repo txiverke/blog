@@ -18,7 +18,8 @@ class About extends React.Component {
   state = {
     txtMessage: '',
     next: false,
-    DIC: {}
+    DIC: {},
+    sent: false
   }
   
   props: {
@@ -51,7 +52,8 @@ class About extends React.Component {
 
     this.setState({
       txtMessage: DIC.RESUME,
-      next: true
+      next: true,
+      sent: true
     })
 
     setTimeout(() => this.setState({ next: false}))
@@ -60,9 +62,10 @@ class About extends React.Component {
   render() {
     const { completed, data, message, error } = this.props.user
     const lang = this.props.language.current
-    const { txtMessage, next, DIC } = this.state
+    const { txtMessage, next, DIC, sent } = this.state
     const bio = lang === 'eng' ? data.bio : data.bio_cat
     const job = lang === 'eng' ? data.job : data.job_cat
+    const btnMessage = sent ? DIC.DOWNLOADED_RESUME: DIC.DOWNLOAD_RESUME 
 
     if (completed) {
       return (
@@ -91,9 +94,11 @@ class About extends React.Component {
               href={pdf}
               download="resume.pdf" 
               className="btn btn-centered mt10"
-              onClick={this.renderMsg}>
-              <span className="icon-cloud-download mr5"></span>
-              {DIC.DOWNLOAD_RESUME}
+              onClick={this.renderMsg}
+            >
+              {!sent && <span className="icon-cloud-download mr5"></span>}
+              {sent && <span className="icon-like mr5"></span>}
+              {btnMessage}
             </a>
           </article>
         </section>

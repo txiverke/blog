@@ -21,7 +21,6 @@ describe('<AdminPostView />', () => {
       match={match}
     />)
     expect(component).toMatchSnapshot()
-    expect(component.find('.app-view').length).toEqual(1)
   })
 
   it('should render Loader until data is loaded', () => {
@@ -39,7 +38,6 @@ describe('<AdminPostView />', () => {
       authenticate={authenticate}
       match={match}
     />)
-    expect(component.find('.app-view.pb5').length).toEqual(0)
     expect(component.find('Loader').length).toEqual(1)
   })
 })

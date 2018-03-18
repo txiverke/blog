@@ -5,11 +5,13 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <About
+    dispatch={[Function]}
     language={
         Object {
             "current": "eng",
           }
     }
+    location={Object {}}
     user={
         Object {
             "completed": true,
@@ -19,6 +21,8 @@ ShallowWrapper {
               "job": "test job",
               "lastname": "test lastname",
             },
+            "error": false,
+            "message": "Just a fake message",
           }
     }
 />,
@@ -288,6 +292,7 @@ ShallowWrapper {
                 <span
                   className="icon-cloud-download mr5"
 />,
+                false,
                 "Download Résumé",
               ],
               "className": "btn btn-centered mt10",
@@ -308,6 +313,7 @@ ShallowWrapper {
                 "rendered": null,
                 "type": "span",
               },
+              false,
               "Download Résumé",
             ],
             "type": "a",
@@ -578,6 +584,7 @@ ShallowWrapper {
                   <span
                     className="icon-cloud-download mr5"
 />,
+                  false,
                   "Download Résumé",
                 ],
                 "className": "btn btn-centered mt10",
@@ -598,6 +605,7 @@ ShallowWrapper {
                   "rendered": null,
                   "type": "span",
                 },
+                false,
                 "Download Résumé",
               ],
               "type": "a",

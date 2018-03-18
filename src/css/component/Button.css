@@ -31,6 +31,13 @@
   color: var(--textColor);
 }
 
+.btn:disabled,
+.btn:hover:disabled {
+  background: var(--bgColor);
+  border: 1px solid grey;
+  color: grey;
+}
+
 .btn-icon {
   padding: 0.5rem 0.75rem;
 }

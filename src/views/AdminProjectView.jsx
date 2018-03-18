@@ -28,7 +28,7 @@ class AdminProjectView extends React.Component {
     dispatch(isAuthenticated())
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     this.setState({ data: nextProps.item.data})
   }
 
@@ -74,4 +74,5 @@ const mapStateToProps = state => ({
   item: state.item, 
 })
 
+export const Unwrapped = AdminProjectView
 export default connect(mapStateToProps)(AdminProjectView)
