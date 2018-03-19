@@ -33,15 +33,17 @@ class AdminPostView extends React.Component {
   }
 
   updatePost = (obj: Object, id: string) => {
-    const { dispatch } = this.props
-    dispatch(updatePostData(obj, id))
+    if (Object.keys(obj).length && id.length) {
+      const { dispatch } = this.props
+      dispatch(updatePostData(obj, id))
+    } 
   }
 
   render() {
     const { message, error, completed } = this.props.item
     const { data } = this.state
 
-    if (completed && Object.keys(data).length) {
+    if (completed) {
       return (
         <section className="app-view pb5">
           <Helmet 

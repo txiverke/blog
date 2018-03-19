@@ -39,7 +39,7 @@ const AdminSections = ({ authenticate, location }: Props) => {
     return (
       <section className="app-view">
         <Helmet 
-          title="Admin page" 
+          title={`Admin page - ${section}`}
           meta={[
             { name: "description", content: "Admin page" },
             { property: "og:title", content: "Admin page" }
@@ -55,4 +55,5 @@ const AdminSections = ({ authenticate, location }: Props) => {
 
 const mapStateToProps = (state: Object) => ({ authenticate: state.authenticate })
 
-export default  connect(mapStateToProps)(AdminSections)
+export const Unwrapped = AdminSections
+export default connect(mapStateToProps)(AdminSections)

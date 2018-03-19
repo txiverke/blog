@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
 import { Unwrapped as UnwrappedAbout } from '../About'
 import { shallow } from 'enzyme'
 

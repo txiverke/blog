@@ -18,11 +18,6 @@ const Routes = () => (
         <RoutesAsync props={props} loadingPromise={import('./views/About')} />
       )} />
     <Route
-      path="/posts/:slug"
-      component={props => (
-        <RoutesAsync props={props} loadingPromise={import('./views/PostView')} />
-      )} />
-    <Route
       path="/posts"
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/Posts')} />

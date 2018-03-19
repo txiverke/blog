@@ -39,7 +39,7 @@ class ProjectView extends React.PureComponent {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     const { data } = nextProps.projects
 
     if (data && data.length) {
@@ -122,4 +122,5 @@ class ProjectView extends React.PureComponent {
 
 const mapStateToProps = state => ({ projects: state.projects})
 
+export const Unwrapped = ProjectView
 export default connect(mapStateToProps)(ProjectView)

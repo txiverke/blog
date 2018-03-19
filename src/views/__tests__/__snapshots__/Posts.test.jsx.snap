@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Posts
+    dispatch={[Function]}
     language={
         Object {
             "current": "eng",
@@ -30,9 +31,14 @@ ShallowWrapper {
           }
     }
     tags={
-        Array [
-            "",
-          ]
+        Object {
+            "completed": true,
+            "data": Array [
+              "test",
+            ],
+            "error": false,
+            "message": "tag fake message",
+          }
     }
 />,
   Symbol(enzyme.__renderer__): Object {

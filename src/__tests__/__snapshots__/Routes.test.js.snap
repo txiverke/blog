@@ -29,10 +29,6 @@ ShallowWrapper {
 />,
         <Route
           component={[Function]}
-          path="/posts/:slug"
-/>,
-        <Route
-          component={[Function]}
           path="/posts"
 />,
         <Route
@@ -98,18 +94,6 @@ ShallowWrapper {
         "props": Object {
           "component": [Function],
           "path": "/about-me",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "path": "/posts/:slug",
         },
         "ref": null,
         "rendered": null,
@@ -267,10 +251,6 @@ ShallowWrapper {
 />,
           <Route
             component={[Function]}
-            path="/posts/:slug"
-/>,
-          <Route
-            component={[Function]}
             path="/posts"
 />,
           <Route
@@ -336,18 +316,6 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "path": "/about-me",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "path": "/posts/:slug",
           },
           "ref": null,
           "rendered": null,
