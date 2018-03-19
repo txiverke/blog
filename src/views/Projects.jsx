@@ -28,7 +28,7 @@ class Projects extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     const { data } = nextProps.projects
 
     if (data && data.length) {
@@ -36,7 +36,7 @@ class Projects extends React.Component {
     }
   }
 
-  setSlug(data) {
+  setSlug(data: Array<Object>) {
     const url = getSlug(String(`${data[0].title} ${data[0]._id}`))
     this.setState({ slug: url })
   }
@@ -59,4 +59,5 @@ class Projects extends React.Component {
   
 const mapStateToProps = state => ({ projects: state.projects })
 
+export const Unwrapped = Projects
 export default connect(mapStateToProps)(Projects)

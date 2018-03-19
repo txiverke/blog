@@ -21,7 +21,7 @@ class SignIn extends React.PureComponent {
 
   render() {
     const { data } = this.props.authenticate
-
+    
     if (!data) {
       return (
         <section className="app-view app-view-centered">
@@ -43,4 +43,5 @@ class SignIn extends React.PureComponent {
 
 const mapStateToProps = state =>({ authenticate: state.authenticate })
 
+export const Unwrapped = SignIn
 export default connect(mapStateToProps)(SignIn)
