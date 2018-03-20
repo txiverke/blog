@@ -1,3 +1,5 @@
+// @flow
+
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as action from '../projectActionCreators'
@@ -13,7 +15,7 @@ describe('projectActionCreators', () => {
     })
 
     it('should return LOAD_PROJECT_DATA_SUCCESS action', () => {
-      expect(action.loadProjectDataSuccess(['test'])).toMatchSnapshot()
+      expect(action.loadProjectDataSuccess([{test: true}])).toMatchSnapshot()
     })
 
     it('should return LOAD_PROJECT_DATA_FAILURE action', () => {
@@ -69,7 +71,7 @@ describe('projectActionCreators', () => {
     })
 
     it('should return CREATE_PROJECT_DATA_SUCCESS action', () => {
-      expect(action.createProjectDataSuccess(['test'])).toMatchSnapshot()
+      expect(action.createProjectDataSuccess([{test: true}])).toMatchSnapshot()
     })
 
     it('should return CREATE_PROJECT_DATA_FAILURE action', () => {
@@ -97,7 +99,7 @@ describe('projectActionCreators', () => {
     })
 
     it('should return UPDATE_PROJECT_DATA_SUCCESS action', () => {
-      expect(action.updateProjectDataSuccess(['test'])).toMatchSnapshot()
+      expect(action.updateProjectDataSuccess([{test: true}])).toMatchSnapshot()
     })
 
     it('should return UPDATE_PROJECT_DATA_FAILURE action', () => {
@@ -125,7 +127,8 @@ describe('projectActionCreators', () => {
     })
 
     it('should return REMOVE_PROJECT_DATA_SUCCESS action', () => {
-      expect(action.removeProjectDataSuccess('id')).toMatchSnapshot()
+
+      expect(action.removeProjectDataSuccess([{test: true}])).toMatchSnapshot()
     })
 
     it('should return REMOVE_PROJECT_DATA_FAILURE action', () => {

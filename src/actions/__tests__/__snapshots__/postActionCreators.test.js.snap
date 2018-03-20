@@ -15,9 +15,7 @@ Object {
 exports[`postActionCreators check post tags actions should return CHECK_POSTS_TAGS_SUCCESS action 1`] = `
 Object {
   "payload": Array [
-    Object {
-      "test": true,
-    },
+    "test",
   ],
   "type": "CHECK_POSTS_TAGS_SUCCESS",
 }
@@ -138,11 +136,12 @@ Object {
 
 exports[`postActionCreators remove post data actions should return REMOVE_POST_DATA_SUCCESS action 1`] = `
 Object {
-  "payload": Array [
-    Object {
-      "test": true,
-    },
-  ],
+  "payload": Object {
+    "completed": true,
+    "data": Array [],
+    "error": false,
+    "message": "fake message",
+  },
   "type": "REMOVE_POST_DATA_SUCCESS",
 }
 `;

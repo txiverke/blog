@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`userActionCreators authenticate user should return IS_AUTHENTICATE_FAILURE action 1`] = `
+Object {
+  "type": "IS_AUTHENTICATE_FAILURE",
+}
+`;
+
+exports[`userActionCreators authenticate user should return IS_AUTHENTICATE_REQUEST action 1`] = `
+Object {
+  "type": "IS_AUTHENTICATE_REQUEST",
+}
+`;
+
+exports[`userActionCreators authenticate user should return IS_AUTHENTICATE_SUCCESS action 1`] = `
+Object {
+  "payload": "",
+  "type": "IS_AUTHENTICATE_SUCCESS",
+}
+`;
+
+exports[`userActionCreators load user data should return LOAD_USER_DATA_FAILURE action 1`] = `
+Object {
+  "type": "LOAD_USER_DATA_FAILURE",
+}
+`;
+
+exports[`userActionCreators load user data should return LOAD_USER_DATA_REQUEST action 1`] = `
+Object {
+  "type": "LOAD_USER_DATA_REQUEST",
+}
+`;
+
+exports[`userActionCreators load user data should return LOAD_USER_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "LOAD_USER_DATA_SUCCESS",
+}
+`;
+
+exports[`userActionCreators login user should return LOGIN_USER_FAILURE action 1`] = `
+Object {
+  "type": "LOG_IN_USER_FAILURE",
+}
+`;
+
+exports[`userActionCreators login user should return LOGIN_USER_REQUEST action 1`] = `
+Object {
+  "type": "LOG_IN_USER_REQUEST",
+}
+`;
+
+exports[`userActionCreators login user should return LOGIN_USER_SUCCESS action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "LOG_IN_USER_SUCCESS",
+}
+`;
+
+exports[`userActionCreators logout user should return LOG_OUT_USER_FAILURE action 1`] = `
+Object {
+  "type": "LOG_OUT_USER_FAILURE",
+}
+`;
+
+exports[`userActionCreators logout user should return LOG_OUT_USER_REQUEST action 1`] = `
+Object {
+  "type": "LOG_OUT_USER_REQUEST",
+}
+`;
+
+exports[`userActionCreators logout user should return LOG_OUT_USER_SUCCESS action 1`] = `
+Object {
+  "type": "LOG_OUT_USER_SUCCESS",
+}
+`;
+
+exports[`userActionCreators update user data should return UPDATE_USER_DATA_FAILURE action 1`] = `
+Object {
+  "type": "UPDATE_USER_DATA_FAILURE",
+}
+`;
+
+exports[`userActionCreators update user data should return UPDATE_USER_DATA_REQUEST action 1`] = `
+Object {
+  "type": "UPDATE_USER_DATA_REQUEST",
+}
+`;
+
+exports[`userActionCreators update user data should return UPDATE_USER_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Object {},
+  "type": "UPDATE_USER_DATA_SUCCESS",
+}
+`;

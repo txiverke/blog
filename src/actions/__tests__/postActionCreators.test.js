@@ -1,3 +1,5 @@
+// @flow
+
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as action from '../postActionCreators'
@@ -117,7 +119,12 @@ describe('postActionCreators', () => {
     })
 
     it('should return REMOVE_POST_DATA_SUCCESS action', () => {
-      const payload = [{ test: true }]
+      const payload = {
+        completed: true,
+        data: [],
+        message: 'fake message',
+        error: false
+      }
       expect(action.removePostDataSuccess(payload)).toMatchSnapshot()
     })
 
@@ -142,7 +149,7 @@ describe('postActionCreators', () => {
     })
 
     it('should return CHECK_POSTS_TAGS_SUCCESS action', () => {
-      const payload = [{ test: true }]
+      const payload = ['test']
       expect(action.checkPostsTagsSuccess(payload)).toMatchSnapshot()
     })
 
@@ -161,19 +168,6 @@ describe('postActionCreators', () => {
       const actualActions = store.getActions().map(action => action.type)
       expect(actualActions).toEqual(expectedActions)
     })
-
-    it('expected actions should be dispatched on failure request', () => {
-      const store = mockStore({})
-      const expectedActions = [
-        'CHECK_POSTS_TAGS_REQUEST',
-        'CHECK_POSTS_TAGS_FAILURE'
-      ]
-      store.dispatch(action.checkPostsTags())
-        
-      const actualActions = store.getActions().map(action => action.type)
-      expect(actualActions).toEqual(expectedActions)
-    })
-
   })
   
 })

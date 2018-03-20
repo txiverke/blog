@@ -1,3 +1,5 @@
+// @flow
+
 import * as action from '../languageActionCreators'
 import * as type from '../actionsType'
 

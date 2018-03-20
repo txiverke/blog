@@ -15,7 +15,9 @@ Object {
 exports[`projectActionCreators create project actions should return CREATE_PROJECT_DATA_SUCCESS action 1`] = `
 Object {
   "payload": Array [
-    "test",
+    Object {
+      "test": true,
+    },
   ],
   "type": "CREATE_PROJECT_DATA_SUCCESS",
 }
@@ -36,7 +38,9 @@ Object {
 exports[`projectActionCreators load project actions should return LOAD_PROJECT_DATA_SUCCESS action 1`] = `
 Object {
   "payload": Array [
-    "test",
+    Object {
+      "test": true,
+    },
   ],
   "type": "LOAD_PROJECT_DATA_SUCCESS",
 }
@@ -77,7 +81,11 @@ Object {
 
 exports[`projectActionCreators remove project actions should return REMOVE_PROJECT_DATA_SUCCESS action 1`] = `
 Object {
-  "payload": "id",
+  "payload": Array [
+    Object {
+      "test": true,
+    },
+  ],
   "type": "REMOVE_PROJECT_DATA_SUCCESS",
 }
 `;
@@ -97,7 +105,9 @@ Object {
 exports[`projectActionCreators update project actions should return UPDATE_PROJECT_DATA_SUCCESS action 1`] = `
 Object {
   "payload": Array [
-    "test",
+    Object {
+      "test": true,
+    },
   ],
   "type": "UPDATE_PROJECT_DATA_SUCCESS",
 }
