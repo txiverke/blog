@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`projectActionCreators create project actions should return CREATE_PROJECT_DATA_FAILURE action 1`] = `
+Object {
+  "type": "CREATE_PROJECT_DATA_FAILURE",
+}
+`;
+
+exports[`projectActionCreators create project actions should return CREATE_PROJECT_DATA_REQUEST action 1`] = `
+Object {
+  "type": "CREATE_PROJECT_DATA_REQUEST",
+}
+`;
+
+exports[`projectActionCreators create project actions should return CREATE_PROJECT_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    "test",
+  ],
+  "type": "CREATE_PROJECT_DATA_SUCCESS",
+}
+`;
+
+exports[`projectActionCreators load project actions should return LOAD_PROJECT_DATA_FAILURE action 1`] = `
+Object {
+  "type": "LOAD_PROJECT_DATA_FAILURE",
+}
+`;
+
+exports[`projectActionCreators load project actions should return LOAD_PROJECT_DATA_REQUEST action 1`] = `
+Object {
+  "type": "LOAD_PROJECT_DATA_REQUEST",
+}
+`;
+
+exports[`projectActionCreators load project actions should return LOAD_PROJECT_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    "test",
+  ],
+  "type": "LOAD_PROJECT_DATA_SUCCESS",
+}
+`;
+
+exports[`projectActionCreators load project item actions should return LOAD_PROJECT_ITEM_FAILURE action 1`] = `
+Object {
+  "type": "LOAD_PROJECT_ITEM_FAILURE",
+}
+`;
+
+exports[`projectActionCreators load project item actions should return LOAD_PROJECT_ITEM_REQUEST action 1`] = `
+Object {
+  "type": "LOAD_PROJECT_ITEM_REQUEST",
+}
+`;
+
+exports[`projectActionCreators load project item actions should return LOAD_PROJECT_ITEM_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "test": true,
+  },
+  "type": "LOAD_PROJECT_ITEM_SUCCESS",
+}
+`;
+
+exports[`projectActionCreators remove project actions should return REMOVE_PROJECT_DATA_FAILURE action 1`] = `
+Object {
+  "type": "REMOVE_PROJECT_DATA_FAILURE",
+}
+`;
+
+exports[`projectActionCreators remove project actions should return REMOVE_PROJECT_DATA_REQUEST action 1`] = `
+Object {
+  "type": "REMOVE_PROJECT_DATA_REQUEST",
+}
+`;
+
+exports[`projectActionCreators remove project actions should return REMOVE_PROJECT_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": "id",
+  "type": "REMOVE_PROJECT_DATA_SUCCESS",
+}
+`;
+
+exports[`projectActionCreators update project actions should return UPDATE_PROJECT_DATA_FAILURE action 1`] = `
+Object {
+  "type": "UPDATE_PROJECT_DATA_FAILURE",
+}
+`;
+
+exports[`projectActionCreators update project actions should return UPDATE_PROJECT_DATA_REQUEST action 1`] = `
+Object {
+  "type": "UPDATE_PROJECT_DATA_REQUEST",
+}
+`;
+
+exports[`projectActionCreators update project actions should return UPDATE_PROJECT_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    "test",
+  ],
+  "type": "UPDATE_PROJECT_DATA_SUCCESS",
+}
+`;
