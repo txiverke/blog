@@ -147,7 +147,6 @@ export const checkPostsTagsFailure = () => ({ type: ACTION.CHECK_POSTS_TAGS_FAIL
 export const checkPostsTags = (arr: Array<string>) => 
   (dispatch: Function) => {
     dispatch(checkPostsTagsRequest())
-
     if (Array.isArray(arr)) {
       return dispatch(checkPostsTagsSuccess(arr))
     } 

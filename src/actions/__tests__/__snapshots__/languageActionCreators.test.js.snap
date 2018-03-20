@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`languageActionCreators should return UPDATE_APP_LANGUAGE action 1`] = `
+Object {
+  "payload": "eng",
+  "type": "UPDATE_APP_LANGUAGE",
+}
+`;

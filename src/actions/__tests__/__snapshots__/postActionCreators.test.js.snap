@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`postActionCreators check post tags actions should return CHECK_POSTS_TAGS_FAILURE 1`] = `
+Object {
+  "type": "CHECK_POSTS_TAGS_FAILURE",
+}
+`;
+
+exports[`postActionCreators check post tags actions should return CHECK_POSTS_TAGS_REQUEST action 1`] = `
+Object {
+  "type": "CHECK_POSTS_TAGS_REQUEST",
+}
+`;
+
+exports[`postActionCreators check post tags actions should return CHECK_POSTS_TAGS_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "test": true,
+    },
+  ],
+  "type": "CHECK_POSTS_TAGS_SUCCESS",
+}
+`;
+
+exports[`postActionCreators create post data actions expected actions should be dispatched on request 1`] = `
+Array [
+  "LOAD_POST_DATA_REQUEST",
+  "LOAD_POST_DATA_FAILURE",
+]
+`;
+
+exports[`postActionCreators create post data actions should return CREATE_POST_DATA_FAILURE 1`] = `
+Object {
+  "type": "CREATE_POST_DATA_FAILURE",
+}
+`;
+
+exports[`postActionCreators create post data actions should return CREATE_POST_DATA_REQUEST action 1`] = `
+Object {
+  "type": "CREATE_POST_DATA_REQUEST",
+}
+`;
+
+exports[`postActionCreators create post data actions should return CREATE_POST_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "test": true,
+    },
+  ],
+  "type": "CREATE_POST_DATA_SUCCESS",
+}
+`;
+
+exports[`postActionCreators load post data actions expected actions should be dispatched on request 1`] = `
+Array [
+  "LOAD_POST_DATA_REQUEST",
+  "LOAD_POST_DATA_FAILURE",
+]
+`;
+
+exports[`postActionCreators load post data actions should return LOAD_POST_DATA_FAILURE 1`] = `
+Object {
+  "type": "LOAD_POST_DATA_FAILURE",
+}
+`;
+
+exports[`postActionCreators load post data actions should return LOAD_POST_DATA_REQUEST action 1`] = `
+Object {
+  "type": "LOAD_POST_DATA_REQUEST",
+}
+`;
+
+exports[`postActionCreators load post data actions should return LOAD_POST_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "test": true,
+    },
+  ],
+  "type": "LOAD_POST_DATA_SUCCESS",
+}
+`;
+
+exports[`postActionCreators load post item actions expected actions should be dispatched on request 1`] = `
+Array [
+  "LOAD_POST_ITEM_REQUEST",
+  "LOAD_POST_ITEM_FAILURE",
+]
+`;
+
+exports[`postActionCreators load post item actions should return LOAD_POST_ITEM_FAILURE 1`] = `
+Object {
+  "type": "LOAD_POST_ITEM_FAILURE",
+}
+`;
+
+exports[`postActionCreators load post item actions should return LOAD_POST_ITEM_REQUEST action 1`] = `
+Object {
+  "type": "LOAD_POST_ITEM_REQUEST",
+}
+`;
+
+exports[`postActionCreators load post item actions should return LOAD_POST_ITEM_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "test": true,
+  },
+  "type": "LOAD_POST_ITEM_SUCCESS",
+}
+`;
+
+exports[`postActionCreators load post item actions should return UPDATE_POST_ITEM_SUCCESS action 1`] = `
+Object {
+  "type": "UPDATE_POST_ITEM_SUCCESS",
+}
+`;
+
+exports[`postActionCreators remove post data actions expected actions should be dispatched on request 1`] = `
+Array [
+  "REMOVE_POST_DATA_REQUEST",
+  "REMOVE_POST_DATA_FAILURE",
+]
+`;
+
+exports[`postActionCreators remove post data actions should return REMOVE_POST_DATA_FAILURE 1`] = `
+Object {
+  "type": "REMOVE_POST_DATA_FAILURE",
+}
+`;
+
+exports[`postActionCreators remove post data actions should return REMOVE_POST_DATA_REQUEST action 1`] = `
+Object {
+  "type": "REMOVE_POST_DATA_REQUEST",
+}
+`;
+
+exports[`postActionCreators remove post data actions should return REMOVE_POST_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "test": true,
+    },
+  ],
+  "type": "REMOVE_POST_DATA_SUCCESS",
+}
+`;
+
+exports[`postActionCreators update post data actions expected actions should be dispatched on request 1`] = `
+Array [
+  "UPDATE_POST_DATA_REQUEST",
+  "UPDATE_POST_DATA_FAILURE",
+]
+`;
+
+exports[`postActionCreators update post data actions should return UPDATE_POST_DATA_FAILURE 1`] = `
+Object {
+  "type": "UPDATE_POST_DATA_FAILURE",
+}
+`;
+
+exports[`postActionCreators update post data actions should return UPDATE_POST_DATA_REQUEST action 1`] = `
+Object {
+  "type": "UPDATE_POST_DATA_REQUEST",
+}
+`;
+
+exports[`postActionCreators update post data actions should return UPDATE_POST_DATA_SUCCESS action 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "test": true,
+    },
+  ],
+  "type": "UPDATE_POST_DATA_SUCCESS",
+}
+`;

@@ -107,7 +107,7 @@ export const updateUserData = (obj: Object) =>
       setPromise.urls = `${URL}/${config.api.profileId}`
       // $FlowFixMe
       setPromise.types = 'application/json'
-      const data = await setPromise.response(true)
+      const data = await setPromise.response()
       return dispatch(updateUserDataSuccess(data))
     } catch (err) {
       return dispatch(updateUserDataFailure())
