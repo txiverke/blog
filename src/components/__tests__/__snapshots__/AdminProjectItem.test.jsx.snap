@@ -30,10 +30,6 @@ ShallowWrapper {
           >
                     test label
           </h2>
-          <button
-                    className="btn btn-icon btn-clean icon-close tr2 btn-show"
-                    onClick={[Function]}
-          />
 </header>,
         <form
           className="app-grid-body "
@@ -145,10 +141,7 @@ ShallowWrapper {
 >
               test label
 </h2>,
-            <button
-              className="btn btn-icon btn-clean icon-close tr2 btn-show"
-              onClick={[Function]}
-/>,
+            false,
           ],
           "className": "app-grid-header",
         },
@@ -166,18 +159,7 @@ ShallowWrapper {
             "rendered": "test label",
             "type": "h2",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "btn btn-icon btn-clean icon-close tr2 btn-show",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "button",
-          },
+          false,
         ],
         "type": "header",
       },
@@ -461,10 +443,6 @@ ShallowWrapper {
             >
                         test label
             </h2>
-            <button
-                        className="btn btn-icon btn-clean icon-close tr2 btn-show"
-                        onClick={[Function]}
-            />
 </header>,
           <form
             className="app-grid-body "
@@ -576,10 +554,7 @@ ShallowWrapper {
 >
                 test label
 </h2>,
-              <button
-                className="btn btn-icon btn-clean icon-close tr2 btn-show"
-                onClick={[Function]}
-/>,
+              false,
             ],
             "className": "app-grid-header",
           },
@@ -597,18 +572,7 @@ ShallowWrapper {
               "rendered": "test label",
               "type": "h2",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "btn btn-icon btn-clean icon-close tr2 btn-show",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "button",
-            },
+            false,
           ],
           "type": "header",
         },

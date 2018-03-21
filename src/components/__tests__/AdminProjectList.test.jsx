@@ -1,8 +1,7 @@
 // @flow
 
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { MemoryRouter } from 'react-router-dom'
+import { shallow } from 'enzyme'
 import { Unwrapped as UnwrappedAdminProjectList } from '../AdminProjectList'
 
 const properties = {

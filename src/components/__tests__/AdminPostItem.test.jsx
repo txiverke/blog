@@ -32,11 +32,6 @@ describe('<AdminPostItem />', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('should render the toogle button if no data', () => {
-    const component = shallow(<AdminPostItem {...properties} />)
-    expect(component.find('header > .btn').length).toEqual(1)
-  })
-
   it('should not render the toogle button if there is data', () => {
     properties.data = { test: true }
     const component = shallow(<AdminPostItem {...properties} />)
