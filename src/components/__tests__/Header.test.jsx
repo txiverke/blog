@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'React'
+import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
 import { Unwrapped as UnwrappedHeader } from '../Header'
