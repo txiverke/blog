@@ -34,8 +34,15 @@ class AdminPostList extends React.Component {
     if (completed) {
       return (
         <div className="app-content-grid"> 
-          <ReactMessages message={message} error={error} next={true} />
-          <AdminPostItem label="Create Post" handlePost={obj => this.createPost(obj)} />
+          <ReactMessages 
+            message={message} 
+            error={error} 
+            next={true} 
+          />
+          <AdminPostItem 
+            label="Create Post" 
+            handlePost={obj => this.createPost(obj)} 
+          />
           <AdminList type="posts" data={data} />
         </div>
       )
@@ -45,4 +52,5 @@ class AdminPostList extends React.Component {
   }
 }
 
+export const Unwrapped = AdminPostList
 export default connect()(AdminPostList)

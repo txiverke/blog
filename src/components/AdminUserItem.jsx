@@ -26,28 +26,28 @@ class AdminUserItem extends React.PureComponent {
     }
   }
 
-  handleChange = (event) => {
-    event.target.classList.add('active')
+  handleChange = (e: InputEvent) => {
+    e.target.classList.add('active')
     showInputError(event.target)
   }
   
-  handleData = (event) => {
-    const firstname = event.target.elements.firstname.value.trim()
-    const lastname = event.target.elements.lastname.value.trim()
-    const username = event.target.elements.username.value.trim()
-    const bio = event.target.elements.bio.value.trim()
-    const bio_cat = event.target.elements.bio_cat.value.trim()
-    const job = event.target.elements.job.value.trim()
-    const job_cat = event.target.elements.job_cat.value.trim()
+  handleData = (e: InputEvent) => {
+    const firstname = e.target.elements.firstname.value.trim()
+    const lastname = e.target.elements.lastname.value.trim()
+    const username = e.target.elements.username.value.trim()
+    const bio = e.target.elements.bio.value.trim()
+    const bio_cat = e.target.elements.bio_cat.value.trim()
+    const job = e.target.elements.job.value.trim()
+    const job_cat = e.target.elements.job_cat.value.trim()
   
     return { firstname, lastname, username, bio, bio_cat, job, job_cat }
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
+  handleSubmit = (e: InputEvent) => {
+    e.preventDefault()
 
     if (showFormErrors()) {
-      this.props.handleClick(this.handleData(event))
+      this.props.handleClick(this.handleData(e))
     }
   }
 
@@ -64,81 +64,81 @@ class AdminUserItem extends React.PureComponent {
             className="app-grid-body" 
             onSubmit={this.handleSubmit}
           >
-          <SingleInput
-            wrapper="app-grid-item1"
-            name="firstname"
-            inputType="text"
-            title="First name"
-            placeholder="First name"
-            content={data.firstname}
-            pattern=".{2,}"
-            controlFunc={this.handleChange}
-          />
-          <SingleInput
-            wrapper="app-grid-item2"
-            name="lastname"
-            inputType="text"
-            title="Last name"
-            placeholder="Last name"
-            content={data.lastname}
-            pattern=".{2,}"
-            controlFunc={this.handleChange}
-          />
-          <SingleInput
-            wrapper="app-grid-item1"
-            name="username"
-            inputType="text"
-            title="Username"
-            placeholder="Username"
-            content={data.username}
-            pattern=".{2,}"
-            controlFunc={this.handleChange}
-          />
-          <SingleInput
-            wrapper="app-grid-item2"
-            name="job"
-            inputType="text"
-            title="Job"
-            placeholder="Job"
-            content={data.job}
-            pattern=".{2,}"
-            controlFunc={this.handleChange}
-          />
-          <SingleInput
-            wrapper="app-grid-item2"
-            name="job_cat"
-            inputType="text"
-            title="Job cat"
-            placeholder="Job cat"
-            content={data.job_cat}
-            pattern=".{2,}"
-            controlFunc={this.handleChange}
-          />
-          <Textarea
-            wrapper="app-grid-whole"
-            name="bio"
-            title="Bio"
-            content={data.bio}
-            pattern=".{6,}"
-            controlFunc={this.handleChange}
-          />
-          <Textarea
-            wrapper="app-grid-whole"
-            name="bio_cat"
-            title="Bio cat"
-            content={data.bio_cat}
-            pattern=".{6,}"
-            controlFunc={this.handleChange}
-          />
-          <button 
-            type="submit"
-            className="app-grid-btn btn"
-            disabled={!completed}
-          >
-          Update Profile
-          </button>
-        </form>
-      </article>
+            <SingleInput
+              wrapper="app-grid-item1"
+              name="firstname"
+              inputType="text"
+              title="First name"
+              placeholder="First name"
+              content={data.firstname}
+              pattern=".{2,}"
+              controlFunc={this.handleChange}
+            />
+            <SingleInput
+              wrapper="app-grid-item2"
+              name="lastname"
+              inputType="text"
+              title="Last name"
+              placeholder="Last name"
+              content={data.lastname}
+              pattern=".{2,}"
+              controlFunc={this.handleChange}
+            />
+            <SingleInput
+              wrapper="app-grid-item1"
+              name="username"
+              inputType="text"
+              title="Username"
+              placeholder="Username"
+              content={data.username}
+              pattern=".{2,}"
+              controlFunc={this.handleChange}
+            />
+            <SingleInput
+              wrapper="app-grid-item2"
+              name="job"
+              inputType="text"
+              title="Job"
+              placeholder="Job"
+              content={data.job}
+              pattern=".{2,}"
+              controlFunc={this.handleChange}
+            />
+            <SingleInput
+              wrapper="app-grid-item2"
+              name="job_cat"
+              inputType="text"
+              title="Job cat"
+              placeholder="Job cat"
+              content={data.job_cat}
+              pattern=".{2,}"
+              controlFunc={this.handleChange}
+            />
+            <Textarea
+              wrapper="app-grid-whole"
+              name="bio"
+              title="Bio"
+              content={data.bio}
+              pattern=".{6,}"
+              controlFunc={this.handleChange}
+            />
+            <Textarea
+              wrapper="app-grid-whole"
+              name="bio_cat"
+              title="Bio cat"
+              content={data.bio_cat}
+              pattern=".{6,}"
+              controlFunc={this.handleChange}
+            />
+            <button 
+              type="submit"
+              className="app-grid-btn btn"
+              disabled={!completed}
+            >
+            Update Profile
+            </button>
+          </form>
+        </article>
       )
     }
   
@@ -146,4 +146,5 @@ class AdminUserItem extends React.PureComponent {
   }
 }
 
+export const Unwrapped = AdminUserItem
 export default connect()(AdminUserItem)

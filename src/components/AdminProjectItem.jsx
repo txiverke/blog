@@ -64,7 +64,7 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
     <article className="app-grid"> 
       <header className="app-grid-header">
         <h2 className="tit-section">{label}</h2>
-        {!data && 
+        {!data || Object.keys(data).length === 0 && 
           <button 
             onClick={showContent}
             className={`btn btn-icon btn-clean icon-close tr2 btn-show`}>

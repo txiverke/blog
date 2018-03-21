@@ -62,7 +62,7 @@ const AdminPostItem = ({label, handlePost, data}: Props) => {
     <article className="app-grid"> 
       <header className="app-grid-header">
         <h2 className="tit-section">{label}</h2>
-        {!data && 
+        {!data || Object.keys(data).length === 0 && 
           <button 
             onClick={showContent}
             className="btn btn-icon btn-clean icon-close btn-show tr2">

@@ -46,4 +46,5 @@ class AdminProjectList extends React.Component {
   }
 }
 
+export const Unwrapped = AdminProjectList
 export default connect()(AdminProjectList)
