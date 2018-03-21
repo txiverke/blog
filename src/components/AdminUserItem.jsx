@@ -28,7 +28,7 @@ class AdminUserItem extends React.PureComponent {
 
   handleChange = (e: InputEvent) => {
     e.target.classList.add('active')
-    showInputError(event.target)
+    showInputError(e.target)
   }
   
   handleData = (e: InputEvent) => {
