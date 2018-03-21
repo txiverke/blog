@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import withWindow from '../withWindow'
 
 const Component = () => <div className="test">Just a test component</div>
