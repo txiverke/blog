@@ -72,4 +72,5 @@ const mapStateToProps = state => ({
 
 const HeaderWithWindowScroll = withWindow(Header)
 
+export const Unwrapped = Header
 export default connect(mapStateToProps)(HeaderWithWindowScroll)

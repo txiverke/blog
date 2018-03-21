@@ -4,7 +4,7 @@ import React from 'react'
 
 import landingBg from '../assets/imgs/bg_1.png'
 
-class Background extends React.Component {
+class Background extends React.PureComponent {
   state = {
     render: ''
   }
