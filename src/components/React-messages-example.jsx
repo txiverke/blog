@@ -81,8 +81,8 @@ class ReactMessagesExample extends React.PureComponent {
           <li className="app-list-item">
             <label className="txt" htmlFor="error">
               Choose if the message is an error:<br />
-              <input onChange={this.handleError} type="radio" name="error" value={true} checked={error === true}/> Is an error &nbsp;
-              <input onChange={this.handleError} type="radio" name="error" value={false} checked={error === false}/> Is not an error
+              <input id="isError" onChange={this.handleError} type="radio" name="error" value={true} checked={error === true}/> Is an error &nbsp;
+              <input id="isNotError" onChange={this.handleError} type="radio" name="error" value={false} checked={error === false}/> Is not an error
             </label>
           </li>
           <li>

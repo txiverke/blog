@@ -1,0 +1,1524 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostList /> should render itself 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PostList
+    DIC={
+        Object {
+            "NO_POSTS_MSG": "No post message test",
+            "POSTED_AT": "Posted at test",
+          }
+    }
+    list={
+        Array [
+            Object {
+              "__v": 0,
+              "_id": "5aa9aa3d8bc34eabc8c7e043",
+              "background": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
+              "content": "just testing the react components",
+              "created": "2018-03-14T23:03:25.139Z",
+              "link": "localhost:3000/404",
+              "tags": "rest",
+              "title": "tesing is nicesss",
+            },
+            Object {
+              "__v": 0,
+              "_id": "5aa9aa3d8bc34eabc8c7e044",
+              "background": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
+              "content": "just testing the react components",
+              "created": "2018-03-14T23:03:25.139Z",
+              "link": "localhost:3000/404",
+              "tags": "rest",
+              "title": "tesing is nicesss",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <article
+            className="app-article app-article-even"
+>
+            <div
+                        className="app-article-content"
+            >
+                        <figure
+                                    className="app-article-img"
+                        >
+                                    <a
+                                                className="btn btn-icon app-article-icon"
+                                                href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                                    >
+                                                <span
+                                                            className="icon-twitter"
+                                                />
+                                    </a>
+                                    <img
+                                                alt="tesing is nicesss"
+                                                className="bg-item"
+                                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                    />
+                        </figure>
+                        <h2
+                                    className="app-article-title"
+                        >
+                                    <a
+                                                href="localhost:3000/404"
+                                                target="_blank"
+                                    >
+                                                tesing is nicesss
+                                    </a>
+                        </h2>
+                        <p
+                                    className="app-article-txt txt mt0"
+                        >
+                                    just testing the react components
+                        </p>
+                        <p
+                                    className="app-article-tags"
+                        >
+                                    <span
+                                                className="app-article-tag"
+                                    >
+                                                <span>
+                                                            Tags : 
+                                                </span>
+                                                rest
+                                    </span>
+                                    <small
+                                                className="app-article-date"
+                                    >
+                                                Posted at test 2018-3-14
+                                    </small>
+                        </p>
+            </div>
+</article>,
+          <article
+            className="app-article app-article-odd"
+>
+            <div
+                        className="app-article-content"
+            >
+                        <figure
+                                    className="app-article-img"
+                        >
+                                    <a
+                                                className="btn btn-icon app-article-icon"
+                                                href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                                    >
+                                                <span
+                                                            className="icon-twitter"
+                                                />
+                                    </a>
+                                    <img
+                                                alt="tesing is nicesss"
+                                                className="bg-item"
+                                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                    />
+                        </figure>
+                        <h2
+                                    className="app-article-title"
+                        >
+                                    <a
+                                                href="localhost:3000/404"
+                                                target="_blank"
+                                    >
+                                                tesing is nicesss
+                                    </a>
+                        </h2>
+                        <p
+                                    className="app-article-txt txt mt0"
+                        >
+                                    just testing the react components
+                        </p>
+                        <p
+                                    className="app-article-tags"
+                        >
+                                    <span
+                                                className="app-article-tag"
+                                    >
+                                                <span>
+                                                            Tags : 
+                                                </span>
+                                                rest
+                                    </span>
+                                    <small
+                                                className="app-article-date"
+                                    >
+                                                Posted at test 2018-3-14
+                                    </small>
+                        </p>
+            </div>
+</article>,
+        ],
+        "",
+      ],
+      "className": "app-article-wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "5aa9aa3d8bc34eabc8c7e043",
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="app-article-content"
+>
+            <figure
+                        className="app-article-img"
+            >
+                        <a
+                                    className="btn btn-icon app-article-icon"
+                                    href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                        >
+                                    <span
+                                                className="icon-twitter"
+                                    />
+                        </a>
+                        <img
+                                    alt="tesing is nicesss"
+                                    className="bg-item"
+                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                        />
+            </figure>
+            <h2
+                        className="app-article-title"
+            >
+                        <a
+                                    href="localhost:3000/404"
+                                    target="_blank"
+                        >
+                                    tesing is nicesss
+                        </a>
+            </h2>
+            <p
+                        className="app-article-txt txt mt0"
+            >
+                        just testing the react components
+            </p>
+            <p
+                        className="app-article-tags"
+            >
+                        <span
+                                    className="app-article-tag"
+                        >
+                                    <span>
+                                                Tags : 
+                                    </span>
+                                    rest
+                        </span>
+                        <small
+                                    className="app-article-date"
+                        >
+                                    Posted at test 2018-3-14
+                        </small>
+            </p>
+</div>,
+          "className": "app-article app-article-even",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <figure
+                className="app-article-img"
+>
+                <a
+                                className="btn btn-icon app-article-icon"
+                                href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                >
+                                <span
+                                                className="icon-twitter"
+                                />
+                </a>
+                <img
+                                alt="tesing is nicesss"
+                                className="bg-item"
+                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                />
+</figure>,
+              <h2
+                className="app-article-title"
+>
+                <a
+                                href="localhost:3000/404"
+                                target="_blank"
+                >
+                                tesing is nicesss
+                </a>
+</h2>,
+              <p
+                className="app-article-txt txt mt0"
+>
+                just testing the react components
+</p>,
+              <p
+                className="app-article-tags"
+>
+                <span
+                                className="app-article-tag"
+                >
+                                <span>
+                                                Tags : 
+                                </span>
+                                rest
+                </span>
+                <small
+                                className="app-article-date"
+                >
+                                Posted at test 2018-3-14
+                </small>
+</p>,
+            ],
+            "className": "app-article-content",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <a
+                    className="btn btn-icon app-article-icon"
+                    href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+>
+                    <span
+                                        className="icon-twitter"
+                    />
+</a>,
+                  <img
+                    alt="tesing is nicesss"
+                    className="bg-item"
+                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+/>,
+                ],
+                "className": "app-article-img",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span
+                      className="icon-twitter"
+/>,
+                    "className": "btn btn-icon app-article-icon",
+                    "href": "https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "icon-twitter",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "span",
+                  },
+                  "type": "a",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "tesing is nicesss",
+                    "className": "bg-item",
+                    "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+              ],
+              "type": "figure",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="localhost:3000/404"
+                  target="_blank"
+>
+                  tesing is nicesss
+</a>,
+                "className": "app-article-title",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "tesing is nicesss",
+                  "href": "localhost:3000/404",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": "tesing is nicesss",
+                "type": "a",
+              },
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "just testing the react components",
+                "className": "app-article-txt txt mt0",
+              },
+              "ref": null,
+              "rendered": "just testing the react components",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="app-article-tag"
+>
+                    <span>
+                                        Tags : 
+                    </span>
+                    rest
+</span>,
+                  <small
+                    className="app-article-date"
+>
+                    Posted at test 2018-3-14
+</small>,
+                ],
+                "className": "app-article-tags",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <span>
+                        Tags : 
+</span>,
+                      "rest",
+                    ],
+                    "className": "app-article-tag",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Tags : ",
+                      },
+                      "ref": null,
+                      "rendered": "Tags : ",
+                      "type": "span",
+                    },
+                    "rest",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Posted at test 2018-3-14",
+                    "className": "app-article-date",
+                  },
+                  "ref": null,
+                  "rendered": "Posted at test 2018-3-14",
+                  "type": "small",
+                },
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "article",
+      },
+      Object {
+        "instance": null,
+        "key": "5aa9aa3d8bc34eabc8c7e044",
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="app-article-content"
+>
+            <figure
+                        className="app-article-img"
+            >
+                        <a
+                                    className="btn btn-icon app-article-icon"
+                                    href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                        >
+                                    <span
+                                                className="icon-twitter"
+                                    />
+                        </a>
+                        <img
+                                    alt="tesing is nicesss"
+                                    className="bg-item"
+                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                        />
+            </figure>
+            <h2
+                        className="app-article-title"
+            >
+                        <a
+                                    href="localhost:3000/404"
+                                    target="_blank"
+                        >
+                                    tesing is nicesss
+                        </a>
+            </h2>
+            <p
+                        className="app-article-txt txt mt0"
+            >
+                        just testing the react components
+            </p>
+            <p
+                        className="app-article-tags"
+            >
+                        <span
+                                    className="app-article-tag"
+                        >
+                                    <span>
+                                                Tags : 
+                                    </span>
+                                    rest
+                        </span>
+                        <small
+                                    className="app-article-date"
+                        >
+                                    Posted at test 2018-3-14
+                        </small>
+            </p>
+</div>,
+          "className": "app-article app-article-odd",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <figure
+                className="app-article-img"
+>
+                <a
+                                className="btn btn-icon app-article-icon"
+                                href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                >
+                                <span
+                                                className="icon-twitter"
+                                />
+                </a>
+                <img
+                                alt="tesing is nicesss"
+                                className="bg-item"
+                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                />
+</figure>,
+              <h2
+                className="app-article-title"
+>
+                <a
+                                href="localhost:3000/404"
+                                target="_blank"
+                >
+                                tesing is nicesss
+                </a>
+</h2>,
+              <p
+                className="app-article-txt txt mt0"
+>
+                just testing the react components
+</p>,
+              <p
+                className="app-article-tags"
+>
+                <span
+                                className="app-article-tag"
+                >
+                                <span>
+                                                Tags : 
+                                </span>
+                                rest
+                </span>
+                <small
+                                className="app-article-date"
+                >
+                                Posted at test 2018-3-14
+                </small>
+</p>,
+            ],
+            "className": "app-article-content",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <a
+                    className="btn btn-icon app-article-icon"
+                    href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+>
+                    <span
+                                        className="icon-twitter"
+                    />
+</a>,
+                  <img
+                    alt="tesing is nicesss"
+                    className="bg-item"
+                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+/>,
+                ],
+                "className": "app-article-img",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span
+                      className="icon-twitter"
+/>,
+                    "className": "btn btn-icon app-article-icon",
+                    "href": "https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "icon-twitter",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "span",
+                  },
+                  "type": "a",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "tesing is nicesss",
+                    "className": "bg-item",
+                    "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+              ],
+              "type": "figure",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="localhost:3000/404"
+                  target="_blank"
+>
+                  tesing is nicesss
+</a>,
+                "className": "app-article-title",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "tesing is nicesss",
+                  "href": "localhost:3000/404",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": "tesing is nicesss",
+                "type": "a",
+              },
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "just testing the react components",
+                "className": "app-article-txt txt mt0",
+              },
+              "ref": null,
+              "rendered": "just testing the react components",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="app-article-tag"
+>
+                    <span>
+                                        Tags : 
+                    </span>
+                    rest
+</span>,
+                  <small
+                    className="app-article-date"
+>
+                    Posted at test 2018-3-14
+</small>,
+                ],
+                "className": "app-article-tags",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <span>
+                        Tags : 
+</span>,
+                      "rest",
+                    ],
+                    "className": "app-article-tag",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Tags : ",
+                      },
+                      "ref": null,
+                      "rendered": "Tags : ",
+                      "type": "span",
+                    },
+                    "rest",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Posted at test 2018-3-14",
+                    "className": "app-article-date",
+                  },
+                  "ref": null,
+                  "rendered": "Posted at test 2018-3-14",
+                  "type": "small",
+                },
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "article",
+      },
+      "",
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <article
+              className="app-article app-article-even"
+>
+              <div
+                            className="app-article-content"
+              >
+                            <figure
+                                          className="app-article-img"
+                            >
+                                          <a
+                                                        className="btn btn-icon app-article-icon"
+                                                        href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                                          >
+                                                        <span
+                                                                      className="icon-twitter"
+                                                        />
+                                          </a>
+                                          <img
+                                                        alt="tesing is nicesss"
+                                                        className="bg-item"
+                                                        src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                          />
+                            </figure>
+                            <h2
+                                          className="app-article-title"
+                            >
+                                          <a
+                                                        href="localhost:3000/404"
+                                                        target="_blank"
+                                          >
+                                                        tesing is nicesss
+                                          </a>
+                            </h2>
+                            <p
+                                          className="app-article-txt txt mt0"
+                            >
+                                          just testing the react components
+                            </p>
+                            <p
+                                          className="app-article-tags"
+                            >
+                                          <span
+                                                        className="app-article-tag"
+                                          >
+                                                        <span>
+                                                                      Tags : 
+                                                        </span>
+                                                        rest
+                                          </span>
+                                          <small
+                                                        className="app-article-date"
+                                          >
+                                                        Posted at test 2018-3-14
+                                          </small>
+                            </p>
+              </div>
+</article>,
+            <article
+              className="app-article app-article-odd"
+>
+              <div
+                            className="app-article-content"
+              >
+                            <figure
+                                          className="app-article-img"
+                            >
+                                          <a
+                                                        className="btn btn-icon app-article-icon"
+                                                        href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                                          >
+                                                        <span
+                                                                      className="icon-twitter"
+                                                        />
+                                          </a>
+                                          <img
+                                                        alt="tesing is nicesss"
+                                                        className="bg-item"
+                                                        src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                          />
+                            </figure>
+                            <h2
+                                          className="app-article-title"
+                            >
+                                          <a
+                                                        href="localhost:3000/404"
+                                                        target="_blank"
+                                          >
+                                                        tesing is nicesss
+                                          </a>
+                            </h2>
+                            <p
+                                          className="app-article-txt txt mt0"
+                            >
+                                          just testing the react components
+                            </p>
+                            <p
+                                          className="app-article-tags"
+                            >
+                                          <span
+                                                        className="app-article-tag"
+                                          >
+                                                        <span>
+                                                                      Tags : 
+                                                        </span>
+                                                        rest
+                                          </span>
+                                          <small
+                                                        className="app-article-date"
+                                          >
+                                                        Posted at test 2018-3-14
+                                          </small>
+                            </p>
+              </div>
+</article>,
+          ],
+          "",
+        ],
+        "className": "app-article-wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "5aa9aa3d8bc34eabc8c7e043",
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="app-article-content"
+>
+              <figure
+                            className="app-article-img"
+              >
+                            <a
+                                          className="btn btn-icon app-article-icon"
+                                          href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                            >
+                                          <span
+                                                        className="icon-twitter"
+                                          />
+                            </a>
+                            <img
+                                          alt="tesing is nicesss"
+                                          className="bg-item"
+                                          src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                            />
+              </figure>
+              <h2
+                            className="app-article-title"
+              >
+                            <a
+                                          href="localhost:3000/404"
+                                          target="_blank"
+                            >
+                                          tesing is nicesss
+                            </a>
+              </h2>
+              <p
+                            className="app-article-txt txt mt0"
+              >
+                            just testing the react components
+              </p>
+              <p
+                            className="app-article-tags"
+              >
+                            <span
+                                          className="app-article-tag"
+                            >
+                                          <span>
+                                                        Tags : 
+                                          </span>
+                                          rest
+                            </span>
+                            <small
+                                          className="app-article-date"
+                            >
+                                          Posted at test 2018-3-14
+                            </small>
+              </p>
+</div>,
+            "className": "app-article app-article-even",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <figure
+                  className="app-article-img"
+>
+                  <a
+                                    className="btn btn-icon app-article-icon"
+                                    href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                  >
+                                    <span
+                                                      className="icon-twitter"
+                                    />
+                  </a>
+                  <img
+                                    alt="tesing is nicesss"
+                                    className="bg-item"
+                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                  />
+</figure>,
+                <h2
+                  className="app-article-title"
+>
+                  <a
+                                    href="localhost:3000/404"
+                                    target="_blank"
+                  >
+                                    tesing is nicesss
+                  </a>
+</h2>,
+                <p
+                  className="app-article-txt txt mt0"
+>
+                  just testing the react components
+</p>,
+                <p
+                  className="app-article-tags"
+>
+                  <span
+                                    className="app-article-tag"
+                  >
+                                    <span>
+                                                      Tags : 
+                                    </span>
+                                    rest
+                  </span>
+                  <small
+                                    className="app-article-date"
+                  >
+                                    Posted at test 2018-3-14
+                  </small>
+</p>,
+              ],
+              "className": "app-article-content",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <a
+                      className="btn btn-icon app-article-icon"
+                      href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+>
+                      <span
+                                            className="icon-twitter"
+                      />
+</a>,
+                    <img
+                      alt="tesing is nicesss"
+                      className="bg-item"
+                      src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+/>,
+                  ],
+                  "className": "app-article-img",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <span
+                        className="icon-twitter"
+/>,
+                      "className": "btn btn-icon app-article-icon",
+                      "href": "https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "icon-twitter",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    "type": "a",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "tesing is nicesss",
+                      "className": "bg-item",
+                      "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                ],
+                "type": "figure",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <a
+                    href="localhost:3000/404"
+                    target="_blank"
+>
+                    tesing is nicesss
+</a>,
+                  "className": "app-article-title",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "tesing is nicesss",
+                    "href": "localhost:3000/404",
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": "tesing is nicesss",
+                  "type": "a",
+                },
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "just testing the react components",
+                  "className": "app-article-txt txt mt0",
+                },
+                "ref": null,
+                "rendered": "just testing the react components",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span
+                      className="app-article-tag"
+>
+                      <span>
+                                            Tags : 
+                      </span>
+                      rest
+</span>,
+                    <small
+                      className="app-article-date"
+>
+                      Posted at test 2018-3-14
+</small>,
+                  ],
+                  "className": "app-article-tags",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span>
+                          Tags : 
+</span>,
+                        "rest",
+                      ],
+                      "className": "app-article-tag",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Tags : ",
+                        },
+                        "ref": null,
+                        "rendered": "Tags : ",
+                        "type": "span",
+                      },
+                      "rest",
+                    ],
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Posted at test 2018-3-14",
+                      "className": "app-article-date",
+                    },
+                    "ref": null,
+                    "rendered": "Posted at test 2018-3-14",
+                    "type": "small",
+                  },
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "article",
+        },
+        Object {
+          "instance": null,
+          "key": "5aa9aa3d8bc34eabc8c7e044",
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="app-article-content"
+>
+              <figure
+                            className="app-article-img"
+              >
+                            <a
+                                          className="btn btn-icon app-article-icon"
+                                          href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                            >
+                                          <span
+                                                        className="icon-twitter"
+                                          />
+                            </a>
+                            <img
+                                          alt="tesing is nicesss"
+                                          className="bg-item"
+                                          src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                            />
+              </figure>
+              <h2
+                            className="app-article-title"
+              >
+                            <a
+                                          href="localhost:3000/404"
+                                          target="_blank"
+                            >
+                                          tesing is nicesss
+                            </a>
+              </h2>
+              <p
+                            className="app-article-txt txt mt0"
+              >
+                            just testing the react components
+              </p>
+              <p
+                            className="app-article-tags"
+              >
+                            <span
+                                          className="app-article-tag"
+                            >
+                                          <span>
+                                                        Tags : 
+                                          </span>
+                                          rest
+                            </span>
+                            <small
+                                          className="app-article-date"
+                            >
+                                          Posted at test 2018-3-14
+                            </small>
+              </p>
+</div>,
+            "className": "app-article app-article-odd",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <figure
+                  className="app-article-img"
+>
+                  <a
+                                    className="btn btn-icon app-article-icon"
+                                    href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+                  >
+                                    <span
+                                                      className="icon-twitter"
+                                    />
+                  </a>
+                  <img
+                                    alt="tesing is nicesss"
+                                    className="bg-item"
+                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                  />
+</figure>,
+                <h2
+                  className="app-article-title"
+>
+                  <a
+                                    href="localhost:3000/404"
+                                    target="_blank"
+                  >
+                                    tesing is nicesss
+                  </a>
+</h2>,
+                <p
+                  className="app-article-txt txt mt0"
+>
+                  just testing the react components
+</p>,
+                <p
+                  className="app-article-tags"
+>
+                  <span
+                                    className="app-article-tag"
+                  >
+                                    <span>
+                                                      Tags : 
+                                    </span>
+                                    rest
+                  </span>
+                  <small
+                                    className="app-article-date"
+                  >
+                                    Posted at test 2018-3-14
+                  </small>
+</p>,
+              ],
+              "className": "app-article-content",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <a
+                      className="btn btn-icon app-article-icon"
+                      href="https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest"
+>
+                      <span
+                                            className="icon-twitter"
+                      />
+</a>,
+                    <img
+                      alt="tesing is nicesss"
+                      className="bg-item"
+                      src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+/>,
+                  ],
+                  "className": "app-article-img",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <span
+                        className="icon-twitter"
+/>,
+                      "className": "btn btn-icon app-article-icon",
+                      "href": "https://twitter.com/intent/tweet?text=tesing is nicesss&url=localhost:3000/404&hashtags=rest",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "icon-twitter",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    "type": "a",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "tesing is nicesss",
+                      "className": "bg-item",
+                      "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                ],
+                "type": "figure",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <a
+                    href="localhost:3000/404"
+                    target="_blank"
+>
+                    tesing is nicesss
+</a>,
+                  "className": "app-article-title",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "tesing is nicesss",
+                    "href": "localhost:3000/404",
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": "tesing is nicesss",
+                  "type": "a",
+                },
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "just testing the react components",
+                  "className": "app-article-txt txt mt0",
+                },
+                "ref": null,
+                "rendered": "just testing the react components",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span
+                      className="app-article-tag"
+>
+                      <span>
+                                            Tags : 
+                      </span>
+                      rest
+</span>,
+                    <small
+                      className="app-article-date"
+>
+                      Posted at test 2018-3-14
+</small>,
+                  ],
+                  "className": "app-article-tags",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span>
+                          Tags : 
+</span>,
+                        "rest",
+                      ],
+                      "className": "app-article-tag",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Tags : ",
+                        },
+                        "ref": null,
+                        "rendered": "Tags : ",
+                        "type": "span",
+                      },
+                      "rest",
+                    ],
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Posted at test 2018-3-14",
+                      "className": "app-article-date",
+                    },
+                    "ref": null,
+                    "rendered": "Posted at test 2018-3-14",
+                    "type": "small",
+                  },
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "article",
+        },
+        "",
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
