@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Regular';
+  src: url('../fonts/SourceSansPro-Regular.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Lighter';
+  src: url('../fonts/SourceSansPro-ExtraLight.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Bold';
+  src: url('../fonts/SourceSansPro-Black.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Number';
+  src: url('../fonts/Montserrat-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?r5ozf0');
+  src:  url('../fonts/icomoon.eot?r5ozf0#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?r5ozf0') format('truetype'),
+    url('../fonts/icomoon.woff?r5ozf0') format('woff'),
+    url('../fonts/icomoon.svg?r5ozf0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cheveron-left:before {
+  content: "\e907";
+}
+.icon-close:before {
+  content: "\e902";
+}
+.icon-user:before {
+  content: "\e903";
+}
+.icon-chat-3:before {
+  content: "\e909";
+}
+.icon-like:before {
+  content: "\e908";
+}
+.icon-mail-envelope-open:before {
+  content: "\e900";
+}
+.icon-trash-can:before {
+  content: "\e901";
+}
+.icon-search:before {
+  content: "\e904";
+}
+.icon-cloud-download:before {
+  content: "\e905";
+}
+.icon-pen-angled:before {
+  content: "\e906";
+}
+.icon-spinner11:before {
+  content: "\e984";
+}
+.icon-switch:before {
+  content: "\e9b6";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-file-pdf:before {
+  content: "\eadf";
+}
+

@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageUploader /> should render itself 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ImageUploader />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <SingleInput
+          content=""
+          controlFunc={[Function]}
+          inputType="file"
+          name="image"
+          pattern=""
+          placeholder=""
+          required={false}
+          size=""
+          title="Image"
+          wrapper="app-form-group"
+/>,
+        <p
+          className="txt"
+>
+          Please select an Image for Preview
+</p>,
+      ],
+      "className": "app-grid-whole",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "content": "",
+          "controlFunc": [Function],
+          "inputType": "file",
+          "name": "image",
+          "pattern": "",
+          "placeholder": "",
+          "required": false,
+          "size": "",
+          "title": "Image",
+          "wrapper": "app-form-group",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Please select an Image for Preview",
+          "className": "txt",
+        },
+        "ref": null,
+        "rendered": "Please select an Image for Preview",
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <SingleInput
+            content=""
+            controlFunc={[Function]}
+            inputType="file"
+            name="image"
+            pattern=""
+            placeholder=""
+            required={false}
+            size=""
+            title="Image"
+            wrapper="app-form-group"
+/>,
+          <p
+            className="txt"
+>
+            Please select an Image for Preview
+</p>,
+        ],
+        "className": "app-grid-whole",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "content": "",
+            "controlFunc": [Function],
+            "inputType": "file",
+            "name": "image",
+            "pattern": "",
+            "placeholder": "",
+            "required": false,
+            "size": "",
+            "title": "Image",
+            "wrapper": "app-form-group",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Please select an Image for Preview",
+            "className": "txt",
+          },
+          "ref": null,
+          "rendered": "Please select an Image for Preview",
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignInForm /> should render itself 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SignInForm
+    authenticate={
+        Object {
+            "completed": true,
+            "data": "test",
+            "error": false,
+            "message": "test message",
+          }
+    }
+    handleClick={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <M
+          duration={2000}
+          error={false}
+          icon=""
+          message="test message"
+          next={true}
+/>,
+        <h2
+          className="app-grid-header tit-section"
+>
+          Sign In
+</h2>,
+        <form
+          className="app-grid-body"
+          noValidate={true}
+          onSubmit={[Function]}
+>
+          <SingleInput
+                    content=""
+                    controlFunc={[Function]}
+                    inputType="text"
+                    name="username"
+                    pattern=".{6,}"
+                    placeholder="Username"
+                    required={true}
+                    size=""
+                    title="Username"
+                    wrapper="app-grid-item1"
+          />
+          <SingleInput
+                    content=""
+                    controlFunc={[Function]}
+                    inputType="password"
+                    name="password"
+                    pattern=".{6,}"
+                    placeholder="Password"
+                    required={true}
+                    size=""
+                    title="Password"
+                    wrapper="app-grid-item2"
+          />
+          <button
+                    className="app-grid-btn btn"
+                    disabled={false}
+                    type="submit"
+          >
+                    Sign In
+          </button>
+</form>,
+      ],
+      "className": "app-grid",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "duration": 2000,
+          "error": false,
+          "icon": "",
+          "message": "test message",
+          "next": true,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Sign In",
+          "className": "app-grid-header tit-section",
+        },
+        "ref": null,
+        "rendered": "Sign In",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <SingleInput
+              content=""
+              controlFunc={[Function]}
+              inputType="text"
+              name="username"
+              pattern=".{6,}"
+              placeholder="Username"
+              required={true}
+              size=""
+              title="Username"
+              wrapper="app-grid-item1"
+/>,
+            <SingleInput
+              content=""
+              controlFunc={[Function]}
+              inputType="password"
+              name="password"
+              pattern=".{6,}"
+              placeholder="Password"
+              required={true}
+              size=""
+              title="Password"
+              wrapper="app-grid-item2"
+/>,
+            <button
+              className="app-grid-btn btn"
+              disabled={false}
+              type="submit"
+>
+              Sign In
+</button>,
+          ],
+          "className": "app-grid-body",
+          "noValidate": true,
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "content": "",
+              "controlFunc": [Function],
+              "inputType": "text",
+              "name": "username",
+              "pattern": ".{6,}",
+              "placeholder": "Username",
+              "required": true,
+              "size": "",
+              "title": "Username",
+              "wrapper": "app-grid-item1",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "content": "",
+              "controlFunc": [Function],
+              "inputType": "password",
+              "name": "password",
+              "pattern": ".{6,}",
+              "placeholder": "Password",
+              "required": true,
+              "size": "",
+              "title": "Password",
+              "wrapper": "app-grid-item2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Sign In",
+              "className": "app-grid-btn btn",
+              "disabled": false,
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Sign In",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <M
+            duration={2000}
+            error={false}
+            icon=""
+            message="test message"
+            next={true}
+/>,
+          <h2
+            className="app-grid-header tit-section"
+>
+            Sign In
+</h2>,
+          <form
+            className="app-grid-body"
+            noValidate={true}
+            onSubmit={[Function]}
+>
+            <SingleInput
+                        content=""
+                        controlFunc={[Function]}
+                        inputType="text"
+                        name="username"
+                        pattern=".{6,}"
+                        placeholder="Username"
+                        required={true}
+                        size=""
+                        title="Username"
+                        wrapper="app-grid-item1"
+            />
+            <SingleInput
+                        content=""
+                        controlFunc={[Function]}
+                        inputType="password"
+                        name="password"
+                        pattern=".{6,}"
+                        placeholder="Password"
+                        required={true}
+                        size=""
+                        title="Password"
+                        wrapper="app-grid-item2"
+            />
+            <button
+                        className="app-grid-btn btn"
+                        disabled={false}
+                        type="submit"
+            >
+                        Sign In
+            </button>
+</form>,
+        ],
+        "className": "app-grid",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "duration": 2000,
+            "error": false,
+            "icon": "",
+            "message": "test message",
+            "next": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Sign In",
+            "className": "app-grid-header tit-section",
+          },
+          "ref": null,
+          "rendered": "Sign In",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <SingleInput
+                content=""
+                controlFunc={[Function]}
+                inputType="text"
+                name="username"
+                pattern=".{6,}"
+                placeholder="Username"
+                required={true}
+                size=""
+                title="Username"
+                wrapper="app-grid-item1"
+/>,
+              <SingleInput
+                content=""
+                controlFunc={[Function]}
+                inputType="password"
+                name="password"
+                pattern=".{6,}"
+                placeholder="Password"
+                required={true}
+                size=""
+                title="Password"
+                wrapper="app-grid-item2"
+/>,
+              <button
+                className="app-grid-btn btn"
+                disabled={false}
+                type="submit"
+>
+                Sign In
+</button>,
+            ],
+            "className": "app-grid-body",
+            "noValidate": true,
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "content": "",
+                "controlFunc": [Function],
+                "inputType": "text",
+                "name": "username",
+                "pattern": ".{6,}",
+                "placeholder": "Username",
+                "required": true,
+                "size": "",
+                "title": "Username",
+                "wrapper": "app-grid-item1",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "content": "",
+                "controlFunc": [Function],
+                "inputType": "password",
+                "name": "password",
+                "pattern": ".{6,}",
+                "placeholder": "Password",
+                "required": true,
+                "size": "",
+                "title": "Password",
+                "wrapper": "app-grid-item2",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Sign In",
+                "className": "app-grid-btn btn",
+                "disabled": false,
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Sign In",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
