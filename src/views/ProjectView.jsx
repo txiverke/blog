@@ -72,6 +72,11 @@ class ProjectView extends React.PureComponent {
   render() {
     const { message } = this.props.projects
     const { data, next, prev, notFound, render } = this.state
+    let dataExtra = null
+
+    /*if(data.extra) {
+      dataExtra = <RoutesAsync loadingPromise={import(`../components/${data.extra}`)} />
+    }*/
 
     if (Object.keys(data).length && !notFound) {
       return (
@@ -101,8 +106,7 @@ class ProjectView extends React.PureComponent {
               </nav>
               <p>{data.summary}</p>
               <p>{data.content}</p>
-              {/*$FlowFixMe */}
-              {data.extra && <RoutesAsync loadingPromise={import(`../components/${data.extra}`)} />}
+              {/*dataExtra*/}
               <a className="btn" href={`https://${data.link}`} target="_blank">Check the project</a>
             </div>
           </article>
