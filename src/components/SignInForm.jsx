@@ -6,14 +6,14 @@ import ReactMessages from 'react-messages'
 import SingleInput from './form/SingleInput'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
 
-const handleChange = event => {
-  event.target.classList.add('active')
-  showInputError(event.target)
+const handleChange = (e: InputEvent) => {
+  e.target.classList.add('active')
+  showInputError(e.target)
 }
 
-const handleData = event => {
-  const username = event.target.elements.username.value.trim()
-  const password = event.target.elements.password.value.trim()
+const handleData = (e: InputEvent) => {
+  const username = e.target.elements.username.value.trim()
+  const password = e.target.elements.password.value.trim()
 
   return { username, password }
 }
@@ -24,6 +24,7 @@ type Props = {
 }
 
 const SignInForm = ({ authenticate, handleClick }: Props) => {
+  
   const { message, completed, error } = authenticate
   const errorIcon = error === true ? 'warning' : ''
 
@@ -35,10 +36,10 @@ const SignInForm = ({ authenticate, handleClick }: Props) => {
           noValidate
           className="app-grid-body" 
           onSubmit={
-            (event) => {
-              event.preventDefault()
+            (e: InputEvent) => {
+              e.preventDefault()
               if (showFormErrors()) {
-                handleClick(handleData(event))
+                handleClick(handleData(e))
               }
           }}
         >

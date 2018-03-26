@@ -27,7 +27,7 @@ class Stats extends React.PureComponent {
   }
 
 
-  getValue(section) {
+  getValue(section: string) {
     const { users, posts, projects } = this.props.statistic.data
 
     switch (section) {
@@ -73,4 +73,5 @@ const mapStateToProps = (state: Object) => ({
   authenticate: state.authenticate 
 })
 
+export const Unwrapped = Stats
 export default connect(mapStateToProps)(Stats)

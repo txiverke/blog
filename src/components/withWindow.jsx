@@ -1,12 +1,10 @@
 import React from 'react'
 
-const withWindow = (Component: React$Component<*,*,*>) => (
+const withWindow = (Component: Class<React$Component<*, *, *>>) => (
   class extends React.Component {
     state = {
       scroll: false
     }
-
-    handleScroll = this.handleScroll.bind(this)
 
     componentDidMount() {
       window.addEventListener('scroll', this.handleScroll)
@@ -16,7 +14,7 @@ const withWindow = (Component: React$Component<*,*,*>) => (
       window.removeEventListener('scroll', this.handleScroll)
     }
 
-    handleScroll() {
+    handleScroll = () => {
       if (window.scrollY > 10) {
         this.setState({ scroll: true })
       } else {

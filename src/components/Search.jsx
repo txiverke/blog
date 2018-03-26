@@ -34,8 +34,7 @@ class Search extends React.PureComponent {
 
     return (
       <div className="app-search">
-        <button 
-          className={`app-search-bg${opacityClass}`} />
+        <button className={`app-search-bg${opacityClass}`} />
         <div className="app-search-content">
           <button
             onClick={this.handleResetClick}
@@ -59,4 +58,5 @@ class Search extends React.PureComponent {
 
 const SearchWithWindowScroll = withWindow(Search)
 
+export const Unwrapped = Search
 export default SearchWithWindowScroll

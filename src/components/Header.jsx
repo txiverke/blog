@@ -65,7 +65,7 @@ const Header = ({ dispatch, authenticate, language, scroll }: Props) => {
   )
 }
 
-const mapStateToProps = state => ({ 
+const mapStateToProps = (state: Object) => ({ 
   authenticate: state.authenticate,
   language: state.language 
 })
