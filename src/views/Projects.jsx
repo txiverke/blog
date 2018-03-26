@@ -46,7 +46,7 @@ class Projects extends React.Component {
     const { slug } = this.state
 
     if (slug) {
-      return <Redirect to={`projects/${slug}`} />
+      return <Redirect to={`react-messages-5aa0874985314f0e3ac598d4`} />
     }
 
     return (

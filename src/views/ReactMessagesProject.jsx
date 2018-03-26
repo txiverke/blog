@@ -3,20 +3,18 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import Loader from '../components/Loader'
 import ButtonBack from '../components/ButtonBack'
 import { loadProjectData } from '../actions/projectActionCreators'
-import { getItem, getSlug } from '../utils/helpers'
+import { getItem } from '../utils/helpers'
 import config from '../config'
+import ReactMessagesExample from '../components/React-messages-example'
 
 class ProjectView extends React.PureComponent {
   state = {
     data: {},
-    next: '',
-    prev: '',
-    notFound: false,
     render: ''
   }
 
@@ -33,7 +31,7 @@ class ProjectView extends React.PureComponent {
     if (data.length === 0) {
       dispatch(loadProjectData())
     } else {
-      const id = getItem(this.props.match.params.id, '-')
+      const id = getItem(this.props.match.url, '-')
       this.getProject(data, id)
     }
   }
@@ -42,37 +40,28 @@ class ProjectView extends React.PureComponent {
     const { data } = nextProps.projects
 
     if (data && data.length) {
-      const id = getItem(this.props.match.params.id, '-')
+      const id = getItem(this.props.match.url, '-')
       this.getProject(data, id)
     }
   }
 
   getProject(data: Array<Object>, id: string) {
-    const result = data.filter(item => item._id === id)
-    const index = data.map(item => item._id).indexOf(id)
-
-    if (index !== -1) {
-      const next = data.length === index + 1 ? 0 : index + 1
-      const prev = index === 0 ? data.length - 1 : index - 1
 
       this.setState({ 
-        data: result[0],
-        next: getSlug(String(`${data[next].title} ${data[next]._id}`)),
-        prev: getSlug(String(`${data[prev].title} ${data[prev]._id}`)),
+        data: data[0],
       })
+
       setTimeout(() => { 
         this.setState({ render: 'app-background-render' }) 
       })
-    } else {
-      this.setState({ notFound: true})
-    }
+    
   }
 
   render() {
     const { message } = this.props.projects
-    const { data, next, prev, notFound, render } = this.state
+    const { data, notFound, render } = this.state
 
-    if (Object.keys(data).length && !notFound) {
+    if (Object.keys(data).length) {
       return (
         <section className="app-view-100">
           <Helmet 
@@ -90,16 +79,9 @@ class ProjectView extends React.PureComponent {
             <div className="app-article-content-txt">
               <h1 className="app-article-full-title">{data.title}</h1>
               <h2 className="app-article-full-subtitle">{data.subtitle}</h2>
-              <nav className="app-article-nav">
-                <Link className="btn-prev icon-cheveron-left" to={prev}>
-                  <span className="hidden">Prev</span>
-                </Link>
-                <Link className="btn-next icon-cheveron-left" to={next}>
-                  <span className="hidden">Next</span>
-                </Link>
-              </nav>
               <p>{data.summary}</p>
               <p>{data.content}</p>
+              <ReactMessagesExample />
               <a className="btn" href={`https://${data.link}`} target="_blank">Check the project</a>
             </div>
           </article>
