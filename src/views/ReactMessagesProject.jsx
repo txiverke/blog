@@ -3,7 +3,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 
 import Loader from '../components/Loader'
 import ButtonBack from '../components/ButtonBack'
@@ -59,7 +58,7 @@ class ProjectView extends React.PureComponent {
 
   render() {
     const { message } = this.props.projects
-    const { data, notFound, render } = this.state
+    const { data, render } = this.state
 
     if (Object.keys(data).length) {
       return (
@@ -87,8 +86,6 @@ class ProjectView extends React.PureComponent {
           </article>
         </section>
       )
-    } else if(Object.keys(data).length && notFound) {
-      return <Redirect to="/projects" />
     }
 
     return (

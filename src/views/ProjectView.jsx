@@ -10,6 +10,7 @@ import ButtonBack from '../components/ButtonBack'
 import { loadProjectData } from '../actions/projectActionCreators'
 import { getItem, getSlug } from '../utils/helpers'
 import config from '../config'
+import ReactMessagesExample from '../components/React-messages-example'
 
 class ProjectView extends React.PureComponent {
   state = {
@@ -68,9 +69,17 @@ class ProjectView extends React.PureComponent {
     }
   }
 
+  getExtraContent = (content: string) => {
+    switch(content) {
+      case 'React-messages-example': return <ReactMessagesExample />
+      default: return ''
+    }
+  }
+
   render() {
     const { message } = this.props.projects
     const { data, next, prev, notFound, render } = this.state
+    const contentExtra = data.extra ? this.getExtraContent(data.extra) : ''
 
     if (Object.keys(data).length && !notFound) {
       return (
@@ -100,6 +109,7 @@ class ProjectView extends React.PureComponent {
               </nav>
               <p>{data.summary}</p>
               <p>{data.content}</p>
+              {contentExtra}
               <a className="btn" href={`https://${data.link}`} target="_blank">Check the project</a>
             </div>
           </article>

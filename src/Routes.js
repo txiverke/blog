@@ -22,18 +22,18 @@ const Routes = () => (
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/Posts')} />
       )} />
-    
+    {/** Temporary hardcoded route related with a bug in the production build 
     <Route
       path="/react-messages-5aa0874985314f0e3ac598d4"
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/ReactMessagesProject')} />
       )} /> 
-    {/** Temporary hardcoded route related with a bug in the production build 
+    */}
     <Route
       path="/projects/:id"
       component={props => (
         <RoutesAsync props={props} loadingPromise={import('./views/ProjectView')} />
-      )} />*/}
+      )} />
     <Route
       path="/projects"
       component={props => (
