@@ -8,7 +8,7 @@ ShallowWrapper {
     authenticate={
         Object {
             "completed": true,
-            "data": "",
+            "data": "token",
             "error": false,
             "message": "",
           }

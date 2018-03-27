@@ -4,6 +4,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import ReactMessages from 'react-messages'
+import { Redirect } from 'react-router-dom'
 
 import Loader from '../components/Loader'
 import AdminPostItem from '../components/AdminPostItem'
@@ -42,8 +43,11 @@ class AdminPostView extends React.Component {
   render() {
     const { message, error, completed } = this.props.item
     const { data } = this.state
+    const isAuthenticate = this.props.authenticate.data
 
-    if (completed) {
+    if(!isAuthenticate) return <Redirect to="/" />
+
+    if (isAuthenticate && completed) {
       return (
         <section className="app-view pb5">
           <Helmet 
@@ -61,6 +65,8 @@ class AdminPostView extends React.Component {
           />
         </section>
       )
+    } else if (!isAuthenticate) {
+      return <Redirect to="/" />
     }
 
     return (

@@ -40,191 +40,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <HelmetWrapper
-          defer={true}
-          encodeSpecialCharacters={true}
-          meta={
-                    Array [
-                              Object {
-                                "content": "Admin page",
-                                "name": "description",
-                              },
-                              Object {
-                                "content": "Admin page",
-                                "property": "og:title",
-                              },
-                            ]
-          }
-          title="Admin page"
-/>,
-        <M
-          duration={2000}
-          error={false}
-          icon="heart"
-          message="Just a fake message"
-          next={true}
-/>,
-        <AdminPostItem
-          data={Object {}}
-          handlePost={[Function]}
-          label="Update post"
-/>,
-      ],
-      "className": "app-view pb5",
+      "push": false,
+      "to": "/",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "defer": true,
-          "encodeSpecialCharacters": true,
-          "meta": Array [
-            Object {
-              "content": "Admin page",
-              "name": "description",
-            },
-            Object {
-              "content": "Admin page",
-              "property": "og:title",
-            },
-          ],
-          "title": "Admin page",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "duration": 2000,
-          "error": false,
-          "icon": "heart",
-          "message": "Just a fake message",
-          "next": true,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "data": Object {},
-          "handlePost": [Function],
-          "label": "Update post",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "section",
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-            meta={
-                        Array [
-                                    Object {
-                                      "content": "Admin page",
-                                      "name": "description",
-                                    },
-                                    Object {
-                                      "content": "Admin page",
-                                      "property": "og:title",
-                                    },
-                                  ]
-            }
-            title="Admin page"
-/>,
-          <M
-            duration={2000}
-            error={false}
-            icon="heart"
-            message="Just a fake message"
-            next={true}
-/>,
-          <AdminPostItem
-            data={Object {}}
-            handlePost={[Function]}
-            label="Update post"
-/>,
-        ],
-        "className": "app-view pb5",
+        "push": false,
+        "to": "/",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "defer": true,
-            "encodeSpecialCharacters": true,
-            "meta": Array [
-              Object {
-                "content": "Admin page",
-                "name": "description",
-              },
-              Object {
-                "content": "Admin page",
-                "property": "og:title",
-              },
-            ],
-            "title": "Admin page",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "duration": 2000,
-            "error": false,
-            "icon": "heart",
-            "message": "Just a fake message",
-            "next": true,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "data": Object {},
-            "handlePost": [Function],
-            "label": "Update post",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "section",
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

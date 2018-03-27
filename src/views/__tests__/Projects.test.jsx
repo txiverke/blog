@@ -51,7 +51,7 @@ describe('<Projects />', () => {
     properties.projects.data = [
       {
         created: "2018-03-14T15:35:36.142Z",
-        _id: "5aa94148c37e4894ab853a3b",
+        _id: "5aa",
         title: "react-messages",
         subtitle: "A component to create messages.",
         summary: "'react-messages' is a simple react component which allows you to create messages and configre their look and feel.",

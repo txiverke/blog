@@ -15,7 +15,7 @@ const properties = {
   },
   authenticate: { 
     completed: true,
-    data: '',
+    data: 'token',
     message: '',
     error: false
   },
@@ -40,23 +40,30 @@ function setup() {
 describe('<AdminProjectView />', () => {
   it('should render itself', () => {
     const component = shallow(<UnwrappedAdminProjectView {...properties} />)
-
     expect(component).toMatchSnapshot()
+  })
+
+  it('should render Redirect if user is not authenticate', () => {
+    properties.authenticate.data = ''
+    const component = shallow(<UnwrappedAdminProjectView {...properties} />)
+    expect(component.find('Redirect').length).toEqual(1)
   })
 
   it('should render Loader if no data', () => {
     properties.item.completed = false
-    const { enzymeWrapper } = setup()
-    expect(enzymeWrapper.find('Loader').length).toEqual(1)
+    properties.authenticate.data = 'test'
+    const component = shallow(<UnwrappedAdminProjectView {...properties} />)
+    expect(component.find('Redirect').length).toEqual(0)
+    expect(component.find('Loader').length).toEqual(1)
   })
 
-  it('should render AdminProjectItem if there is data', () => {
+  it('should render Project data if there is data', () => {
     properties.item.completed = true
     properties.item.data = { test: true }
-    const { enzymeWrapper } = setup()
-
-    expect(enzymeWrapper.find('Loader').length).toEqual(0)
-    expect(enzymeWrapper.find('AdminProjectItem').length).toEqual(1)
+    const component = shallow(<UnwrappedAdminProjectView {...properties} />)
+    expect(component.find('Redirect').length).toEqual(0)
+    expect(component.find('Loader').length).toEqual(0)
+    expect(component.find('AdminProjectItem').length).toEqual(1)
   })
 
   it('should call updateProject and dispatch updateProjectData action', () => {
