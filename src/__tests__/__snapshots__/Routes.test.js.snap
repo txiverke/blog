@@ -33,7 +33,7 @@ ShallowWrapper {
 />,
         <Route
           component={[Function]}
-          path="/react-messages-5aa0874985314f0e3ac598d4"
+          path="/projects/:id"
 />,
         <Route
           component={[Function]}
@@ -117,7 +117,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "component": [Function],
-          "path": "/react-messages-5aa0874985314f0e3ac598d4",
+          "path": "/projects/:id",
         },
         "ref": null,
         "rendered": null,
@@ -255,7 +255,7 @@ ShallowWrapper {
 />,
           <Route
             component={[Function]}
-            path="/react-messages-5aa0874985314f0e3ac598d4"
+            path="/projects/:id"
 />,
           <Route
             component={[Function]}
@@ -339,7 +339,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
-            "path": "/react-messages-5aa0874985314f0e3ac598d4",
+            "path": "/projects/:id",
           },
           "ref": null,
           "rendered": null,
