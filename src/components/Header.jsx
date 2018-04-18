@@ -31,7 +31,7 @@ const Header = ({ dispatch, authenticate, language, scroll }: Props) => {
     <header className="app-header">
       <div className={`app-header-bg${opacityClass}`}></div>
       <h2 className="app-header-title">
-        <Link to="/">
+        <Link className="app-header-link" to="/">
           <img className="app-header-logo-img" src={Logo} alt="Xavier Vilà" />
           <div className="app-header-logo-txt">
             Xavier Vilà<br />

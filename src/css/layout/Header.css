@@ -45,6 +45,31 @@
 .app-header-logo-img {
   margin: 0.1rem 0.3rem 0 0;
   align-self: flex-start;
+  transform: rotate(0deg)
+}
+
+.app-header-link:hover > img{
+  -webkit-animation: app-loader-rotation .3s infinite linear; /* Safari 4+ */
+  -moz-animation:    app-loader-rotation .3s infinite linear; /* Fx 5+ */
+  -o-animation:      app-loader-rotation .3s infinite linear; /* Opera 12+ */
+  animation:         app-loader-rotation .3s infinite linear;
+}
+
+@-webkit-keyframes app-loader-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-moz-keyframes app-loader-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-o-keyframes app-loader-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes app-loader-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .app-header-title span {

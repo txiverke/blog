@@ -41,6 +41,7 @@ ShallowWrapper {
           className="app-header-title"
 >
           <Link
+                    className="app-header-link"
                     replace={false}
                     to="/"
           >
@@ -93,6 +94,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <Link
+            className="app-header-link"
             replace={false}
             to="/"
 >
@@ -135,6 +137,7 @@ ShallowWrapper {
                 </span>
 </div>,
             ],
+            "className": "app-header-link",
             "replace": false,
             "to": "/",
           },
@@ -258,6 +261,7 @@ ShallowWrapper {
             className="app-header-title"
 >
             <Link
+                        className="app-header-link"
                         replace={false}
                         to="/"
             >
@@ -310,6 +314,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <Link
+              className="app-header-link"
               replace={false}
               to="/"
 >
@@ -352,6 +357,7 @@ ShallowWrapper {
                   </span>
 </div>,
               ],
+              "className": "app-header-link",
               "replace": false,
               "to": "/",
             },
