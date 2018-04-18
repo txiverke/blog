@@ -44,11 +44,20 @@ ShallowWrapper {
                     replace={false}
                     to="/"
           >
-                    Xavier Vilà
-                    <br />
-                    <span>
-                              Front-end developer
-                    </span>
+                    <img
+                              alt="Xavier Vilà"
+                              className="app-header-logo-img"
+                              src="logo.png"
+                    />
+                    <div
+                              className="app-header-logo-txt"
+                    >
+                              Xavier Vilà
+                              <br />
+                              <span>
+                                        Front-end developer
+                              </span>
+                    </div>
           </Link>
 </h2>,
         <nav
@@ -87,11 +96,20 @@ ShallowWrapper {
             replace={false}
             to="/"
 >
-            Xavier Vilà
-            <br />
-            <span>
-                        Front-end developer
-            </span>
+            <img
+                        alt="Xavier Vilà"
+                        className="app-header-logo-img"
+                        src="logo.png"
+            />
+            <div
+                        className="app-header-logo-txt"
+            >
+                        Xavier Vilà
+                        <br />
+                        <span>
+                                    Front-end developer
+                        </span>
+            </div>
 </Link>,
           "className": "app-header-title",
         },
@@ -102,37 +120,78 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              "Xavier Vilà",
-              <br />,
-              <span>
-                Front-end developer
-</span>,
+              <img
+                alt="Xavier Vilà"
+                className="app-header-logo-img"
+                src="logo.png"
+/>,
+              <div
+                className="app-header-logo-txt"
+>
+                Xavier Vilà
+                <br />
+                <span>
+                                Front-end developer
+                </span>
+</div>,
             ],
             "replace": false,
             "to": "/",
           },
           "ref": null,
           "rendered": Array [
-            "Xavier Vilà",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
-              "props": Object {},
+              "props": Object {
+                "alt": "Xavier Vilà",
+                "className": "app-header-logo-img",
+                "src": "logo.png",
+              },
               "ref": null,
               "rendered": null,
-              "type": "br",
+              "type": "img",
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Front-end developer",
+                "children": Array [
+                  "Xavier Vilà",
+                  <br />,
+                  <span>
+                    Front-end developer
+</span>,
+                ],
+                "className": "app-header-logo-txt",
               },
               "ref": null,
-              "rendered": "Front-end developer",
-              "type": "span",
+              "rendered": Array [
+                "Xavier Vilà",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Front-end developer",
+                  },
+                  "ref": null,
+                  "rendered": "Front-end developer",
+                  "type": "span",
+                },
+              ],
+              "type": "div",
             },
           ],
           "type": [Function],
@@ -202,11 +261,20 @@ ShallowWrapper {
                         replace={false}
                         to="/"
             >
-                        Xavier Vilà
-                        <br />
-                        <span>
-                                    Front-end developer
-                        </span>
+                        <img
+                                    alt="Xavier Vilà"
+                                    className="app-header-logo-img"
+                                    src="logo.png"
+                        />
+                        <div
+                                    className="app-header-logo-txt"
+                        >
+                                    Xavier Vilà
+                                    <br />
+                                    <span>
+                                                Front-end developer
+                                    </span>
+                        </div>
             </Link>
 </h2>,
           <nav
@@ -245,11 +313,20 @@ ShallowWrapper {
               replace={false}
               to="/"
 >
-              Xavier Vilà
-              <br />
-              <span>
-                            Front-end developer
-              </span>
+              <img
+                            alt="Xavier Vilà"
+                            className="app-header-logo-img"
+                            src="logo.png"
+              />
+              <div
+                            className="app-header-logo-txt"
+              >
+                            Xavier Vilà
+                            <br />
+                            <span>
+                                          Front-end developer
+                            </span>
+              </div>
 </Link>,
             "className": "app-header-title",
           },
@@ -260,37 +337,78 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                "Xavier Vilà",
-                <br />,
-                <span>
-                  Front-end developer
-</span>,
+                <img
+                  alt="Xavier Vilà"
+                  className="app-header-logo-img"
+                  src="logo.png"
+/>,
+                <div
+                  className="app-header-logo-txt"
+>
+                  Xavier Vilà
+                  <br />
+                  <span>
+                                    Front-end developer
+                  </span>
+</div>,
               ],
               "replace": false,
               "to": "/",
             },
             "ref": null,
             "rendered": Array [
-              "Xavier Vilà",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
-                "props": Object {},
+                "props": Object {
+                  "alt": "Xavier Vilà",
+                  "className": "app-header-logo-img",
+                  "src": "logo.png",
+                },
                 "ref": null,
                 "rendered": null,
-                "type": "br",
+                "type": "img",
               },
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Front-end developer",
+                  "children": Array [
+                    "Xavier Vilà",
+                    <br />,
+                    <span>
+                      Front-end developer
+</span>,
+                  ],
+                  "className": "app-header-logo-txt",
                 },
                 "ref": null,
-                "rendered": "Front-end developer",
-                "type": "span",
+                "rendered": Array [
+                  "Xavier Vilà",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Front-end developer",
+                    },
+                    "ref": null,
+                    "rendered": "Front-end developer",
+                    "type": "span",
+                  },
+                ],
+                "type": "div",
               },
             ],
             "type": [Function],

@@ -14,7 +14,7 @@ type Props = {
   data?: Object
 }
 
-const AdminPostItem = ({label, handlePost, data}: Props) => {
+const AdminPostItem = ({ label, handlePost, data }: Props) => {
   
   const post = {}
   const hidden = data ? '' : 'hidden'

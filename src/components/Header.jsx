@@ -8,6 +8,7 @@ import SignOut from '../containers/SignOut'
 import withWindow from '../components/withWindow'
 import { updateAppLanguage } from '../actions/languageActionCreators'
 import { getDictionary } from '../utils/dictionary'
+import Logo from '../assets/imgs/logo.png'
 
 type Props = {
   dispatch: Function,
@@ -31,8 +32,11 @@ const Header = ({ dispatch, authenticate, language, scroll }: Props) => {
       <div className={`app-header-bg${opacityClass}`}></div>
       <h2 className="app-header-title">
         <Link to="/">
-          Xavier Vilà<br />
-          <span>{DIC.FRONTEND}</span>
+          <img className="app-header-logo-img" src={Logo} alt="Xavier Vilà" />
+          <div className="app-header-logo-txt">
+            Xavier Vilà<br />
+            <span>{DIC.FRONTEND}</span>
+          </div>
         </Link>
       </h2>
 

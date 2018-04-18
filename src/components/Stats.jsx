@@ -28,7 +28,10 @@ class Stats extends React.PureComponent {
 
 
   getValue(section: string) {
-    const { users, posts, projects } = this.props.statistic.data
+    const { data } = this.props.statistic
+    const users = data.users ? data.users : '0'
+    const posts = data.posts ? data.posts : '0'
+    const projects = data.projects ? data.projects : '0'
 
     switch (section) {
       case 'about-me': return normalizeVal(users)
