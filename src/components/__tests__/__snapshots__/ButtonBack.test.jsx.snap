@@ -24,9 +24,13 @@ ShallowWrapper {
         <span
           className="mr5 icon-cheveron-left"
 />,
-        "Back",
+        <span
+          className="btn-back-txt"
+>
+          Back
+</span>,
       ],
-      "className": "app-header-nav-item btn btn-icon txt-tiny tr",
+      "className": "app-header-nav-item btn btn-icon btn-back txt-tiny tr",
       "replace": false,
       "to": "/",
     },
@@ -43,7 +47,18 @@ ShallowWrapper {
         "rendered": null,
         "type": "span",
       },
-      "Back",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Back",
+          "className": "btn-back-txt",
+        },
+        "ref": null,
+        "rendered": "Back",
+        "type": "span",
+      },
     ],
     "type": [Function],
   },
@@ -57,9 +72,13 @@ ShallowWrapper {
           <span
             className="mr5 icon-cheveron-left"
 />,
-          "Back",
+          <span
+            className="btn-back-txt"
+>
+            Back
+</span>,
         ],
-        "className": "app-header-nav-item btn btn-icon txt-tiny tr",
+        "className": "app-header-nav-item btn btn-icon btn-back txt-tiny tr",
         "replace": false,
         "to": "/",
       },
@@ -76,7 +95,18 @@ ShallowWrapper {
           "rendered": null,
           "type": "span",
         },
-        "Back",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Back",
+            "className": "btn-back-txt",
+          },
+          "ref": null,
+          "rendered": "Back",
+          "type": "span",
+        },
       ],
       "type": [Function],
     },
@@ -115,9 +145,13 @@ ShallowWrapper {
         <span
           className="mr5 icon-cheveron-left"
 />,
-        "test label",
+        <span
+          className="btn-back-txt"
+>
+          test label
+</span>,
       ],
-      "className": "app-header-nav-item btn btn-icon txt-tiny tr",
+      "className": "app-header-nav-item btn btn-icon btn-back txt-tiny tr",
       "replace": false,
       "to": "/test",
     },
@@ -134,7 +168,18 @@ ShallowWrapper {
         "rendered": null,
         "type": "span",
       },
-      "test label",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "test label",
+          "className": "btn-back-txt",
+        },
+        "ref": null,
+        "rendered": "test label",
+        "type": "span",
+      },
     ],
     "type": [Function],
   },
@@ -148,9 +193,13 @@ ShallowWrapper {
           <span
             className="mr5 icon-cheveron-left"
 />,
-          "test label",
+          <span
+            className="btn-back-txt"
+>
+            test label
+</span>,
         ],
-        "className": "app-header-nav-item btn btn-icon txt-tiny tr",
+        "className": "app-header-nav-item btn btn-icon btn-back txt-tiny tr",
         "replace": false,
         "to": "/test",
       },
@@ -167,7 +216,18 @@ ShallowWrapper {
           "rendered": null,
           "type": "span",
         },
-        "test label",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "test label",
+            "className": "btn-back-txt",
+          },
+          "ref": null,
+          "rendered": "test label",
+          "type": "span",
+        },
       ],
       "type": [Function],
     },

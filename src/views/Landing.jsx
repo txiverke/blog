@@ -13,7 +13,8 @@ type Props = {
   language: Object
 }
 
-const Landing = ({location, language}: Props)  => {
+const Landing = ({ location, language }: Props)  => {
+  
   const DIC = getDictionary(language.current)
 
   return (

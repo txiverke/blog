@@ -114,3 +114,19 @@
   opacity: 1;
 }
 
+@media (max-width: 450px) {
+  .btn-back {
+    padding: 0.2rem 0.35rem;
+  }
+  .btn-back > .mr5 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+  }
+  .btn-back-txt {
+    display: none;
+
+  }
+}
+
+

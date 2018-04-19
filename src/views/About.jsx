@@ -34,7 +34,7 @@ class About extends React.Component {
 
     this.setState({ DIC: getDictionary(language.current)})
     
-    if (Object.keys(user.data).length === 0) {
+    if (!Object.keys(user.data).length) {
       dispatch(loadUserData(config.api.profileId))
     }
   }
@@ -42,6 +42,7 @@ class About extends React.Component {
   componentWillReceiveProps(nextProps: Object) {
     const old = this.props.language.current
     const current = nextProps.language.current
+    
     if (old !== current) {
       this.setState({ DIC: getDictionary(current)})
     }

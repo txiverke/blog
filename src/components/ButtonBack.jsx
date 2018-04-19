@@ -11,9 +11,9 @@ type Props = {
 const ButtonBack = ({ label, route }: Props) => 
   <Link
     to={route} 
-    className="app-header-nav-item btn btn-icon txt-tiny tr">
+    className="app-header-nav-item btn btn-icon btn-back txt-tiny tr">
     <span className={`mr5 icon-cheveron-left`}></span>
-    {label}
+    <span className="btn-back-txt">{label}</span>
   </Link>
 
 ButtonBack.defaultProps = {
