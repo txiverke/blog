@@ -11,12 +11,15 @@ import Loader from './Loader'
 import Textarea from './form/Textarea';
 import { loadUserData } from '../actions/userActionCreators'
 
-class AdminUserItem extends React.PureComponent {
-  props: {
-    dispatch: Function,
-    user: Item,
-    handleClick: Function
-  }
+type Props = {
+  dispatch: Function,
+  user: Item,
+  handleClick: Function
+}
+
+class AdminUserItem extends React.PureComponent<Props> {
+  
+  props: Props
 
   componentDidMount() {
     const { user, dispatch } = this.props

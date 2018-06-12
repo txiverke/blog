@@ -8,11 +8,13 @@ import { Redirect } from 'react-router-dom'
 import { isAuthenticated } from '../actions/userActionCreators'
 import SignInForm from '../containers/SignInForm'
 
-class SignIn extends React.PureComponent {
-  props: {
-    authenticate: Auth,
-    dispatch: Function,
-  }
+type Props = {
+  authenticate: Auth,
+  dispatch: Function,
+}
+
+class SignIn extends React.Component<Props> {
+  props: Props
 
   componentDidMount() {
     const { dispatch } = this.props

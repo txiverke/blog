@@ -5,17 +5,23 @@ import React from 'react'
 import Tag from './Tag'
 import withWindow from './withWindow'
 
-class Search extends React.PureComponent {
-  state = {
+type Props = {
+  tags: Array<string>,
+  handleTagClick: Function,
+  handleResetClick: Function,
+  scroll: boolean,
+}
+
+type State = {
+  reset: boolean
+}
+
+class Search extends React.PureComponent<Props, State> {
+  state: State = {
     reset: false
   }
 
-  props: {
-    tags: Array<string>,
-    handleTagClick: Function,
-    handleResetClick: Function,
-    scroll: boolean,
-  }
+  props: Props
 
   handleTagClick = (val: string) => {
     this.props.handleTagClick(val)

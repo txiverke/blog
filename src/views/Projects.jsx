@@ -8,15 +8,21 @@ import Loader from '../components/Loader'
 import { loadProjectData } from '../actions/projectActionCreators'
 import { getSlug } from '../utils/helpers'
 
-class Projects extends React.Component {
-  state = {
+type Props = {
+  projects: Data,
+  dispatch: Function
+}
+
+type State = {
+  slug: string
+}
+
+class Projects extends React.Component<Props, State> {
+  state: State = {
     slug: ''
   }
 
-  props: {
-    projects: Data,
-    dispatch: Function
-  }
+  props: Props
 
   componentDidMount() {
     const { projects, dispatch } = this.props

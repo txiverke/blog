@@ -9,13 +9,15 @@ import AdminProjectItem from '../components/AdminProjectItem'
 import Loader from './Loader'
 import { loadProjectData } from '../actions/projectActionCreators'
 
-class AdminProjectList extends React.Component {
+type Props = {
+  dispatch: Function,
+  projects: Data,
+  handleCreateProject: Function
+}
+
+class AdminProjectList extends React.Component<Props> {
   
-  props: {
-    dispatch: Function,
-    projects: Data,
-    handleCreateProject: Function
-  }
+  props: Props
 
   componentDidMount() {
     const { dispatch, projects } = this.props

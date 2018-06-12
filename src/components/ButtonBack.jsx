@@ -4,8 +4,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {
-  label?: string,
-  route?: string,
+  label: string,
+  route: string,
 }
 
 const ButtonBack = ({ label, route }: Props) => 

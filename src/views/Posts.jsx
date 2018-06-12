@@ -13,19 +13,27 @@ import { loadPostData } from '../actions/postActionCreators'
 import { isEqual } from '../utils/helpers'
 import { getDictionary } from '../utils/dictionary'
 
-class Posts extends React.PureComponent {
-  state = {
+type Props = {
+  dispatch: Function,
+  posts: Data,
+  tags: Tag,
+  language: Object
+}
+
+type State = {
+  tags: Array<string>,
+  posts: Array<Object>,
+  DIC: Object
+}
+
+class Posts extends React.PureComponent<Props, State> {
+  state: State = {
     tags: [],
     posts: [],
     DIC: {}
   }
 
-  props: {
-    dispatch: Function,
-    posts: Data,
-    tags: Tag,
-    language: Object
-  }
+  props: Props
 
   componentDidMount() {
     const { dispatch, posts, language } = this.props
@@ -54,6 +62,7 @@ class Posts extends React.PureComponent {
 
   getTags(data: Array<Object>) {
     const listOfArr = data.map(item =>  item.tags.split(','))
+    // $FlowFixMe
     return Array.from(new Set([].concat(...listOfArr).map(item => item.trim())))
   }
   

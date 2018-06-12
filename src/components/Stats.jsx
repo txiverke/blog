@@ -10,13 +10,15 @@ import { loadStats } from '../actions/statsActionCreators'
 
 const sections = [{ url: 'about-me' }, { url: 'posts' }, { url: 'projects'}]
 
-class Stats extends React.PureComponent {
-  props: {
+type Props = {
     dispatch: Function,
     statistic: Statistic,
     authenticate: Auth,
     DIC: Object
   }
+
+class Stats extends React.PureComponent<Props, *> {
+  props: Props
 
   componentDidMount() {
     const { dispatch, statistic, authenticate } = this.props

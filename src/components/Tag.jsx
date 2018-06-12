@@ -2,16 +2,21 @@
 
 import React from 'react'
 
-class Tag extends React.PureComponent {
-  state = {
+type Props = {
+  label: string,
+  handleClick: Function,
+  reset: boolean
+}
+type State = {
+  active: boolean
+}
+
+class Tag extends React.PureComponent<Props, State> {
+  state: State = {
     active: true,
   }
 
-  props: {
-    label: string,
-    handleClick: Function,
-    reset: boolean
-  }
+  props: Props
 
   componentWillReceiveProps(nextProps: Object) {
     if (nextProps.reset) {
@@ -23,7 +28,7 @@ class Tag extends React.PureComponent {
     const value = e.target.dataset.value
 
     this.setState(
-      ({active}) => ({ active: !active }), 
+      ({ active }) => ({ active: !active }), 
       () => { this.props.handleClick(value) }
     )  
   }

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
+
 import { Unwrapped as UnwrappedAdminPostList } from '../AdminPostList'
 
 const properties = {

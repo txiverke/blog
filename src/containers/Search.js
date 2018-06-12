@@ -6,13 +6,15 @@ import { connect } from 'react-redux'
 import Search from '../components/Search'
 import { checkPostsTags } from '../actions/postActionCreators'
 
-class SearchContainer extends React.PureComponent {
-  
-  props: {
+type Props = {
     tagsToRender: Array<string>,
     dispatch: Function,
     tags: Tag
   }
+
+class SearchContainer extends React.PureComponent<Props> {
+  
+  props: Props
 
   componentDidMount() {
     const { tagsToRender, dispatch } = this.props

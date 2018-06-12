@@ -6,4 +6,8 @@
 <PROJECT_ROOT>/node_modules/fbjs/.*
 flow-typed
 
+[lints]
+
 [options]
+
+[strict]

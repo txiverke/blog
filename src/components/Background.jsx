@@ -4,14 +4,20 @@ import React from 'react'
 
 import landingBg from '../assets/imgs/bg_1.png'
 
-class Background extends React.PureComponent {
-  state = {
+type Props = {
+  title: string
+}
+
+type State = {
+  render: string
+}
+
+class Background extends React.PureComponent<Props, State> {
+  state: State = {
     render: ''
   }
   
-  props: {
-    title: string,
-  }
+  props: Props
 
   componentDidMount() {
     setTimeout(() => { 

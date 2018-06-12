@@ -6,7 +6,7 @@ type Props = {
   wrapper?: string,
   title: string,
   name: string,
-  rows?: Number,
+  rows?: number,
   content?: string,
   resize?: boolean,
   placeholder?: string,

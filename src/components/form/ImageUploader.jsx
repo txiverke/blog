@@ -4,7 +4,7 @@ import React from 'react'
 
 import SingleInput from './SingleInput'
 
-class ImageUploader extends React.Component {
+class ImageUploader extends React.Component<*, *> {
   state = {
     imagePreviewUrl: ''
   } 

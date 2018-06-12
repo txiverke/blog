@@ -3,8 +3,17 @@
 import React from 'react'
 import ReactMessages from 'react-messages'
 
-class ReactMessagesExample extends React.PureComponent {
-  state = {
+type State = {
+  next: boolean,
+  message: string,
+  newMessage: string,
+  icon: string,
+  duration: number,
+  error: boolean
+}
+
+class ReactMessagesExample extends React.PureComponent<*, State> {
+  state: State = {
     next: false,
     message: 'Just an initial message',
     newMessage: '',
@@ -25,7 +34,7 @@ class ReactMessagesExample extends React.PureComponent {
 
   handleError = () => {
     const { error } = this.state
-    this.setState({ error: !error, next: false })
+    this.setState( prevState => ({ error: !prevState.error, next: false }))
   }
 
   handleChange = (e: InputEvent) => {

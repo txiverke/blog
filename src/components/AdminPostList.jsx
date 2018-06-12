@@ -9,12 +9,14 @@ import AdminList from '../containers/AdminList'
 import Loader from './Loader'
 import { loadPostData } from '../actions/postActionCreators'
 
-class AdminPostList extends React.Component {
-  props: {
-    dispatch: Function,
-    posts: Data,
-    handleClickCreate: Function,
-  }
+type Props = {
+  dispatch: Function,
+  posts: Data,
+  handleClickCreate: Function,
+}
+
+class AdminPostList extends React.Component<Props> {
+  props: Props
   
   componentDidMount() {
     const { posts, dispatch } = this.props

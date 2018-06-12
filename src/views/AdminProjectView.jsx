@@ -11,17 +11,23 @@ import AdminProjectItem from '../components/AdminProjectItem'
 import { loadProjectItem, updateProjectData } from '../actions/projectActionCreators'
 import { isAuthenticated } from '../actions/userActionCreators'
 
-class AdminProjectView extends React.Component {
-  state = {
+type Props = {
+  dispatch: Function,
+  item: Item,
+  authenticate: Auth,
+  match: Object
+}
+
+type State = {
+  data: Object
+}
+
+class AdminProjectView extends React.Component<Props, State> {
+  state: State = {
     data: {}
   }
 
-  props: {
-    dispatch: Function,
-    item: Item,
-    authenticate: Auth,
-    match: Object
-  }
+  props: Props
 
   componentDidMount() {
     const { dispatch, match } = this.props

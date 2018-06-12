@@ -11,17 +11,23 @@ import AdminPostItem from '../components/AdminPostItem'
 import { loadPostItem, updatePostData } from '../actions/postActionCreators'
 import { isAuthenticated } from '../actions/userActionCreators'
 
-class AdminPostView extends React.Component {
-  state = {
+type Props = {
+  dispatch: Function,
+  item: Item,
+  authenticate: Auth,
+  match: Object
+}
+
+type State = {
+  data: Object
+}
+
+class AdminPostView extends React.Component<Props, State> {
+  state: State = {
     data: {}
   }
 
-  props: {
-    dispatch: Function,
-    item: Item,
-    authenticate: Auth,
-    match: Object
-  }
+  props: Props
 
   componentDidMount() {
     const { dispatch, match } = this.props

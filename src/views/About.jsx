@@ -14,20 +14,29 @@ import { getDictionary } from '../utils/dictionary'
 // $FlowFixMe
 import pdf from '../assets/files/XavierVilaAlbiol_CV_en.pdf'
 
-class About extends React.Component {
-  state = {
+type Props = {
+  user: Item,
+  dispatch: Function,
+  location: Object,
+  language: Object
+}
+
+type State = {
+  txtMessage: string,
+  next: boolean,
+  DIC: Object,
+  sent: boolean
+}
+
+class About extends React.Component<Props, State> {
+  state: State = {
     txtMessage: '',
     next: false,
     DIC: {},
     sent: false
   }
   
-  props: {
-    user: Item,
-    dispatch: Function,
-    location: Object,
-    language: Object
-  }
+  props: Props
 
   componentDidMount() {
     const { dispatch, user, language } = this.props

@@ -12,8 +12,22 @@ import { getItem, getSlug } from '../utils/helpers'
 import config from '../config'
 import ReactMessagesExample from '../components/React-messages-example'
 
-class ProjectView extends React.PureComponent {
-  state = {
+type Props = {
+  dispatch: Function,
+  match: Object,
+  projects: Data
+}
+
+type State = {
+  data: Object,
+  next: string,
+  prev: string,
+  notFound: boolean,
+  render: string
+}
+
+class ProjectView extends React.PureComponent<Props, State> {
+  state: State = {
     data: {},
     next: '',
     prev: '',
@@ -21,11 +35,7 @@ class ProjectView extends React.PureComponent {
     render: ''
   }
 
-  props: {
-    dispatch: Function,
-    match: Object,
-    projects: Data
-  }
+  props: Props
 
   componentDidMount() {
     const { dispatch } = this.props
