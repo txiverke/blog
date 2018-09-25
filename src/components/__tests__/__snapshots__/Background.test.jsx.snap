@@ -22,7 +22,7 @@ ShallowWrapper {
       "children": <img
         alt="Background of Just a fake title"
         className="app-background-img"
-        src="bg_1.png"
+        src="bg_1.jpg"
 />,
       "className": "app-background ",
     },
@@ -34,7 +34,7 @@ ShallowWrapper {
       "props": Object {
         "alt": "Background of Just a fake title",
         "className": "app-background-img",
-        "src": "bg_1.png",
+        "src": "bg_1.jpg",
       },
       "ref": null,
       "rendered": null,
@@ -51,7 +51,7 @@ ShallowWrapper {
         "children": <img
           alt="Background of Just a fake title"
           className="app-background-img"
-          src="bg_1.png"
+          src="bg_1.jpg"
 />,
         "className": "app-background ",
       },
@@ -63,7 +63,7 @@ ShallowWrapper {
         "props": Object {
           "alt": "Background of Just a fake title",
           "className": "app-background-img",
-          "src": "bg_1.png",
+          "src": "bg_1.jpg",
         },
         "ref": null,
         "rendered": null,
