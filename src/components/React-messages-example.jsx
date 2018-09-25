@@ -33,7 +33,6 @@ class ReactMessagesExample extends React.PureComponent<*, State> {
   }
 
   handleError = () => {
-    const { error } = this.state
     this.setState( prevState => ({ error: !prevState.error, next: false }))
   }
 
