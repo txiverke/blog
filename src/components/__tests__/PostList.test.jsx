@@ -4,10 +4,12 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import PostList from '../PostList'
 
+const created = new Date('2018-03-14').toLocaleDateString()
+
 const properties = {
   list: [
     {
-      created: "2018-03-14T23:03:25.139Z",
+      created,
       _id: "5aa9aa3d8bc34eabc8c7e043",
       title: "tesing is nicesss",
       content: "just testing the react components",
@@ -17,7 +19,7 @@ const properties = {
       __v: 0
     },
     {
-      created: "2018-03-14T23:03:25.139Z",
+      created,
       _id: "5aa9aa3d8bc34eabc8c7e044",
       title: "tesing is nicesss",
       content: "just testing the react components",
