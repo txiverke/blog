@@ -18,7 +18,7 @@ ShallowWrapper {
               "_id": "5aa9aa3d8bc34eabc8c7e043",
               "background": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
               "content": "just testing the react components",
-              "created": "2018-3-13",
+              "created": "3/14/2018",
               "link": "localhost:3000/404",
               "tags": "rest",
               "title": "tesing is nicesss",
@@ -28,7 +28,7 @@ ShallowWrapper {
               "_id": "5aa9aa3d8bc34eabc8c7e044",
               "background": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
               "content": "just testing the react components",
-              "created": "2018-3-13",
+              "created": "3/14/2018",
               "link": "localhost:3000/404",
               "tags": "rest",
               "title": "tesing is nicesss",
@@ -102,7 +102,7 @@ ShallowWrapper {
                                     <small
                                                 className="app-article-date"
                                     >
-                                                Posted at test 2018-3-13
+                                                Posted at test 2018-3-14
                                     </small>
                         </p>
             </div>
@@ -159,7 +159,7 @@ ShallowWrapper {
                                     <small
                                                 className="app-article-date"
                                     >
-                                                Posted at test 2018-3-13
+                                                Posted at test 2018-3-14
                                     </small>
                         </p>
             </div>
@@ -225,7 +225,7 @@ ShallowWrapper {
                         <small
                                     className="app-article-date"
                         >
-                                    Posted at test 2018-3-13
+                                    Posted at test 2018-3-14
                         </small>
             </p>
 </div>,
@@ -284,7 +284,7 @@ ShallowWrapper {
                 <small
                                 className="app-article-date"
                 >
-                                Posted at test 2018-3-13
+                                Posted at test 2018-3-14
                 </small>
 </p>,
             ],
@@ -415,7 +415,7 @@ ShallowWrapper {
                   <small
                     className="app-article-date"
 >
-                    Posted at test 2018-3-13
+                    Posted at test 2018-3-14
 </small>,
                 ],
                 "className": "app-article-tags",
@@ -457,11 +457,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Posted at test 2018-3-13",
+                    "children": "Posted at test 2018-3-14",
                     "className": "app-article-date",
                   },
                   "ref": null,
-                  "rendered": "Posted at test 2018-3-13",
+                  "rendered": "Posted at test 2018-3-14",
                   "type": "small",
                 },
               ],
@@ -526,7 +526,7 @@ ShallowWrapper {
                         <small
                                     className="app-article-date"
                         >
-                                    Posted at test 2018-3-13
+                                    Posted at test 2018-3-14
                         </small>
             </p>
 </div>,
@@ -585,7 +585,7 @@ ShallowWrapper {
                 <small
                                 className="app-article-date"
                 >
-                                Posted at test 2018-3-13
+                                Posted at test 2018-3-14
                 </small>
 </p>,
             ],
@@ -716,7 +716,7 @@ ShallowWrapper {
                   <small
                     className="app-article-date"
 >
-                    Posted at test 2018-3-13
+                    Posted at test 2018-3-14
 </small>,
                 ],
                 "className": "app-article-tags",
@@ -758,11 +758,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Posted at test 2018-3-13",
+                    "children": "Posted at test 2018-3-14",
                     "className": "app-article-date",
                   },
                   "ref": null,
-                  "rendered": "Posted at test 2018-3-13",
+                  "rendered": "Posted at test 2018-3-14",
                   "type": "small",
                 },
               ],
@@ -837,7 +837,7 @@ ShallowWrapper {
                                           <small
                                                         className="app-article-date"
                                           >
-                                                        Posted at test 2018-3-13
+                                                        Posted at test 2018-3-14
                                           </small>
                             </p>
               </div>
@@ -894,7 +894,7 @@ ShallowWrapper {
                                           <small
                                                         className="app-article-date"
                                           >
-                                                        Posted at test 2018-3-13
+                                                        Posted at test 2018-3-14
                                           </small>
                             </p>
               </div>
@@ -960,7 +960,7 @@ ShallowWrapper {
                             <small
                                           className="app-article-date"
                             >
-                                          Posted at test 2018-3-13
+                                          Posted at test 2018-3-14
                             </small>
               </p>
 </div>,
@@ -1019,7 +1019,7 @@ ShallowWrapper {
                   <small
                                     className="app-article-date"
                   >
-                                    Posted at test 2018-3-13
+                                    Posted at test 2018-3-14
                   </small>
 </p>,
               ],
@@ -1150,7 +1150,7 @@ ShallowWrapper {
                     <small
                       className="app-article-date"
 >
-                      Posted at test 2018-3-13
+                      Posted at test 2018-3-14
 </small>,
                   ],
                   "className": "app-article-tags",
@@ -1192,11 +1192,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Posted at test 2018-3-13",
+                      "children": "Posted at test 2018-3-14",
                       "className": "app-article-date",
                     },
                     "ref": null,
-                    "rendered": "Posted at test 2018-3-13",
+                    "rendered": "Posted at test 2018-3-14",
                     "type": "small",
                   },
                 ],
@@ -1261,7 +1261,7 @@ ShallowWrapper {
                             <small
                                           className="app-article-date"
                             >
-                                          Posted at test 2018-3-13
+                                          Posted at test 2018-3-14
                             </small>
               </p>
 </div>,
@@ -1320,7 +1320,7 @@ ShallowWrapper {
                   <small
                                     className="app-article-date"
                   >
-                                    Posted at test 2018-3-13
+                                    Posted at test 2018-3-14
                   </small>
 </p>,
               ],
@@ -1451,7 +1451,7 @@ ShallowWrapper {
                     <small
                       className="app-article-date"
 >
-                      Posted at test 2018-3-13
+                      Posted at test 2018-3-14
 </small>,
                   ],
                   "className": "app-article-tags",
@@ -1493,11 +1493,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Posted at test 2018-3-13",
+                      "children": "Posted at test 2018-3-14",
                       "className": "app-article-date",
                     },
                     "ref": null,
-                    "rendered": "Posted at test 2018-3-13",
+                    "rendered": "Posted at test 2018-3-14",
                     "type": "small",
                   },
                 ],

@@ -4,7 +4,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import PostList from '../PostList'
 
-const created = new Date('2018-03-14').toLocaleDateString()
+const created = '3/14/2018'
 
 const properties = {
   list: [
