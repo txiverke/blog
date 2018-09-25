@@ -1,22 +1,32 @@
 @font-face {
   font-family: 'Regular';
-  src: url('../fonts/SourceSansPro-Regular.otf') format('truetype');
+  font-display: block;
+	src: local("Regular"),
+    url('../fonts/SourceSansPro-Regular.otf') format('truetype');
 }
 @font-face {
   font-family: 'Lighter';
-  src: url('../fonts/SourceSansPro-ExtraLight.otf') format('truetype');
+  font-display: block;
+	src: local("Lighter"),
+    url('../fonts/SourceSansPro-ExtraLight.otf') format('truetype');
 }
 @font-face {
   font-family: 'Bold';
-  src: url('../fonts/SourceSansPro-Black.otf') format('truetype');
+  font-display: block;
+	src: local("Bold"),
+    url('../fonts/SourceSansPro-Black.otf') format('truetype');
 }
 @font-face {
   font-family: 'Number';
-  src: url('../fonts/Montserrat-ExtraLight.ttf') format('truetype');
+  font-display: block;
+	src: local("Number"),
+    url('../fonts/Montserrat-ExtraLight.ttf') format('truetype');
 }
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?r5ozf0');
+  font-display: block;
+	src: local("icomoon"),
+    url('../fonts/icomoon.eot?r5ozf0');
   src:  url('../fonts/icomoon.eot?r5ozf0#iefix') format('embedded-opentype'),
     url('../fonts/icomoon.ttf?r5ozf0') format('truetype'),
     url('../fonts/icomoon.woff?r5ozf0') format('woff'),

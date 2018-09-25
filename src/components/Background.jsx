@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import landingBg from '../assets/imgs/bg_1.png'
+import landingBg from '../assets/imgs/bg_1.jpg'
 
 type Props = {
   title: string
