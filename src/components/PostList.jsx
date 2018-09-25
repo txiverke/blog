@@ -15,7 +15,7 @@ const PostList = ({ list, DIC }: Props) => {
   return (
     <div className="app-article-wrapper">
       {list.map((item, index) => {
-        const d = new Date(item.created).toLocaleDateString()
+        const d = new Date(item.created).toDateString()
         const posClass = index%2 === 0 ? 'even' : 'odd'
 
         return (
