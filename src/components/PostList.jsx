@@ -2,8 +2,6 @@
 
 import React from 'react'
 
-import config from '../config'
-
 type Props = {
   list: Array<Object>,
   DIC: Object,
@@ -28,7 +26,7 @@ const PostList = ({ list, DIC }: Props) => {
                   >
                   <span className="icon-twitter"></span>
                 </a>
-                <img className="bg-item" src={`${config.api.public}/posts/${item.background}`} alt={item.title} />
+                <img className="bg-item" src={item.background} alt={item.title} />
               </figure>
               <h2 className="app-article-title">
                 <a href={item.link} target="_blank">{item.title}</a>

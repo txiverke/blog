@@ -6,7 +6,6 @@ import SingleInput from './form/SingleInput'
 import Textarea from './form/Textarea'
 import ImageUploader from './form/ImageUploader'
 import { showFormErrors, showInputError } from '../utils/errorHandler'
-import config from '../config'
 
 type Props = {
   label: string,
@@ -130,7 +129,7 @@ const AdminProjectItem = ({ label, handleProject, data }: Props) => {
         {data && !project.file &&
           <img 
             className="app-preview"
-            src={`${config.api.public}/projects/${data.background}`} 
+            src={data.background} 
             height="200" 
             alt="Preview..." 
           />

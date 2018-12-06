@@ -70,7 +70,7 @@ ShallowWrapper {
                                     <img
                                                 alt="tesing is nicesss"
                                                 className="bg-item"
-                                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                                src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                                     />
                         </figure>
                         <h2
@@ -127,7 +127,7 @@ ShallowWrapper {
                                     <img
                                                 alt="tesing is nicesss"
                                                 className="bg-item"
-                                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                                src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                                     />
                         </figure>
                         <h2
@@ -193,7 +193,7 @@ ShallowWrapper {
                         <img
                                     alt="tesing is nicesss"
                                     className="bg-item"
-                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                    src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                         />
             </figure>
             <h2
@@ -252,7 +252,7 @@ ShallowWrapper {
                 <img
                                 alt="tesing is nicesss"
                                 className="bg-item"
-                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                 />
 </figure>,
               <h2
@@ -309,7 +309,7 @@ ShallowWrapper {
                   <img
                     alt="tesing is nicesss"
                     className="bg-item"
-                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                    src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
 />,
                 ],
                 "className": "app-article-img",
@@ -348,7 +348,7 @@ ShallowWrapper {
                   "props": Object {
                     "alt": "tesing is nicesss",
                     "className": "bg-item",
-                    "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                    "src": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
                   },
                   "ref": null,
                   "rendered": null,
@@ -494,7 +494,7 @@ ShallowWrapper {
                         <img
                                     alt="tesing is nicesss"
                                     className="bg-item"
-                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                    src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                         />
             </figure>
             <h2
@@ -553,7 +553,7 @@ ShallowWrapper {
                 <img
                                 alt="tesing is nicesss"
                                 className="bg-item"
-                                src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                 />
 </figure>,
               <h2
@@ -610,7 +610,7 @@ ShallowWrapper {
                   <img
                     alt="tesing is nicesss"
                     className="bg-item"
-                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                    src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
 />,
                 ],
                 "className": "app-article-img",
@@ -649,7 +649,7 @@ ShallowWrapper {
                   "props": Object {
                     "alt": "tesing is nicesss",
                     "className": "bg-item",
-                    "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                    "src": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
                   },
                   "ref": null,
                   "rendered": null,
@@ -805,7 +805,7 @@ ShallowWrapper {
                                           <img
                                                         alt="tesing is nicesss"
                                                         className="bg-item"
-                                                        src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                                        src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                                           />
                             </figure>
                             <h2
@@ -862,7 +862,7 @@ ShallowWrapper {
                                           <img
                                                         alt="tesing is nicesss"
                                                         className="bg-item"
-                                                        src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                                        src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                                           />
                             </figure>
                             <h2
@@ -928,7 +928,7 @@ ShallowWrapper {
                             <img
                                           alt="tesing is nicesss"
                                           className="bg-item"
-                                          src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                          src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                             />
               </figure>
               <h2
@@ -987,7 +987,7 @@ ShallowWrapper {
                   <img
                                     alt="tesing is nicesss"
                                     className="bg-item"
-                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                    src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                   />
 </figure>,
                 <h2
@@ -1044,7 +1044,7 @@ ShallowWrapper {
                     <img
                       alt="tesing is nicesss"
                       className="bg-item"
-                      src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                      src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
 />,
                   ],
                   "className": "app-article-img",
@@ -1083,7 +1083,7 @@ ShallowWrapper {
                     "props": Object {
                       "alt": "tesing is nicesss",
                       "className": "bg-item",
-                      "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                      "src": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
                     },
                     "ref": null,
                     "rendered": null,
@@ -1229,7 +1229,7 @@ ShallowWrapper {
                             <img
                                           alt="tesing is nicesss"
                                           className="bg-item"
-                                          src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                          src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                             />
               </figure>
               <h2
@@ -1288,7 +1288,7 @@ ShallowWrapper {
                   <img
                                     alt="tesing is nicesss"
                                     className="bg-item"
-                                    src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                                    src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
                   />
 </figure>,
                 <h2
@@ -1345,7 +1345,7 @@ ShallowWrapper {
                     <img
                       alt="tesing is nicesss"
                       className="bg-item"
-                      src="http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg"
+                      src="e17f8d88376301da04b72153a29303631521068605128.jpeg"
 />,
                   ],
                   "className": "app-article-img",
@@ -1384,7 +1384,7 @@ ShallowWrapper {
                     "props": Object {
                       "alt": "tesing is nicesss",
                       "className": "bg-item",
-                      "src": "http://localhost:8888/blog/img/posts/e17f8d88376301da04b72153a29303631521068605128.jpeg",
+                      "src": "e17f8d88376301da04b72153a29303631521068605128.jpeg",
                     },
                     "ref": null,
                     "rendered": null,

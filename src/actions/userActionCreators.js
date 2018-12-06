@@ -21,11 +21,11 @@ export const loginUser = (obj: Object) =>
         body: JSON.stringify(obj), 
         headers: new Headers({ 'Content-Type': 'application/json' })
       })
-      const data = await promise.json()
+      const response = await promise.json()
 
-      handleToken.set(JSON.stringify(data.token))
-      dispatch(loginUserSuccess(data.token))
-      return dispatch(isAuthenticatedSuccess(data.token))
+      handleToken.set(JSON.stringify(response.data))
+      dispatch(loginUserSuccess(response.data))
+      return dispatch(isAuthenticatedSuccess(response.data))
     } catch (err) {
       return dispatch(loginUserFailure())
     }

@@ -92,7 +92,7 @@ ShallowWrapper {
                     alt="Preview..."
                     className="app-preview"
                     height="200"
-                    src="http://localhost:8888/blog/img/projects/undefined"
+                    src={undefined}
           />
           <TextArea
                     content=""
@@ -224,7 +224,7 @@ ShallowWrapper {
               alt="Preview..."
               className="app-preview"
               height="200"
-              src="http://localhost:8888/blog/img/projects/undefined"
+              src={undefined}
 />,
             <TextArea
               content=""
@@ -363,7 +363,7 @@ ShallowWrapper {
               "alt": "Preview...",
               "className": "app-preview",
               "height": "200",
-              "src": "http://localhost:8888/blog/img/projects/undefined",
+              "src": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -505,7 +505,7 @@ ShallowWrapper {
                         alt="Preview..."
                         className="app-preview"
                         height="200"
-                        src="http://localhost:8888/blog/img/projects/undefined"
+                        src={undefined}
             />
             <TextArea
                         content=""
@@ -637,7 +637,7 @@ ShallowWrapper {
                 alt="Preview..."
                 className="app-preview"
                 height="200"
-                src="http://localhost:8888/blog/img/projects/undefined"
+                src={undefined}
 />,
               <TextArea
                 content=""
@@ -776,7 +776,7 @@ ShallowWrapper {
                 "alt": "Preview...",
                 "className": "app-preview",
                 "height": "200",
-                "src": "http://localhost:8888/blog/img/projects/undefined",
+                "src": undefined,
               },
               "ref": null,
               "rendered": null,
